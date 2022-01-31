@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VLU-API", "VLU-API\VLU-API.csproj", "{F321113E-45B5-4437-9B80-253A2E1EBE4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F321113E-45B5-4437-9B80-253A2E1EBE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F321113E-45B5-4437-9B80-253A2E1EBE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F321113E-45B5-4437-9B80-253A2E1EBE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F321113E-45B5-4437-9B80-253A2E1EBE4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {043EBCD8-7ADD-422B-A954-095ACCFED0CC}
+	EndGlobalSection
+EndGlobal
