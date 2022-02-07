@@ -1,0 +1,26 @@
+.footer {
+  background-color: #003768;
+}
+
+ul {
+  color: #FFE600;
+}
+
+li {
+  color: #fff;
+  list-style: none;
+}
+
+.text {
+  color: #fff;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+  a:hover {
+    color: gold;
+    text-decoration: none;
+  }
