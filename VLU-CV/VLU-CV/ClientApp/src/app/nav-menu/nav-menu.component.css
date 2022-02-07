@@ -21,3 +21,9 @@ html {
 li{
     color:#fff;
 }
+.logo-img{
+    width: 3%;
+}
+.navbar-brand:hover{
+    color: #fff;
+}
