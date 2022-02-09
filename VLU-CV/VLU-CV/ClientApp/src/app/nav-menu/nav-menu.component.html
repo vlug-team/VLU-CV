@@ -1,34 +1,37 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
-    <div class="container">
-      <img [routerLink]="['/']" class="logo-img" src="./assets/Image/vlu-logo.png" />
-      <a class="navbar-brand" [routerLink]="['/']">VLU Resume</a>
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-              aria-label="Toggle navigation"
-              [attr.aria-expanded]="isExpanded"
-              (click)="toggle()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-           [ngClass]="{ show: isExpanded }">
-        <ul class="navbar-nav flex-grow">
-          <li class="nav-item"
-              [routerLinkActive]="['link-active']"
-              [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link" [routerLink]="['/counter']">Counter</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link" [routerLink]="['/fetch-data']">Fetch data</a>
-          </li>
-        </ul>
-        <app-login-menu></app-login-menu>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
+        <div class="container">
+            <img [routerLink]="['/']" class="logo-img" src="./assets/Image/vlu-logo.png" />
+            <a class="navbar-brand" [routerLink]="['/']">VLU Resume</a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                    aria-label="Toggle navigation"
+                    [attr.aria-expanded]="isExpanded"
+                    (click)="toggle()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+                 [ngClass]="{ show: isExpanded }">
+                <ul class="navbar-nav flex-grow">
+                    <li class="nav-item"
+                        [routerLinkActive]="['link-active']"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <a class="nav-link" [routerLink]="['/']">Home</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/counter']">List Resume</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/']">Create Resume</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/']">About us</a>
+                    </li>
+                </ul>
+                <app-login-menu></app-login-menu>
+            </div>
+        </div>
+    </nav>
 </header>

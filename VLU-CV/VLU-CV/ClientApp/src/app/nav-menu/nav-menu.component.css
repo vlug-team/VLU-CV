@@ -27,3 +27,6 @@ li{
 .navbar-brand:hover{
     color: #fff;
 }
+a:hover {
+    color:yellow;
+}
