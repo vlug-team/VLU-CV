@@ -4,41 +4,42 @@
 }
 
 .full-width{
-    width: 100%;;
+    width: 100%;
 }
 
 .half-width{
     width: 50%;
 }
 
-.focus-rectangle{
-    width: 70%;
-    height: 321px;
-    border-radius: 10px;
-    background-color: rgb(109,157,201);
-    margin: auto;
-    margin-top: 73px;
-    margin-bottom: 73px;
+.focus-rectangle {
+  width: 70%;
+  height: 321px;
+  border-radius: 10px;
+  background-color: #6D9DC9;
+  margin: auto;
+  margin-top: 73px;
+  margin-bottom: 73px;
 }
 
 .focus-word{
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
-
     letter-spacing: 0.07em;
-
     color: #000000;
 
 }
 
-.focus-button{
-    width:163px;
-    height:48px;
-    background-color: red;
-    border-radius: 5px;
-    color: white;
+.focus-button {
+  width: 163px;
+  height: 48px;
+  background-color: #C70000;
+  border-radius: 10px;
+  color: white;
 }
+  .focus-button:hover {
+    background-color: #fe4848;
+  }
 
 .demo-cv-background{
     width:100%;
