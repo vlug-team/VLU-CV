@@ -1,3 +1,3 @@
 # VLU-CV
 - Add-migration 
-- Update-datbase
+- Update-database
