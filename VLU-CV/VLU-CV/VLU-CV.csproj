@@ -31,7 +31,6 @@
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="wwwroot\Image\**" />
     <EmbeddedResource Remove="wwwroot\Image\**" />
-    <None Remove="$(SpaRoot)**" />
     <None Remove="wwwroot\Image\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
