@@ -12,15 +12,11 @@ export class HomeComponent {
     "https://www.vanlanguni.edu.vn/images/2020/banner/cs3.jpg",
     "https://www.vanlanguni.edu.vn/images/2020/banner/hn.jpg"
   ];
+  imageCVsource = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU";
 
   constructor(config: NgbCarouselConfig) {
     config.interval = 2000;
     config.keyboard = true;
     config.pauseOnHover = true;
   }
-  imageCVsource = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU", 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU"
-  ];
 }
