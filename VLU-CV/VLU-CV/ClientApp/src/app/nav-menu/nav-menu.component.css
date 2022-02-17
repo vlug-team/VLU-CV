@@ -21,6 +21,9 @@ html {
 li{
     color:#fff;
 }
+ul{
+  padding-right: 100px;
+}
 .logo-img{
     width: 3%;
 }

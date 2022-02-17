@@ -8,9 +8,21 @@
 </ul>
 <ul class="navbar-nav" *ngIf="!(isAuthenticated | async)">
   <li class="nav-item">
-        <a class="nav-link" [routerLink]='["/authentication/register"]'>Register</a>
+        <a class="nav-link" [routerLink]='["/authentication/register"]'>
+            <button class="button login__submit">
+                <strong>
+                    Sign up
+                </strong>
+            </button>
+        </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" [routerLink]='["/authentication/login"]'>Login</a>
+        <a class="nav-link" [routerLink]='["/authentication/login"]'>
+            <button class="button login__submit">
+                <strong>
+                    Sign in
+                </strong>
+            </button>
+        </a>
     </li>
 </ul>
