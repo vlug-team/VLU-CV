@@ -1,8 +1,8 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow">
-        <div class="container">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow full__width">
+        <div class="container nav">
             <img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png" />
-            <a class="navbar-brand" [routerLink]="['/']">VLU Resume</a>
+            <a class="navbar-brand logo__text" [routerLink]="['/']">Trường Đại Học Văn Lang</a>
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
@@ -18,16 +18,16 @@
                     <li class="nav-item"
                         [routerLinkActive]="['link-active']"
                         [routerLinkActiveOptions]="{ exact: true }">
-                        <a class="nav-link" [routerLink]="['/']">Home</a>
+                        <a class="nav-link" [routerLink]="['/']">Trang chủ</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['link-active']">
-                        <a class="nav-link" [routerLink]="['/counter']">List Resume</a>
+                        <a class="nav-link" [routerLink]="['/counter']">Giới thiệu</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['link-active']">
-                        <a class="nav-link" [routerLink]="['/']">Create Resume</a>
+                        <a class="nav-link" [routerLink]="['/']">Tham khảo Resume</a>
                     </li>
                     <li class="nav-item" [routerLinkActive]="['link-active']">
-                        <a class="nav-link" [routerLink]="['/']">About us</a>
+                        <a class="nav-link" [routerLink]="['/']">Tạo Resume</a>
                     </li>
                 </ul>
                 <app-login-menu></app-login-menu>
