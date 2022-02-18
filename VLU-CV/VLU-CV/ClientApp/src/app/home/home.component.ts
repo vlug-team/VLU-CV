@@ -19,5 +19,9 @@ export class HomeComponent {
     config.interval = 2000;
     config.keyboard = true;
     config.pauseOnHover = true;
-  }
+  };
+  onClick(event: Event) { 
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;  
+  } ;
 }

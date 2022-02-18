@@ -7,11 +7,11 @@ nav {
   background-color: #003768;
 }
 html {
-  font-size: 14px;
+  font-size: 10px;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -20,16 +20,28 @@ html {
 }
 li{
     color:#fff;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 ul{
-  padding-right: 100px;
+  padding-right: 60px;
 }
 .logo-img{
-    width: 3%;
+    width: 3.5%;
 }
 .navbar-brand:hover{
     color: #fff;
 }
 a:hover {
     color:yellow;
+}
+.logo__text{
+  font-size: 14px;
+}
+.nav{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.full__width{
+  width: 100%;
 }

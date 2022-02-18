@@ -1,52 +1,18 @@
-.login__submit {
-	background: #fff;
-	font-size: 12px;
-	padding: 5px 7px;
-	border-radius: 13px;
-	border: 1px solid #D4D3E8;
-	text-transform: uppercase;
-	font-weight: 350;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	color: #4C489D;
-	box-shadow: 0px 2px 2px #5C5696;
-	cursor: pointer;
-	transition: .2s;
+.button{
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-
-.button strong {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+a{
+    font-size: 12px;
 }
-  
-.button strong:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: -1px;
-    right: -20px;
-    transition: 0.5s;
+.reg{
+    padding-top: 11px;
 }
-
-.button:hover strong {
-	font-size: 12px;
-    padding-right: 15px;
-}
-  
-.button:hover strong:after {
-	font-size: 12px;
-    opacity: 1;
-    right: 0;
-}
-@keyframes change__color {
-    from {background-color: white;}
-    to {background-color: rgb(153,206,255);}
-}
-
-.button:hover{
-    animation-name: change__color;
-    animation-duration: 2s;
+.reg:hover{
+    color: yellow;
 }
