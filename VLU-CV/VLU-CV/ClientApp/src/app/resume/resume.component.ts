@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ResumeComponent {
   onClick(event: Event) { 
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
+    window.scroll({ top: 0, behavior: 'smooth' });
   } ;
 }

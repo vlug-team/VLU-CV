@@ -20,9 +20,10 @@ export class HomeComponent {
     config.keyboard = true;
     config.pauseOnHover = true;
   };
-  onClick(event: Event) { 
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;  
+  onClick(event: Event) {
+     window.scroll({ top: 0, behavior: 'smooth' });
+    // document.body.scrollTop = 0;
+    // document.documentElement.scrollTop = 0;  
   } ;
   openResume(event:Event){
     document.getElementById("_padding").style.backgroundColor="#EDEDED";
