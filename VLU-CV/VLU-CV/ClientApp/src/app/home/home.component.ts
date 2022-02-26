@@ -22,11 +22,27 @@ export class HomeComponent {
   };
   onClick(event: Event) {
      window.scroll({ top: 0, behavior: 'smooth' });
-    // document.body.scrollTop = 0;
-    // document.documentElement.scrollTop = 0;  
   } ;
   openResume(event:Event){
-    document.getElementById("_padding").style.backgroundColor="#EDEDED";
-    document.getElementById("resume_demo").classList.remove("_hidden");
+    if(document.getElementById("resume_demo").classList.length==2){
+      document.getElementById("_padding").style.backgroundColor="#EDEDED";
+      document.getElementById("resume_demo").classList.remove("_hidden");
+      document.getElementById("resume_demo").style.animationName="visibleFrame";
+      document.getElementById("resume_demo").style.animationDuration="2s";
+      document.getElementById("resume_demo_image").style.animationName="rotate180deg";
+      document.getElementById("resume_demo_image").style.animationDuration="1.5s";
+      document.getElementById("resume_demo_image").style.transform="rotate(180deg)";
+    }
+    else{
+      document.getElementById("resume_demo").style.animationName="hiddenFrame";
+      document.getElementById("resume_demo").style.animationDuration="2s";
+      document.getElementById("_padding").style.backgroundColor="white";
+      document.getElementById("resume_demo_image").style.animationName="rotate0deg";
+      document.getElementById("resume_demo_image").style.animationDuration="1.5s";
+      document.getElementById("resume_demo_image").style.transform="rotate(0deg)";
+      setTimeout(() => { 
+        document.getElementById("resume_demo").classList.add("_hidden");
+       }, 2000);
+    }
   }
 }
