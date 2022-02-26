@@ -3,23 +3,90 @@
         <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
       </svg>      
 </button>
-<ngb-carousel *ngIf="images" class="carousel-img">
-    <ng-template ngbSlide>
-        <div class="wrapper">
-            <img [src]="images[0]" alt="Hình ảnh Đại học Văn Lang">
+<div style="position: relative;">
+    <ngb-carousel *ngIf="images" class="carousel-img">
+        <ng-template ngbSlide>
+            <div class="wrapper">
+                <img [src]="images[0]" alt="Hình ảnh Đại học Văn Lang">
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="wrapper">
+                <img [src]="images[1]" alt="Random second slide">
+            </div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="wrapper">
+                <img [src]="images[2]" alt="Random third slide">
+            </div>
+        </ng-template>
+    </ngb-carousel>
+    <div id="_padding" style="background-color: white; height: 82px;overflow: visible;"></div>
+    <button (click)="openResume($event)" style="width: 90px; height: 90px; border-radius: 50%; position: absolute; bottom: 37px; border: 0px; left: 47%; margin: 0px;">
+        <div class="_thumbnail_circle_" style="margin: 0px; overflow: visible;">
+            <img style="width: auto; height: 75%; margin-top: 9%; margin-left: 3%;" 
+                 src="../../assets/Image/png-clipart-computer-icons-arrow-font-awesome-arrow-down-hand-share-icon-removebg-preview.png" 
+                 alt="Ảnh đại diện">
         </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="wrapper">
-            <img [src]="images[1]" alt="Random second slide">
+        <div style="position: absolute; background-color: rgb(0,0,0,0); border: solid white 2px; overflow: visible;  width: 164px; height: 164px; border-radius: 50%; top:-37px; left: -37px;"></div>
+    </button>
+</div>
+
+<div id="resume_demo" class="_resume_demo_background _hidden">
+    <div style="position: absolute; height: 15%; width: 100%; top:10%;">
+        <h1 class="_center_" style="overflow: visible;"><strong style="overflow: visible;">RESUME NỔI BẬT</strong></h1>
+        <h4 class="_center_" style="overflow: visible;"><strong style="overflow: visible;">Tìm kiếm các Resume phù hợp</strong></h4>
+    </div>
+    <div style="height: 60%; width: 100%; top:25%; position: relative; display: flex; flex-direction: row;">
+        <div class="_resume_card_background" style="left: 7.3%;">
+            <div style="width:19.5%; height: 8px; position: relative; background-color: #ADAA5A;"></div>
+            <div class="_thumbnail_circle_ _center_" style="margin-top: 10%;  margin-bottom: 10%;">
+                <img style="width: auto; height: 100%; margin-left: -20px;" 
+                     src="../../assets/Image/ma_cong_son.jpg" 
+                     alt="Ảnh đại diện">
+            </div>
+            <em class="_resume_nickname">Mã Công Sơn</em>
+            <div class="_resume_job_background">
+                <em class="_resume_nickname" style="font-size: 18px;  font-weight: 500;">Software Developer</em>
+            </div>
         </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="wrapper">
-            <img [src]="images[2]" alt="Random third slide">
+        <div class="_resume_card_background" style="left: 22.4%;">
+            <div style="width:19.5%; height: 8px; left: 40.25%; position: relative; background-color: #ADAA5A;"></div>
+            <div class="_thumbnail_circle_ _center_" style="margin-top: 10%; margin-bottom: 10%;">
+                <img style="width: auto; height: 100%; margin-left: -20px;" 
+                     src="../../assets/Image/Le_Nguyen_Thao_Vy.jpg" 
+                     alt="Ảnh đại diện">
+            </div>
+            <em class="_resume_nickname">Lê Nguyễn Thảo Vy</em>
+            <div class="_resume_job_background">
+                <em class="_resume_nickname" style="font-size: 18px; font-weight: 500;">Delivery Assistant</em>
+            </div>
         </div>
-    </ng-template>
-</ngb-carousel><br><br>
+        <div class="_resume_card_background" style="left: 37.5%;">
+            <div style="width:19.5%; height: 8px; left: 80.5%; position: relative; background-color: #ADAA5A;"></div>
+            <div class="_thumbnail_circle_ _center_" style="margin-top: 10%;  margin-bottom: 10%;">
+                <img style="width: auto; height: 135%; margin-top: -10%;" 
+                     src="../../assets/Image/Hong_Lan_Thanh.jpg" 
+                     alt="Ảnh đại diện">
+            </div>
+            <em class="_resume_nickname">Hồng Lan Thanh</em>
+            <div class="_resume_job_background">
+                <em class="_resume_nickname" style="font-size: 18px; font-weight: 500;">Senior UI/UX Designer</em>
+            </div>
+        </div>
+    </div>
+    <div style="height:10%; width:100%;top:15%;position: relative; display: flex; flex-direction: row;">
+        <div style="left: 12.08%; position: relative; width: 8.9%;">
+            <a href="" ><button class="_resume_button"> Xem hồ sơ</button></a>
+        </div>
+        <div style="left: 36.65%; position: relative; width: 8.9%;">
+            <a href="" ><button class="_resume_button"> Xem hồ sơ</button></a>
+        </div>
+        <div style="left: 61.22%; position: relative; width: 8.9%;">
+            <a href="" ><button class="_resume_button"> Xem hồ sơ</button></a>
+        </div>
+    </div>
+</div><br><br>
 
 <h1 class="_center_" style="height: 50px;">32 Ngành Đào Tạo</h1><br><br>
 
@@ -70,15 +137,49 @@
     </div>
 </div>
 
-<div style="background-color: rgb(196,196,196); margin-right: 200px; padding-top: 35px; padding-bottom: 35px;">
+<div style="height: 640px; width: 100%; background:linear-gradient(180deg, #8C4B4B 0%, #4448A8 100%); position: relative;">
+    <h1 class="_center_" style="color: white; overflow: visible; top:50px; position: relative;">
+        <strong style="color: red; overflow: visible; margin-right: 10px;">VLU Resume</strong>là gì?
+    </h1>
+    <div style="width: 100%;height: 400px; position: relative; display: flex;flex-direction: row; top:100px;">
+        <div style="width:50%; position: relative; display: flex; flex-direction: column;">
+            <div class="_thumbnail_circle_ _center_" style="background-color: rgba(255,255,255,0.8); width: 100px; height: 100px; position: relative; margin-top: 5%; margin-bottom: 0%;">
+                <img style="width: auto; height: 75%; margin-top: 10%; margin-left: 10%;" 
+                     src="../../assets/Image/search_icon.png" 
+                     alt="Ảnh đại diện">
+            </div>
+            <h4 class="_center_" style="position: relative; color: white;  overflow: visible; margin-top: 5%;margin-bottom: 0%;">
+                Cơ hội tìm kiếm việc làm
+            </h4>
+            <p class="_center_" style="width: 65%; color: black; margin-top: 5%;">
+                <strong> Nhiều cơ hội việc làm và thực tập hấp dẫn, giúp sinh viên tìm được công việc phù hợp và nhanh chóng</strong>
+            </p>
+        </div>
+        <div style="width:50%;position: relative; display: flex; flex-direction: column;">
+            <div class="_thumbnail_circle_ _center_" style="background-color: rgba(255,255,255,0.8); width: 100px; height: 100px; position: relative; margin-top: 5%; margin-bottom: 0%;">
+                <img style="width: auto; height: 75%; margin-top: 10%; margin-left: 10%;" 
+                     src="../../assets/Image/avatar_icon.png" 
+                     alt="Ảnh đại diện">
+            </div>
+            <h4 class="_center_" style="position: relative; color: white;  overflow: visible; margin-top: 5%;margin-bottom: 0%;">
+                Tạo Resume, Cover Letter dễ dàng
+            </h4>
+            <p class="_center_" style="width: 65%; color: black; margin-top: 5%;">
+                <strong> Tạo Resume, Cover Letter và nộp hồ sơ ứng tuyển, ghi dấu hành trình tích lũy kỹ năng qua Resume</strong>
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+<div style="background-color: rgb(196,196,196); padding-top: 35px; padding-bottom: 35px;">
     <div class="d-flex flex-row">
         <div class="_center_">
             </div>   
         <div class="_center_">
-            <img src="http://maychieure.net/wp-content/uploads/2017/07/may-chieu-hitachi-e1499326357823.jpg" alt="" class="logo-image">
+            <img src="../../assets/Image/hitachi.png" alt="" class="logo-image" style="opacity: 0.8;">
         </div>     
         <div class="_center_">
-            <img src="https://hrchannels.com/Upload/avatar/20210908/094732132_LOGO-BASE.png" alt="" class="logo-image">
+            <img src="https://hrchannels.com/Upload/avatar/20210908/094732132_LOGO-BASE.png" alt="" style="max-height: 300px; margin-top: -50px; margin-bottom: -0px; overflow: visible;">
         </div>
         <div class="_center_">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Logo_TopCV_no_slogan.png" alt="" class="logo-image">
@@ -86,12 +187,17 @@
     </div>
     <br><br>
     <div class="d-flex flex-row" style="justify-content: space-between;">
-        <div style="background-color: white; padding: 55px; width: 800px; display: flex;">
-            <h2>
-                Các doanh nghiệp đang hợp tác với trường
-            </h2>
+        <div style="background-color: white; padding: 55px; width: 78.8%; display: flex;">
+            <div class="_thumbnail_circle_">
+                <img style="width: auto; height: 100%;" 
+                     src="../../assets/Image/rocket-icon-vector.png" 
+                     alt="Ảnh đại diện">
+            </div>
+            <p class="_pacifico_font">
+                Các Doanh Nghiệp Đang Hợp Tác Với Trường
+            </p>
         </div>
-        <div style="margin-right: 150px;">
+        <div style="width: 11.2%;" class="_center_">
             <img src="http://static.ybox.vn/2021/4/1/1618219460593-logo.jpg" alt="" class="logo-image">
         </div>
     </div>
@@ -109,8 +215,66 @@
             <img src="https://skillking.fpt.edu.vn/wp-content/uploads/2018/07/logo.png" alt="" class="logo-image">
         </div>
     </div>
-</div><br><br><br>
+</div><br>
 
+<div style="position: relative;height:832px; width:100%; background: linear-gradient(180deg, #70DA6E 0%, rgba(212, 245, 6, 0.2) 100%);">
+    <h2 class="_center_" style="overflow: visible; position: relative; top:120px"><strong style="overflow: visible;">
+        Cơ Hội Du Học Cho Sinh Viên Văn Lang
+    </strong></h2>
+    <div style="position: relative; display: flex; flex-direction: row; width: 100%; height: 450px; top:160px;">
+        <div style="position: relative; width: 33.3%;">
+            <div class="_center_" style="position: relative; background: linear-gradient(0deg,rgba(194,212,134,1),rgba(150,219,106,1)); border-radius: 20px; height: 100%; width: 80%;">
+                <img src="https://tuyensinh.vanlanguni.edu.vn/wp-content/uploads/2021/07/vlu-liverpool-john-moores-uni-ky-mou-voi-van-lang-cc.jpg"
+                     alt=""
+                     style="max-width:90%; max-height:195px; margin-top: 25px; border-radius: 20px;">
+                <p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+                <strong class="_text_max_height" style="position: absolute; top:255px;">
+                    Đại học Văn Lang và Liverpool John Moores liên kết đào tạo ngành cử nhân
+                </strong>
+                <div style="position: absolute;top:325px;">
+                    <a href="">
+                        <button class="more-button">Xem Thêm</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="position: relative; width: 33.4%;">
+            <div class="_center_" style="position: relative; background: linear-gradient(0deg,rgba(194,212,134,1),rgba(150,219,106,1)); border-radius: 20px; height: 100%; width: 80%;">
+                <img src="https://tuyensinh.vanlanguni.edu.vn/wp-content/uploads/2021/04/vlu-ait.png" 
+                     alt=""
+                     style="max-width:90%; max-height:195px; margin-top: 25px; border-radius: 20px;">
+                <p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+                <strong class="_text_max_height" style="position: absolute; top:255px;">
+                    Chương trình Hợp Nhất Cử nhân - Thạc sĩ Viện Công nghệ Châu Á (AIT) cho...
+                </strong>
+                <div style="position: absolute;top:325px;">
+                    <a href="">
+                        <button class="more-button">Xem Thêm</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="position: relative; width: 33.3%;">
+            <div class="_center_" style="position: relative; background: linear-gradient(0deg,rgba(194,212,134,1),rgba(150,219,106,1)); border-radius: 20px; height: 100%; width: 80%;">
+                <img src="https://en.vanlanguni.edu.vn/images/vlu_ngan_tran/chuong_trinh_tien_tien/chuong-trinh-tien-tien.jpg"
+                     alt=""
+                     style="max-width:90%; max-height:195px; margin-top: 25px; border-radius: 20px;">
+                <p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+                <strong class="_text_max_height" style="position: absolute; top:255px;">
+                    Chương trình liên kết 2+2 với Đại học Victoria (Úc) ngành QUẢN TRỊ KINH...
+                </strong>
+                <div style="position: absolute;top:325px;">
+                    <a href="">
+                        <button class="more-button">Xem Thêm</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
 <h1 class="_center_" style="height: 50px;">Cơ Hội Du Học Cho Sinh Viên Văn Lang</h1><br><br>
 
 <div class="d-flex flex-row" style="justify-content: space-around;">
@@ -156,7 +320,7 @@
 
 <h5 class="_center_" style="height: 25px;">
     Chương trình liên kết 2+2 với Đại học Victoria (Úc) ngành QUẢN TRỊ KINH DOANH
-</h5><br><br><br><br>
+</h5><br><br><br><br> -->
 
 <!-- 
 <div class="d-flex flex-row">

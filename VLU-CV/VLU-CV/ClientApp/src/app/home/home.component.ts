@@ -24,4 +24,8 @@ export class HomeComponent {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;  
   } ;
+  openResume(event:Event){
+    document.getElementById("_padding").style.backgroundColor="#EDEDED";
+    document.getElementById("resume_demo").classList.remove("_hidden");
+  }
 }
