@@ -1,0 +1,27 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+._image_{
+    max-width: 45%;
+    max-height: 40%;
+    position: absolute;
+    
+}
+._shadow_{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+._center_{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  
+  }
+
+  ._input_text_{
+    margin: 6px;
+     background: rgb(245,247,252);
+     height: 7.5vh; width: 25vw; 
+     padding-left: 15px;
+  }

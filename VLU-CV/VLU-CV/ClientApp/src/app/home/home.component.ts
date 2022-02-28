@@ -13,6 +13,11 @@ export class HomeComponent {
     "https://www.vanlanguni.edu.vn/images/2020/banner/cs3.jpg",
     "https://www.vanlanguni.edu.vn/images/2020/banner/hn.jpg"
   ];
+  imageBranch = [
+    "../../assets/Image/vlu_nna.png",
+    "../../assets/Image/vlu_qhcc.png",
+    "../../assets/Image/vlu_ktxnyh.png"
+  ];
   imageCVsource = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU";
 
   constructor(config: NgbCarouselConfig) {
@@ -45,4 +50,14 @@ export class HomeComponent {
        }, 2000);
     }
   }
+  mouseEnter(){
+    document.getElementById("create_resume").style.width="150px";
+    document.getElementById("create_resume_image").style.left="110px";
+    document.getElementById("create_resume_label").classList.remove("_hidden");
+ }
+ mouseLeave(){
+  document.getElementById("create_resume").style.width="45px";
+  document.getElementById("create_resume_image").style.left="5px";
+  document.getElementById("create_resume_label").classList.add("_hidden");
+}
 }
