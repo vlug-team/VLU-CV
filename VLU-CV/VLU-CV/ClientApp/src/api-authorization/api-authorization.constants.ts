@@ -21,6 +21,7 @@ export const LoginActions = {
   Register: 'register'
 };
 
+
 let applicationPaths: ApplicationPathsType = {
   DefaultLoginRedirectPath: '/',
   ApiAuthorizationClientConfigurationUrl: `_configuration/${ApplicationName}`,
