@@ -3,7 +3,9 @@
         <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
       </svg>      
 </button>
+
 <div style="position: relative;">
+    
     <ngb-carousel *ngIf="images" class="carousel-img">
         <ng-template ngbSlide>
             <div class="wrapper">
@@ -21,7 +23,11 @@
             </div>
         </ng-template>
     </ngb-carousel>
-    <div id="_padding" style="background-color: white; height: 82px;overflow: visible;"></div>
+<!--     
+    <button id="create_resume" class="create_resume_button" style="overflow: visible;">
+        <img src="../../assets/Image/project_icon.png" alt="" style="max-width: 30px; max-height: 30px;">
+    </button> -->
+    <div id="_padding" style="background-color: white; height: 34px;overflow: visible;"></div>
     <button (click)="openResume($event)" style="width: 90px; height: 90px; border-radius: 50%; position: absolute; bottom: 37px; border: 0px; left: 47%; margin: 0px;">
         <div class="_thumbnail_circle_" style="margin: 0px; overflow: visible;">
             <img id="resume_demo_image" style="width: auto; height: 75%; margin-top: 9%; margin-left: 3%;" 

@@ -132,7 +132,21 @@ p{
   bottom: 20px;
   right: 30px;
 }
+.create_resume_button{
+  position: relative;
+  width: 45px;
+  height: 48px;
+  border-radius: 0% 22px 22px 0%;
+  z-index: 2;
+  top:-900px;
+  left: 0px;
+  background: linear-gradient(270deg, rgba(234, 57, 100, 0.78) 6.67%, rgba(136, 126, 126, 0.78) 100%);
+  border: 0px;
+}
+.create_resume_button:hover{
+  width: 150px;
 
+}
 ._resume_demo_background{
   background-color: #EDEDED; 
   height: 768px; 
