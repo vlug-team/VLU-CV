@@ -1,9 +1,9 @@
 <body>
-  <app-nav-menu></app-nav-menu>
+  <app-nav-menu (click)="navOnClick()"></app-nav-menu>
   <div>
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <app-footer id="app-footer" *ngIf="isShowFirstTime"></app-footer>
 </body>
 
 

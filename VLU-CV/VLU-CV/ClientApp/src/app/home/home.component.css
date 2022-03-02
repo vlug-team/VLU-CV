@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
@@ -78,8 +80,8 @@ iframe{
   margin-top: 50px;
 }
 .review-image{
-  max-width: 323px;
-  max-height: 246px;
+  max-width: 276%;
+  max-height: 166px;
   margin: auto;
   display: flex;
 }
@@ -128,7 +130,7 @@ p{
   width: 55px;
   height: 55px;
   border-radius: 100%;
-  
+  z-index: 4;
   bottom: 20px;
   right: 30px;
 }
@@ -150,13 +152,13 @@ p{
   position: relative;
 }
 ._resume_card_background{
-  background-color: rgba(93, 159, 220, 0.5); 
+  background: #C63636;
   height: 75%; 
   width: 18.4%; 
   position: relative; 
   display: flex; 
   flex-direction: column;
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3), 0 6px 27px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.35);
 }
 ._resume_nickname{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -164,6 +166,7 @@ p{
   font-size: 24px;
   line-height: 33px;
   text-align: center;
+  color:white;
 }
 ._resume_job_background{
   background-color: #ADAA5A; 
@@ -224,6 +227,13 @@ line-height: 70px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
+._background_32{
+  background-image: url('../../assets/Image/vlu-santhuong-c.jpg') ;
+  background-repeat: no-repeat;
+  background-size: 100% 130%;
+  height: 455px;
+  width: 100%;
+}
 @keyframes rotate180deg {
   from { transform: rotate(0deg);}
   to {transform: rotate(180deg);}
@@ -249,4 +259,13 @@ line-height: 70px;
 @keyframes toWhite{
   from {background-color: white;}
   to{background-color: #EDEDED;}
+}
+
+@keyframes longMore {
+  from {width: 45px;}
+  to{width: 150px;}
+}
+@keyframes shortMore {
+  from {width: 150px;}
+  to{width: 45px;}
 }
