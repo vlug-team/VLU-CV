@@ -15,6 +15,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     CounterComponent,
     ResumeComponent,
+    AboutComponent,
     FetchDataComponent, AppFooterComponent
   ],
   imports: [
@@ -33,6 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
+      {path:'about',component:AboutComponent},
       { path: 'resume', component: ResumeComponent},
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
     ]),

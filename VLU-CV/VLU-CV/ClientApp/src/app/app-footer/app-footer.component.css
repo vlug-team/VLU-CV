@@ -1,6 +1,6 @@
 .footer {
-  background: rgb(8,104,190);
-  background: radial-gradient(circle, rgba(8,104,190,1) 0%, rgba(0,90,156,1) 45%, rgba(2,72,135,1) 100%);
+  background: #003768;
+  /* background: radial-gradient(circle, rgba(8,104,190,1) 0%, rgba(0,90,156,1) 45%, rgba(2,72,135,1) 100%); */
   position: static;
   bottom: -100%;
   width: 100%;

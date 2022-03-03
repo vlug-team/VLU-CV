@@ -51,13 +51,23 @@ export class HomeComponent {
     }
   }
   mouseEnter(){
+    document.getElementById("create_resume").style.animationName="longMore";
+    document.getElementById("create_resume").style.animationDuration="2s";
+    document.getElementById("create_resume_label").style.animationName="visibleFrame";
+    document.getElementById("create_resume_label").style.animationDuration="2s";
     document.getElementById("create_resume").style.width="150px";
-    document.getElementById("create_resume_image").style.left="110px";
+    document.getElementById("create_resume_image").style.left="5px";
+    document.getElementById("create_resume_label").style.left="35px";
     document.getElementById("create_resume_label").classList.remove("_hidden");
  }
  mouseLeave(){
+  document.getElementById("create_resume").style.animationName="shortMore";
+  document.getElementById("create_resume").style.animationDuration="2s";
+  document.getElementById("create_resume_label").style.animationName="hiddenFrame";
+  document.getElementById("create_resume_label").style.animationDuration="2s";
   document.getElementById("create_resume").style.width="45px";
-  document.getElementById("create_resume_image").style.left="5px";
-  document.getElementById("create_resume_label").classList.add("_hidden");
+  document.getElementById("create_resume_image").style.left="5px";setTimeout(() => { 
+    document.getElementById("create_resume_label").classList.add("_hidden");
+  }, 2000);
 }
 }
