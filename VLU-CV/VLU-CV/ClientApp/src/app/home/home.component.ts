@@ -14,38 +14,38 @@ export class HomeComponent {
     "https://www.vanlanguni.edu.vn/images/2020/banner/hn.jpg"
   ];
   imageBranch = [
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-dong-phuong-hoc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-cong-nghe-ky-thuat-moi-truong.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-cong-nghe-sinh-hoc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thiet-ke-cong-nghiep.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thiet-ke-do-hoa.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thiet-ke-thoi-trang1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thiet-ke-noi-that.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thanh-nhac.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-piano.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-van-hoc-ung-dung1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-quan-he-cong-chung1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-kinh-doanh-thuong-mai1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-quan-tri-kinh-doanh1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ke-toan1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-tai-chinh-ngan-hang1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ky-thuat-nhiet1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ky-thuat-phan-mem1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-cong-nghe-thong-tin1.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-thiet-ke-kien-truc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ky-thuat-xay-dung.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-quan-ly-xay-dung.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ky-thuat-cong-trinh-xay-dung.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-luat-kinh-te.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-dieu-duong.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ky-thuat-xet-nghiem-y-hoc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-quan-tri-dich-vu-du-lich-lu-hanh.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-quan-tri-khach-san.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-ngon-ngu-anh.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-tam-ly-hoc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-duoc-hoc.png",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-luat.jpg",
-    "https://ejob.vanlanguni.edu.vn/Assets/Img_Subjects/vlu-cong-nghe-oto.png"
+    "../../assets/32/1.png",
+    "../../assets/32/2.png",
+    "../../assets/32/3.png",
+    "../../assets/32/4.png",
+    "../../assets/32/5.png",
+    "../../assets/32/6.png",
+    "../../assets/32/7.png",
+    "../../assets/32/8.png",
+    "../../assets/32/9.png",
+    "../../assets/32/10.png",
+    "../../assets/32/11.png",
+    "../../assets/32/12.png",
+    "../../assets/32/13.png",
+    "../../assets/32/14.png",
+    "../../assets/32/15.png",
+    "../../assets/32/16.png",
+    "../../assets/32/17.png",
+    "../../assets/32/18.png",
+    "../../assets/32/19.png",
+    "../../assets/32/20.png",
+    "../../assets/32/21.png",
+    "../../assets/32/22.png",
+    "../../assets/32/23.png",
+    "../../assets/32/24.png",
+    "../../assets/32/25.png",
+    "../../assets/32/26.png",
+    "../../assets/32/27.png",
+    "../../assets/32/28.png",
+    "../../assets/32/29.png",
+    "../../assets/32/30.png",
+    "../../assets/32/31.png",
+    "../../assets/32/32.png"
   ];
   imageBranchFor=[];
   imageCVsource = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOyp3fWuVg6dTdcXj6xOadAmVCLxFERCuiw&usqp=CAU";
@@ -69,7 +69,7 @@ export class HomeComponent {
     document.getElementById("video_vlu").classList.remove("_hidden");
     document.getElementById("video_pause").classList.add("_hidden");
     document.getElementById("video_pause").style.display="none";
-    var vid = document.getElementById("video_vlu");
+    var vid =<HTMLVideoElement> document.getElementById("video_vlu");
     vid.play();
   }
   openResume(event:Event){
