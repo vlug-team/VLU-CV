@@ -65,6 +65,13 @@ export class HomeComponent {
   onClick(event: Event) {
      window.scroll({ top: 0, behavior: 'smooth' });
   } ;
+  playVideo(event:Event){
+    document.getElementById("video_vlu").classList.remove("_hidden");
+    document.getElementById("video_pause").classList.add("_hidden");
+    document.getElementById("video_pause").style.display="none";
+    var vid = document.getElementById("video_vlu");
+    vid.play();
+  }
   openResume(event:Event){
     if(document.getElementById("resume_demo").classList.length==2){
       document.getElementById("_padding").style.backgroundColor="#EDEDED";

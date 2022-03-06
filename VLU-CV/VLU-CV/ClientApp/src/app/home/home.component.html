@@ -119,16 +119,26 @@
             </div>
         </ng-template>
     </ngb-carousel>
-</div>
+</div><br>
 
 <!-- <iframe width="840" height="470" src="https://www.youtube.com/embed/nyuOKCNsgVg" title="YouTube video player"
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen></iframe><br><br><br> -->
-
-    <video width="840" height="470" controls>
-        <source src="../../assets/Media/vlu-video.mp3" type="video/mp3">
-      Your browser does not support the video tag.
-      </video>
+<div  id="video_pause" style="display: flex; width: 100%; height: 599px; background-image: url(../../assets/Image/video_background.jfif); z-index:1;background-repeat: no-repeat; background-size: 100% 599px;">
+    <div class="_center_" style=" overflow: visible;display: flex; flex-direction: column;">
+        <h3 style="color: red; overflow: visible;margin: auto;"><strong> Văn Lang</strong></h3>
+        <br><br>
+        <h1 style="overflow: visible;"><strong style="overflow: visible;margin: auto;"> VIDEO</strong></h1><br><br>
+        <img src="../../assets/Image/video_play.png" alt="" style="margin: auto; cursor: pointer;" (click)="playVideo($event)">
+    </div>
+    
+</div>
+<video width="100%" height="599" id="video_vlu" controls style="margin: auto; z-index: 2;" class="_hidden">
+    <source src="../../assets/Media/y2meta.com-[VLU] VAN LANG UNIVERSITY CAMPUS TOUR _ 2021-(1080p).mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+<br><br><br>
+    
 
 <div class="d-flex flex-row" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px;">
     <div class="_center_">
