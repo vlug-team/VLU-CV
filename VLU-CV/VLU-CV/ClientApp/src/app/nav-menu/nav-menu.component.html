@@ -1,51 +1,4 @@
 <header>
-<<<<<<< HEAD
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow full__width" style="position: fixed; top:0px; z-index: 7; ">
-        <div class="container nav">
-            <img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png" />
-            <a class="navbar-brand logo__text" [routerLink]="['/']">Trường Đại Học Văn Lang</a>
-            <button class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"
-                    aria-label="Toggle navigation"
-                    [attr.aria-expanded]="isExpanded"
-                    (click)="toggle()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-                 [ngClass]="{ show: isExpanded }">
-                <ul class="navbar-nav flex-grow">
-                    <li class="nav-item"
-                        [routerLinkActive]="['link-active']"
-                        [routerLinkActiveOptions]="{ exact: true }">
-                        <a class="nav-link" [routerLink]="['/']">Trang chủ</a>
-                    </li>
-                    <li class="nav-item" [routerLinkActive]="['link-active']">
-                        <a class="nav-link" [routerLink]="['/about']">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item link" [routerLinkActive]="['link-active']" style="position: relative; overflow: visible;">
-                        <a class="nav-link ">Resume ▼</a>
-                        <div class="drop-down">
-                            <a href="#" style="margin: 1px 15px;">Tạo Resume</a>
-                            <a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
-                            <a href="#" style="margin: 1px 15px;">Resume của tôi</a>
-                        </div>
-                    </li>
-                    <li class="nav-item link" [routerLinkActive]="['link-active']" style="position: relative; overflow: visible;">
-                        <a class="nav-link ">Cover Letter ▼</a>
-                        <div class="drop-down">
-                            <a href="#" style="margin: 1px 15px;">Tạo Resume</a>
-                            <a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
-                            <a href="#" style="margin: 1px 15px;">Resume của tôi</a>
-                        </div>
-                    </li>
-                </ul>
-                <app-login-menu></app-login-menu>
-            </div>
-        </div>
-    </nav>
-=======
 	<nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom
 		box-shadow full__width" style="position: fixed; top:0px; z-index: 3;">
 		<div class="container nav">
@@ -91,5 +44,4 @@
 			</div>
 		</div>
 	</nav>
->>>>>>> origin/main
 </header>
