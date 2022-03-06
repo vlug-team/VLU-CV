@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+button:not(.fab__button){
+  transition: 0.7s;
+}
+button:hover:not(.fab__button){
+  transform: scale(0.9);
+}
+
 
 * {
   margin: 0px;
@@ -84,6 +91,7 @@ iframe{
   max-height: 166px;
   margin: auto;
   display: flex;
+  z-index: 3;
 }
 .logo-image{
   max-width: 200px;
@@ -99,12 +107,14 @@ iframe{
 }
 .more-button{
   background-color: #C70000;
-  width: 223px;
-  height: 72px;
+  /* width: 223px; */
+  width: 8.9vw;
+  height: 49px;
   border-radius: 5px;
   border: 0px;
   color: white;
   font-weight: bold;
+  
 }
 ._center_{
   margin: auto;
@@ -229,11 +239,16 @@ line-height: 70px;
 }
 ._background_32{
   background-image: url('../../assets/Image/vlu-santhuong-c.jpg') ;
+  z-index: 1;
   background-repeat: no-repeat;
   background-size: 100% 130%;
   height: 455px;
   width: 100%;
 }
+.video_background:hover{
+  transform: scale(0.8);
+}
+
 @keyframes rotate180deg {
   from { transform: rotate(0deg);}
   to {transform: rotate(180deg);}

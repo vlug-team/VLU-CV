@@ -14,7 +14,9 @@ html {
     font-size: 12px;
   }
 }
-
+*{
+  overflow: visible;
+}
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
@@ -44,4 +46,19 @@ a:hover {
 }
 .full__width{
   width: 100%;
+}
+.drop-down{
+  display: flex;
+   flex-direction: column;
+    position: absolute;
+     top: 30px;
+      left: 0px;
+       background-color: #003768;
+        width: 138px;
+         height: 68px;
+         display: none;
+          
+}
+.link:hover .drop-down{
+  display: flex;
 }
