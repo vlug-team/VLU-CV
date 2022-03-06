@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+button:not(.fab__button){
+  transition: 0.7s;
+}
+button:hover:not(.fab__button){
+  transform: scale(0.9);
+}
+
 
 * {
   margin: 0px;
@@ -100,12 +107,14 @@ iframe{
 }
 .more-button{
   background-color: #C70000;
-  width: 223px;
-  height: 72px;
+  /* width: 223px; */
+  width: 8.9vw;
+  height: 49px;
   border-radius: 5px;
   border: 0px;
   color: white;
   font-weight: bold;
+  
 }
 ._center_{
   margin: auto;

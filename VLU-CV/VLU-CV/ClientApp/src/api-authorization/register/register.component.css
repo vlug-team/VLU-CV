@@ -24,4 +24,6 @@
      background: rgb(245,247,252);
      height: 7.5vh; width: 25vw; 
      padding-left: 15px;
+     border-radius: 5px;
+     border: 0;
   }

@@ -2,6 +2,12 @@
     padding: 0px;
     margin: 0px;
 }
+button{
+    transition: 0.7s;
+}
+button:hover{
+    transform: scale(0.9);
+}
 
 ._image_{
     max-width: 45%;
@@ -24,4 +30,5 @@
      background: rgb(245,247,252);
      height: 7.5vh; width: 25vw; 
      padding-left: 15px;
+     border-radius: 5px;
   }
