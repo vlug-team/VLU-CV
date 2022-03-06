@@ -1,4 +1,5 @@
 <header>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow full__width" style="position: fixed; top:0px; z-index: 7; ">
         <div class="container nav">
             <img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png" />
@@ -44,4 +45,51 @@
             </div>
         </div>
     </nav>
+=======
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom
+		box-shadow full__width" style="position: fixed; top:0px; z-index: 3;">
+		<div class="container nav">
+			<img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png"
+				/>
+			<a class="navbar-brand logo__text" [routerLink]="['/']">Trường Đại Học Văn
+				Lang</a>
+			<button class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target=".navbar-collapse"
+				aria-label="Toggle navigation"
+				[attr.aria-expanded]="isExpanded"
+				(click)="toggle()">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+				[ngClass]="{ show: isExpanded }">
+				<ul class="navbar-nav flex-grow">
+					<li class="nav-item"
+						[routerLinkActive]="['link-active']"
+						[routerLinkActiveOptions]="{ exact: true }">
+						<a class="nav-link" [routerLink]="['/']">Trang chủ</a>
+					</li>
+					<li class="nav-item" [routerLinkActive]="['link-active']">
+						<a class="nav-link" [routerLink]="['/about']">Giới thiệu</a>
+					</li>
+					<li class="nav-item" [routerLinkActive]="['link-active']">
+						<a class="nav-link" [routerLink]="['/resume']">Tham khảo Resume</a>
+					</li>
+					<li class="nav-item" [routerLinkActive]="['link-active']">
+						<a class="nav-link" [routerLink]="['/']">Tạo Resume</a>
+					</li>
+					<li *ngIf="user">
+						<h2 *ngIf="user.username">Hello, {{ user.username }}</h2>
+						<p>A logged in user can see this</p>
+					</li>
+					<li *ngIf="!user">
+						<p><button ion-button large type="button" (click)="loginModal()">Please
+								Login</button></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+>>>>>>> origin/main
 </header>
