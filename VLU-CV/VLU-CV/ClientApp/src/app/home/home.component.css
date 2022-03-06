@@ -236,6 +236,10 @@ line-height: 70px;
   height: 455px;
   width: 100%;
 }
+.video_background:hover{
+  transform: scale(0.8);
+}
+
 @keyframes rotate180deg {
   from { transform: rotate(0deg);}
   to {transform: rotate(180deg);}
