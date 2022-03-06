@@ -84,6 +84,7 @@ iframe{
   max-height: 166px;
   margin: auto;
   display: flex;
+  z-index: 3;
 }
 .logo-image{
   max-width: 200px;
@@ -229,6 +230,7 @@ line-height: 70px;
 }
 ._background_32{
   background-image: url('../../assets/Image/vlu-santhuong-c.jpg') ;
+  z-index: 1;
   background-repeat: no-repeat;
   background-size: 100% 130%;
   height: 455px;

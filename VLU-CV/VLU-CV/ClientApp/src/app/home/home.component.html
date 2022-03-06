@@ -8,9 +8,9 @@
 <a href="">
     <button id="create_resume" class="create_resume_button" (mouseenter)="mouseEnter() " (mouseleave)="mouseLeave()">
         <img id="create_resume_image" src="../../assets/Image/project_icon.png" alt=""
-            style="max-width: 30px; max-height: 30px; position: fixed; z-index: 4; top:169px; left: 5px;">
+            style="max-width: 30px; max-height: 30px; position: fixed; z-index: 4; top:169px; left: 5px;transition-delay: 1s;">
         <strong id="create_resume_label" class="_hidden"
-            style="position: fixed; top:170px; left:5px; font-size: 18px;">Tạo Resume</strong>
+            style="position: fixed; top:170px; left:5px; font-size: 18px; transition-delay: 1s;">Tạo Resume</strong>
     </button>
 </a>
 
@@ -100,55 +100,35 @@
             <a href=""><button class="_resume_button"> Xem hồ sơ</button></a>
         </div>
     </div>
-</div><br><br>
+</div>
+<div class="_background_32" style="position: relative; overflow: visible;">
+    <h2 class="_center_" style="height: 50px; position: relative; top:60px;left: 0px; color:white; z-index: 3;">32 Ngành Đào Tạo</h2>
+    <div style="position: absolute;top:0px;left:0px; width: 100%; height: 455px; z-index: 2; background-color: #000; opacity: 0.5;"></div>
+    <ngb-carousel class="carousel-img" style="position: absolute; top: 0px; z-index: 3;">
+        <ng-template ngbSlide  *ngFor="let imageBr of imageBranchFor">
+            <div class="d-flex flex-row" style="height: 455px;">
+                <div class="_center_" style="margin-left: 18.6%;">
+                    <img src={{imageBr.img1}} alt="" class="review-image">
+                </div>
+                <div class="_center_">
+                    <img src={{imageBr.img2}} alt="" class="review-image">
+                </div>
+                <div class="_center_" style="margin-right: 18.6%;">
+                    <img src={{imageBr.img3}} alt="" class="review-image">
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>
 
-<h1 class="_center_" style="height: 50px;">32 Ngành Đào Tạo</h1><br><br>
-
-<ngb-carousel *ngIf="images" class="carousel-img">
-    <ng-template ngbSlide>
-        <div class="d-flex flex-row _background_32">
-            <div class="_center_" style="margin-left: 18.6%;">
-                <img src="../../assets/Image/vlu_ktxnyh.png" alt="" class="review-image">
-            </div>
-            <div class="_center_">
-                <img src="../../assets/Image/vlu_nna.png" alt="" class="review-image">
-            </div>
-            <div class="_center_" style="margin-right: 18.6%;">
-                <img src="../../assets/Image/vlu_qhcc.png" alt="" class="review-image">
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="d-flex flex-row _background_32">
-            <div class="_center_" style="margin-left: 18.6%;">
-                <img src="../../assets/Image/vlu_qhcc.png" alt="" class="review-image">
-            </div>
-            <div class="_center_">
-                <img src="../../assets/Image/vlu_ktxnyh.png" alt="" class="review-image">
-            </div>
-            <div class="_center_" style="margin-right: 18.6%;">
-                <img src="../../assets/Image/vlu_nna.png" alt="" class="review-image">
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="d-flex flex-row _background_32">
-            <div class="_center_" style="margin-left: 18.6%;">
-                <img src="../../assets/Image/vlu_nna.png" alt="" class="review-image">
-            </div>
-            <div class="_center_">
-                <img src="../../assets/Image/vlu_qhcc.png" alt="" class="review-image">
-            </div>
-            <div class="_center_" style="margin-right: 18.6%;">
-                <img src="../../assets/Image/vlu_ktxnyh.png" alt="" class="review-image">
-            </div>
-        </div>
-    </ng-template>
-</ngb-carousel>
-
-<iframe width="840" height="470" src="https://www.youtube.com/embed/nyuOKCNsgVg" title="YouTube video player"
+<!-- <iframe width="840" height="470" src="https://www.youtube.com/embed/nyuOKCNsgVg" title="YouTube video player"
     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe><br><br><br>
+    allowfullscreen></iframe><br><br><br> -->
+
+    <video width="840" height="470" controls>
+        <source src="../../assets/Media/vlu-video.mp3" type="video/mp3">
+      Your browser does not support the video tag.
+      </video>
 
 <div class="d-flex flex-row" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px;">
     <div class="_center_">
