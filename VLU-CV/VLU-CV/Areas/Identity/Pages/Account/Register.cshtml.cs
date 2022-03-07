@@ -23,18 +23,17 @@ namespace VLU_CV.Areas.Identity.Pages.Account
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager,
+            ILogger<RegisterModel> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         [BindProperty]
@@ -43,6 +42,7 @@ namespace VLU_CV.Areas.Identity.Pages.Account
         public string ReturnUrl { get; set; }
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
+        public List<IdentityRole> Roles { get; set; }
 
         public class InputModel
         {
@@ -50,12 +50,12 @@ namespace VLU_CV.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Text)]
-            [Display(Name = "UserName")]
+            [Display(Name = "Tên nhân viên")]
             public string UserName { get; set; }
 
+            [Required]
+            [Display(Name = "Quyền")]
+            public string Role { get; set; }
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
@@ -72,6 +72,7 @@ namespace VLU_CV.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            Roles = _roleManager.Roles.ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
@@ -80,18 +81,28 @@ namespace VLU_CV.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email };
+                var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email, EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                if (result.Succeeded)
+                await _userManager.AddToRoleAsync(user, Input.Role);
+                var user_check = await _userManager.GetUserIdAsync(user);
+                if (user.Id != user_check)
                 {
-                    _logger.LogInformation("User created a new account with password.");
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return LocalRedirect(returnUrl);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("User created a new account with password.");
+                        return LocalRedirect(returnUrl);
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
-                foreach (var error in result.Errors)
+                else
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    _logger.LogInformation("User da ton tai");
+                    return Page();
                 }
+
             }
 
             // If we got this far, something failed, redisplay form
