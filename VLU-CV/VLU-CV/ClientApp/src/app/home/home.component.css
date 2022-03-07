@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-button:not(.fab__button){
+button:not(.fab__button,.create_resume_button){
   transition: 0.7s;
 }
-button:hover:not(.fab__button){
+button:hover:not(.fab__button,.create_resume_button){
   transform: scale(0.9);
 }
 
