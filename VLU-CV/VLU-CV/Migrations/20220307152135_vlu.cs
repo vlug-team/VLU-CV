@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace VLU_CV.Data.Migrations
+namespace VLU_CV.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class vlu : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,21 @@ namespace VLU_CV.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CurriculumVitaes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar", nullable: true),
+                    ImageAvatar = table.Column<string>(type: "nvarchar", nullable: true),
+                    Introduce = table.Column<string>(type: "nvarchar", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CurriculumVitaes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -191,6 +206,16 @@ namespace VLU_CV.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "24abc15f-db77-442c-833e-bc13a14cc15f", "d0505c79-f059-4e98-b1a6-492eb346ecbf", "User", "USER" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "49a39a81-3707-4827-932d-9028866f1af3", "f423407d-70a0-4ea0-9bea-f8bf7859f935", "Admin", "ADMIN" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -273,6 +298,9 @@ namespace VLU_CV.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "CurriculumVitaes");
 
             migrationBuilder.DropTable(
                 name: "DeviceCodes");
