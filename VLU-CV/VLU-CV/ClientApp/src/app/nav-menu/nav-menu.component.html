@@ -26,19 +26,30 @@
 					<li class="nav-item" [routerLinkActive]="['link-active']">
 						<a class="nav-link" [routerLink]="['/about']">Giới thiệu</a>
 					</li>
-					<li class="nav-item" [routerLinkActive]="['link-active']">
-						<a class="nav-link" [routerLink]="['/resume']">Tham khảo Resume</a>
-					</li>
-					<li class="nav-item" [routerLinkActive]="['link-active']">
-						<a class="nav-link" [routerLink]="['/']">Tạo Resume</a>
-					</li>
+					<li class="nav-item link" [routerLinkActive]="['link-active']" style="position: relative; overflow: visible;">
+                        <a class="nav-link ">Resume ▼</a>
+                        <div class="drop-down">
+                            <a href="#" style="margin: 1px 15px;">Tạo Resume</a>
+                            <a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
+                            <a href="#" style="margin: 1px 15px;">Resume của tôi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item link" [routerLinkActive]="['link-active']" style="position: relative; overflow: visible;">
+                        <a class="nav-link ">Cover Letter ▼</a>
+                        <div class="drop-down">
+                            <a href="#" style="margin: 1px 15px;">Tạo Resume</a>
+                            <a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
+                            <a href="#" style="margin: 1px 15px;">Resume của tôi</a>
+                        </div>
+                    </li>
 					<li *ngIf="user">
 						<h2 *ngIf="user.username">Hello, {{ user.username }}</h2>
 						<p>A logged in user can see this</p>
 					</li>
 					<li *ngIf="!user">
-						<p><button ion-button large type="button" (click)="loginModal()">Please
-								Login</button></p>
+						<a [routerLink]="['/Identity/accounts/login ']">
+							<button class="login__button"><strong>Đăng Nhập</strong></button>
+						</a>
 					</li>
 				</ul>
 			</div>
