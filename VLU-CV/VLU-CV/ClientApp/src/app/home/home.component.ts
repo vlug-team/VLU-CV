@@ -94,7 +94,7 @@ export class HomeComponent {
       document.getElementById("resume_demo_image").style.animationName =
         "rotate180deg";
       document.getElementById("resume_demo_image").style.animationDuration =
-        "1.5s";
+        "0.5s";
       document.getElementById("resume_demo_image").style.transform =
         "rotate(180deg)";
     } else {
@@ -115,7 +115,7 @@ export class HomeComponent {
   }
   mouseEnter() {
     document.getElementById("create_resume").style.animationName = "longMore";
-    document.getElementById("create_resume").style.animationDuration = "1s";
+    document.getElementById("create_resume").style.animationDuration = "2s";
     document.getElementById("create_resume_label").style.animationName =
       "visibleFrame";
     document.getElementById("create_resume_label").style.animationDuration =
@@ -128,7 +128,7 @@ export class HomeComponent {
   }
   mouseLeave() {
     document.getElementById("create_resume").style.animationName = "shortMore";
-    document.getElementById("create_resume").style.animationDuration = "1s";
+    document.getElementById("create_resume").style.animationDuration = "2s";
     document.getElementById("create_resume_label").style.animationName =
       "hiddenFrame";
     document.getElementById("create_resume_label").style.animationDuration =
@@ -137,6 +137,6 @@ export class HomeComponent {
     document.getElementById("create_resume_image").style.left = "5px";
     setTimeout(() => {
       document.getElementById("create_resume_label").classList.add("_hidden");
-    }, 800);
+    }, 20);
   }
 }

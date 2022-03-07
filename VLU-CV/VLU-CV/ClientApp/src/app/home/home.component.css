@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-button:not(.fab__button) {
-  transition: 0.7s;
-}
-button:hover:not(.fab__button) {
-  transform: scale(0.9);
-}
 
 * {
   margin: 0px;
@@ -85,11 +79,10 @@ iframe {
   margin-top: 50px;
 }
 .review-image {
-  max-width: 276%;
-  max-height: 166px;
+  max-width: 323px;
+  max-height: 246px;
   margin: auto;
   display: flex;
-  z-index: 3;
 }
 .logo-image {
   max-width: 200px;
@@ -105,9 +98,8 @@ iframe {
 }
 .more-button {
   background-color: #c70000;
-  /* width: 223px; */
-  width: 8.9vw;
-  height: 49px;
+  width: 223px;
+  height: 72px;
   border-radius: 5px;
   border: 0px;
   color: white;
@@ -136,7 +128,7 @@ p {
   width: 55px;
   height: 55px;
   border-radius: 100%;
-  z-index: 4;
+
   bottom: 20px;
   right: 30px;
 }
@@ -162,13 +154,13 @@ p {
   position: relative;
 }
 ._resume_card_background {
-  background: #c63636;
+  background-color: rgba(93, 159, 220, 0.5);
   height: 75%;
   width: 18.4%;
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3), 0 6px 27px 0 rgba(0, 0, 0, 0.25);
 }
 ._resume_nickname {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -177,7 +169,6 @@ p {
   font-size: 24px;
   line-height: 33px;
   text-align: center;
-  color: white;
 }
 ._resume_job_background {
   background-color: #adaa5a;
@@ -239,18 +230,6 @@ p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-._background_32 {
-  background-image: url("../../assets/Image/vlu-santhuong-c.jpg");
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-size: 100% 130%;
-  height: 455px;
-  width: 100%;
-}
-.video_background:hover {
-  transform: scale(0.8);
-}
-
 @keyframes rotate180deg {
   from {
     transform: rotate(0deg);
@@ -299,22 +278,5 @@ p {
   }
   to {
     background-color: #ededed;
-  }
-}
-
-@keyframes longMore {
-  from {
-    width: 45px;
-  }
-  to {
-    width: 150px;
-  }
-}
-@keyframes shortMore {
-  from {
-    width: 150px;
-  }
-  to {
-    width: 45px;
   }
 }
