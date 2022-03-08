@@ -1,11 +1,14 @@
 <header>
 	<nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom
-		box-shadow full__width" style="position: fixed; top:0px; z-index: 7;">
+		box-shadow full__width justify-content-end" style="position: fixed;
+		top:0px; z-index: 7;">
 		<div class="container nav">
 			<img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png"
 				/>
-			<a class="navbar-brand logo__text" [routerLink]="['/']">Trường Đại Học Văn
-				Lang</a>
+			<a class="navbar-brand logo__text" [routerLink]="['/']">
+				Trường Đại Học Văn
+				Lang
+			</a>
 			<button class="navbar-toggler"
 				type="button"
 				data-toggle="collapse"
@@ -29,20 +32,29 @@
 					<li class="nav-item link" [routerLinkActive]="['link-active']"
 						style="position: relative; overflow: visible;">
 						<a class="nav-link">Resume ▼</a>
-						<div class="drop-down">
-							<a href="#" style="margin: 1px 15px;">Tạo Resume</a>
-							<a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
+						<div class="drop-down resume_width">
+							<a [routerLink]="['/resume']" style="margin: 1px 15px;">Tạo Resume</a>
+							<a [routerLink]="['/resume-template']" style="margin: 1px 15px;">Tham
+								khảo Resume</a>
 							<a href="#" style="margin: 1px 15px;">Resume của tôi</a>
 						</div>
 					</li>
 					<li class="nav-item link" [routerLinkActive]="['link-active']"
 						style="position: relative; overflow: visible;">
 						<a class="nav-link">Cover Letter ▼</a>
-						<div class="drop-down">
-							<a href="#" style="margin: 1px 15px;">Tạo Resume</a>
-							<a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Resume</a>
-							<a href="#" style="margin: 1px 15px;">Resume của tôi</a>
+						<div class="drop-down cover_width">
+							<a href="#" style="margin: 1px 15px;">Tạo Cover Letter</a>
+							<a [routerLink]="['/resume']" style="margin: 1px 15px;">Tham khảo Cover
+								Letter</a>
+							<a href="#" style="margin: 1px 15px;">Cover Letter của tôi</a>
 						</div>
+					</li>
+					<li class="nav-item link">
+						<a href="/Identity/Account/Login">
+							<button class="btn-login">
+								Đăng Nhập
+							</button>
+						</a>
 					</li>
 				</ul>
 			</div>

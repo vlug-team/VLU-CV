@@ -1,0 +1,47 @@
+.square {
+  background: #adaa5a;
+  width: 52px;
+  height: 8px;
+}
+.content {
+  margin-top: 87px;
+  margin-bottom: 57px;
+  font-size: 24px;
+}
+._left {
+  margin-left: 59px;
+}
+.cv-selection {
+  width: 290px;
+  height: 400px;
+  background: #5d9fdc80;
+  margin-bottom: 5em;
+}
+.btn-more-resume {
+  width: 12em;
+  height: 4em;
+  margin-left: 3.5em;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #c70000 0%, #503a8e 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 40vh;
+}
+.avatar-cv img {
+  margin-top: 46px;
+  border-radius: 50%;
+  width: 94px;
+  height: 94px;
+}
+.position-content {
+  background: #adaa5a;
+  width: 290px;
+  height: 40px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+}
+p {
+  font-size: 24px;
+}
