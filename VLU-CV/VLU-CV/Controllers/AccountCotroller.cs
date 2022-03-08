@@ -26,7 +26,7 @@ namespace VLU_CV.Controllers
 
             //internal referenz-Number for tracking in tables
 
-            String sIDUserGuid = User.getUserIdGuid();   //*ID in aspUsers wie: 1428ca0b-186c..
+            String sIDUserGuid = User.;   //*ID in aspUsers wie: 1428ca0b-186c..
 
             if (sIDUserGuid == "") return BadRequest();
 
