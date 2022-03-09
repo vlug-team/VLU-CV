@@ -1,79 +1,204 @@
-.main_image{
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin-left: 62px;
+  z-index: 5;
+  overflow: hidden;
+}
+.background{
+  position: relative;
+  left: 62px;
+  top: 0px;
+  width: 306px;
+  height: 429px;
+  background: rgba(252, 138, 138, 0.6);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+}
+.thumb{
+  height: 450px;
+  width: 100%;
+  position: relative;
+}
+.label{
+  position: relative;
+  width: 57.97px;
+  height: 25.51px;
+  left: 0px;
+  top: 20px;
+  background: rgba(80, 83, 170, 0.8);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-style: italic;
+font-weight: bold;
+font-size: 13px;
+line-height: 16px;
+color: #FFFFFF;
+text-align: center;
+  padding-top: 3px;
+  z-index: 2;
 }
 
-.resume_image{
-    max-width: 600px;
-    max-height: 400px;
-    display: flex;
-    z-index: 2;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.cv{
+  position: relative;
+  margin: 43px auto 33px auto;
+  width: 228px;
+  height: 318px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-top: 2px solid rgba(0, 8, 201, 0.7);
+  transition: 1s;
+  cursor: pointer;
 }
-.red_square_x{
-    position: absolute;
-    background-color: red;
-    width: 90px;
-    height: 10px;
-    z-index: 1;
+.cv:hover{
+  transform: scale(1.43);
 }
-.red_square_y{
-    position: absolute;
-    background-color: red;
-    width: 10px;
-    height: 90px;
-    z-index: 1;
+.header,.body{
+  height: 75px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.body{
+  height: 240px;
+}
+.image{
+  width: 43px;
+  height: 53px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+.profile{
+  position: relative;
+  top:20px;
+  left: 29px;
+  height: 53px;
+  width: 139px;
+  display: inline;
+}
+.name, .job,.title, p{
+  margin-left: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 11px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.job, .title{
+  font-weight: normal;
+  font-size: 5px;
+  line-height: 7px;
+}
+.title{
+  color: #000;
 }
 p{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
+font-size: 3px;
+line-height: 4px;
 }
-
-@media (max-width: 1200px) {
-    .resume_image{
-        max-width: 350px;
-        max-height: 250px;
-    }
-    p{
-        font-size: 15px;
-    }
-  }
+.content{
+  position: relative;
+  width: 139px;
+  height: 28px;
+  top:7px;  
+  background: rgba(0, 8, 201, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 3px 4px 5px 4px;
+}
+.left,.right{
+  width: 100px;
+  height: 100%;
+  display: inline;
+}
+.right{
+  width: 120px;
+}
+.title__component{
+  width: 40px;
+  height: 8px;
+  position: relative;
+  left: 20px;
+  top:6px;
+}
+.title__footer{
+  margin-top: 1px;
+  height: 0px;
+  width: 6px;
+  border: 0.5px solid rgba(0, 8, 201, 0.7);
+}
+.simple__information{
+  width: 80px;
+  left: 20px;
+  top:10px;
+  height: 40px;
+  position: relative;
+}
+.information{
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+}
+.icon{
+  width: 5px;
+  height: 5px;
+  position: relative;
+  margin: 0 2px;
+}
+.birthday{
+  background: url(../../assets/Image/Icon/birthday.png);
+}
+.phone{
+  background: url(../../assets/Image/Icon/phone.png);
+}
+.mail{
+  background: url(../../assets/Image/Icon/mail.png);
+}
+.location{
+  background: url(../../assets/Image/Icon/location.png);
+}
+.facebook{
+  background: url(../../assets/Image/Icon/facebook.png);
+}
+.mail2{
+  background: url(../../assets/Image/Icon/envelop2.png);
+}
+.phone2{
+  background: url(../../assets/Image/Icon/phone2.png);
+}
+.birthday2{
+  background: url(../../assets/Image/Icon/party2.png);
+}
+.location2{
+  background: url(../../assets/Image/Icon/location2.png);
+}
+.facebook2{
+  background: url(../../assets/Image/Icon/facebook2.png);
+}
+strong{
+font-size: 4px;
+line-height: 5px;
+top:-14px;
+left: 3px;
+position: relative;
+}
+.p__content{
+  font-size: 4px;
+  line-height: 5px;
+}
+.strong__cv2{
+  font-weight: 700;
+  font-size: 6px;
+  line-height: 8px;
   
-  .more-button{
-    background-color: rgb(215,180,127);
-    width: 223px;
-    height: 72px;
-    border-radius: 5px;
-  }
-  .medal_image{
-    position: absolute;
-    bottom: 20px;
-    right:5px;
-    max-width: 12%;
-  }
-  .rectangle_item{
-    background-color: rgb(196,196,196);
-    /* width: 170px;  */
-    width: 12%;
-    height: 25%; 
-    position: absolute;
-    border-top: solid red 12px;
-  }
-  ._center_{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  ._image_{
-      border-radius: 25px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  .fab__button{
-    position: fixed;
-    width: 55px;
-    height: 55px;
-    border-radius: 100%;
-    bottom: 20px;
-    right: 30px;
-  }
+}
