@@ -27,14 +27,13 @@
             <form id="account" method="post" style="background-color: white; position: absolute; top:20%; left:10%; display: flex; flex-direction: column;">
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <br />
-                <label asp-for="Input.Email" style="margin: 6px;" for="">Tên tài khoản <strong style="color: red;">*</strong></label>
-                <input asp-for="Input.Email" type="text" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px; margin: 6px;   background: rgb(245,247,252);   height: 7.5vh;     width: 25vw;   padding-left: 15px;">
+                <label asp-for="Input.Email" style="margin: 6px; margin-top:0px;" for="">Tên tài khoản <strong style="color: red;">*</strong></label>
+                <input asp-for="Input.Email" type="text" style="border: 1px solid rgba(0, 0, 0, 0.81);box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 5px; margin: 6px;   background: rgb(245,247,252);   height: 7.5vh;     width: 25vw;   padding-left: 15px;">
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
-                <br />
-                <label asp-for="Input.Password" style="margin: 6px;" for="">Mật khẩu <strong style="color: red;">*</strong></label>
-                <input asp-for="Input.Password" type="password"  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px; margin: 6px;    background: rgb(245,247,252);     height: 7.5vh;      width: 25vw;    padding-left: 15px;">
+                <label asp-for="Input.Password" style="margin: 6px; margin-top:10px;" for="">Mật khẩu <strong style="color: red;">*</strong></label>
+                <input asp-for="Input.Password" type="password"  style="border: 1px solid rgba(0, 0, 0, 0.81);box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 5px; margin: 6px;    background: rgb(245,247,252);     height: 7.5vh;      width: 25vw;    padding-left: 15px;">
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
-                <br />
+                @* <br />
                 <div class="form-group">
                     <div class="checkbox">
                         <label asp-for="Input.RememberMe">
@@ -42,10 +41,10 @@
                             @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
                     </div>
-                </div>
-                <button style="margin-top: 30px; height: 45px; background-color: rgb(51,102,201); color:white; border-radius: 10px;" type="submit">Đăng Nhập</button>
+                </div> *@
+                <button style="margin-top: 30px;width:97%; margin-left:5px; height: 45px; background-color: rgb(51,102,201); color:white;  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border:0;" type="submit">Đăng Nhập</button>
             </form>
-            <a href="" style="color: #0085FF; position: absolute; right:6vw; top:60vh;"><strong> Quên mật khẩu?</strong></a>
+            <a href="" style="color: #0085FF; position: absolute; right:6vw; top:63vh;"><strong> Quên mật khẩu?</strong></a>
 
 
         </div>
