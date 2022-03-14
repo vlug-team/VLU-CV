@@ -6,6 +6,8 @@
     overflow: visible;
   }
 
+  
+
 .parent{
     height: 150vh;
     width: 100vw;
@@ -190,4 +192,4 @@ width: 200px;
   }
   .image img:hover{
       transform: scale(1.3);
-  }
+  } 
