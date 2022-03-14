@@ -70,6 +70,7 @@ a:hover {
   margin-top: 0px;
   margin-left: 10ch;
   box-shadow: none;
+  border: 0;
 }
 .resume_width {
   width: 155px;
