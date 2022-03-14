@@ -3,11 +3,11 @@ import * as htmlToImage from 'html-to-image';
 
 import { jsPDF } from "jspdf";
 @Component({
-  selector: 'app-resume-template-lcp',
-  templateUrl: './resume-template-lcp.component.html',
-  styleUrls: ['./resume-template-lcp.component.css']
+  selector: 'app-resume-template-hhm',
+  templateUrl: './resume-template-hhm.component.html',
+  styleUrls: ['./resume-template-hhm.component.css']
 })
-export class ResumeTemplateLCPComponent implements OnInit {
+export class ResumeTemplateHHMComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {

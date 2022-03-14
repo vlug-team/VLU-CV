@@ -6,16 +6,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  isShowFirstTime: boolean = (location.href=='http://localhost:4200/authentication/login'||location.href=='http://localhost:4200/authentication/register')?false:true;
+  isShowFirstTime: boolean = (location.href=='http://localhost:4200/'||location.href=='http://localhost:4200/about')?true:false;
   public navOnClick() {
-    if(location.href=='http://localhost:4200/authentication/login'){
-      this.isShowFirstTime=false;
+    if(location.href=='http://localhost:4200/'){
+      this.isShowFirstTime=true;
     }
-    else if(location.href=='http://localhost:4200/authentication/register'){
-      this.isShowFirstTime=false;
+    else if(location.href=='http://localhost:4200/about'){
+      this.isShowFirstTime=true;
     }
     else{
-      this.isShowFirstTime=true;
+      this.isShowFirstTime=false;
+      console.log(location.href)
     }
   }
 }

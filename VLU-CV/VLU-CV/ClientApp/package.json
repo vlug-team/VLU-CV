@@ -28,11 +28,17 @@
     "core-js": "^3.8.3",
     "downloadjs": "^1.4.7",
     "html-to-image": "^1.9.0",
+    "html2pdf": "^0.0.11",
+    "html2pdf.js": "^0.10.1",
     "jquery": "^3.5.1",
+    "jspdf": "^2.5.1",
     "oidc-client": "^1.11.3",
     "popper.js": "^1.16.0",
     "rxjs": "^6.6.3",
     "zone.js": "0.10.3"
+  },
+  "browser": {
+    "child_process": false
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1002.4",
