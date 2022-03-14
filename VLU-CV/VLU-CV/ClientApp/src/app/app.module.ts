@@ -14,6 +14,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AboutComponent } from "./about/about.component";
 import { ResumeTemplateComponent } from './resume-template/resume-template.component';
 import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-template-lcp.component';
+import { ResumeTemplateHHMComponent } from './resume-template-hhm/resume-template-hhm.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-templat
     AboutComponent,
     AppFooterComponent,
     ResumeTemplateComponent,
-    ResumeTemplateLCPComponent
+    ResumeTemplateLCPComponent,
+    ResumeTemplateHHMComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
@@ -36,6 +38,7 @@ import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-templat
       { path: "resume", component: ResumeComponent },
       { path: "resume-template", component:  ResumeTemplateComponent},
       { path: "resume-template-lcp", component:  ResumeTemplateLCPComponent},
+      { path: "resume-template-hhm", component:  ResumeTemplateHHMComponent},
     ]),
     NgbModule,
   ],
