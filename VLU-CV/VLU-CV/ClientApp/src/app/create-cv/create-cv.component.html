@@ -1,0 +1,111 @@
+<form class="background">
+	<input type="hidden" name="id">
+	<div style="height: 80px; width: 100%; position: relative; "></div>
+	<div class="d-flex flex-row parent">
+		<div style="width: 100%; height: 100%; position: relative; display: flex;">
+		</div>
+		<div id="cv_lcp" class="cv">
+			<div class="header">
+				<div
+					style="background-color: rgba(196, 196, 196, 0.6); position: relative; top: 48px; left: 50px; width: 8em;height: 10em;">
+					<div class="image">
+						<label class="input-group-text" for="inputGroupFile01"
+							style="justify-content: center;">Upload</label>
+						<input type="file" class="form-control" id="inputGroupFile01">
+					</div>
+				</div>
+				<div class="profile">
+					<input type="text" class="name" name="" id="" placeholder="Họ và tên">
+					<input type="text" class="position" name="" id="" placeholder="[Vị trí ứng tuyển]">
+					<textarea class="personal" rows="5" placeholder="Nhập personal statement bạn muốn"></textarea>
+				</div>
+			</div>
+			<div class="body">
+				<div class="left">
+					<div class="title__component" style="top:30px; bottom: 10px;">
+						<p class="title">Thông tin liên hệ</p>
+						<div class="title__footer"></div>
+					</div>
+					<div class="simple__information" style="top: 40px;">
+						<div class="information">
+							<div class="icon birthday"></div>
+							<input type="text" class="birth-day" placeholder="Ngày sinh" onfocus="(this.type='date')"
+								onblur="if(this.value==''){this.type='text'}">
+						</div>
+						<div class="information">
+							<div class="icon mail"></div>
+							<input class="mail-style" placeholder="Email" type="email">
+						</div>
+						<div class="information">
+							<div class="icon phone"></div>
+							<input class="tel-style" placeholder="Số điện thoại" type="tel">
+
+						</div>
+						<div class="information">
+							<div class="icon facebook"></div>
+							<input class="facebook-style" placeholder="Link facebook" type="url">
+
+						</div>
+						<div class="information">
+							<div class="icon location"></div>
+							<input class="location-style" placeholder="Địa chỉ" type="text">
+						</div>
+					</div>
+					<div class="title__component" style="top: -29px;">
+						<p class="title">Các kỹ năng</p>
+						<div class="title__footer"></div>
+					</div>
+					<div class="simple__information">
+						<input class="skill-style skill-input" placeholder="Nhập kĩ năng" type="text">
+						<textarea class="p__content skill-style skill-text" placeholder="Nhập mô tả kĩ năng"></textarea>
+						<input class="skill-style skill-input" placeholder="Nhập kĩ năng" type="text">
+						<textarea class="p__content skill-style skill-text" placeholder="Nhập mô tả kĩ năng"></textarea>
+
+					</div>
+					<div class="title__component" style="top: 4em;">
+						<p class="title">Thành tích</p>
+						<div class="title__footer"></div>
+					</div>
+					<div class="simple__information">
+						<textarea class="p__content" style="width: 180px; top: 7em; position: relative; height: 7em;"
+							placeholder="Nhập thành tích"></textarea>
+
+					</div>
+				</div>
+				<div class="right">
+					<div class="title__component" style="top: 30px; left: 10px;">
+						<p class="title">Trình độ học vấn</p>
+						<div class="title__footer"></div>
+					</div>
+					<div class="simple__information" style="width:300px; margin-top: 3px;">
+						<input style="top: 44px; position: relative;" class="right-input"
+							placeholder="Nhập chuyên ngành" type="text">
+
+						<input style="top: 44px; position: relative;" class="right-input"
+							placeholder="Nhập trường đại học" type="text">
+						<input style="top: 44px; position: relative;" class="right-input" placeholder="Kết quả học tập"
+							type="text">
+					</div>
+					<div class="title__component" style="top: -55px; left: 10px;">
+						<p class="title">Kinh nghiệm làm việc</p>
+						<div class="title__footer"></div>
+					</div>
+					<div class="simple__information" style="width:255px;top:-33px">
+						<input class="job-input" placeholder="Vị trí làm việc" type="text">
+						<input class="job-input" placeholder="Nơi làm việc" type="text">
+						<textarea class="p__content job-input" placeholder="Mô tả công viêc..."></textarea>
+						<input class="job-input" placeholder="Vị trí làm việc" type="text">
+						<input class="job-input" placeholder="Nơi làm việc" type="text">
+						<textarea class="p__content job-input" placeholder="Mô tả công viêc..."></textarea>
+					</div>
+					<div class="simple__information" style="width:255px">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="width: 100%; height: 100%; position: relative; display: flex;">
+			<button (click)="name()" style="margin: 0 0 0 40px;" type="submit">Save</button>
+			<button (click)="name()" style="margin: 0 auto 0 10px;">Export</button>
+		</div>
+	</div>
+</form>

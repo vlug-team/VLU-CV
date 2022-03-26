@@ -52,9 +52,28 @@ namespace VLU_CV.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar", nullable: true),
-                    ImageAvatar = table.Column<string>(type: "nvarchar", nullable: true),
-                    Introduce = table.Column<string>(type: "nvarchar", nullable: true)
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PersonalStatement = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BirthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FacebookUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Skill_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SkillDecription_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Skill_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SkillDecription_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Specialized = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SchoolName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GPA = table.Column<double>(type: "float", nullable: false),
+                    Positioned_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Worked_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description_1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Positioned_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Worked_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Achievement = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -170,12 +189,12 @@ namespace VLU_CV.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "5c6e2e17-aa36-44d9-a4e8-8ef0797fd131", "4ee261b7-fcc5-4796-94a3-c1f7277a692c", "User", "USER" });
+                values: new object[] { "5ce9cda1-a149-4cd4-809d-860ba9efa92b", "5a3a0ab0-1e3e-4c4f-bc06-b06da23c649f", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "de28e28f-b23d-456e-a8b7-6d0189645ef5", "Admin", "ADMIN" });
+                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "377c4bed-bd48-49ee-9910-da93eb808264", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",

@@ -10,7 +10,7 @@ using VLU_CV.Data;
 namespace VLU_CV.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220326100916_vlu")]
+    [Migration("20220326202236_vlu")]
     partial class vlu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,15 +50,15 @@ namespace VLU_CV.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5c6e2e17-aa36-44d9-a4e8-8ef0797fd131",
-                            ConcurrencyStamp = "4ee261b7-fcc5-4796-94a3-c1f7277a692c",
+                            Id = "5ce9cda1-a149-4cd4-809d-860ba9efa92b",
+                            ConcurrencyStamp = "5a3a0ab0-1e3e-4c4f-bc06-b06da23c649f",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "4aac28af-6ded-4720-94cf-bab3cb4072e9",
-                            ConcurrencyStamp = "de28e28f-b23d-456e-a8b7-6d0189645ef5",
+                            ConcurrencyStamp = "377c4bed-bd48-49ee-9910-da93eb808264",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -265,14 +265,71 @@ namespace VLU_CV.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ImageAvatar")
-                        .HasColumnType("nvarchar");
+                    b.Property<string>("Achievement")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Introduce")
-                        .HasColumnType("nvarchar");
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar");
+                    b.Property<DateTime>("BirthDay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description_2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FacebookUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("GPA")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PersonalStatement")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Positioned_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Positioned_2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SchoolName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkillDecription_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkillDecription_2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Skill_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Skill_2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Specialized")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Worked_1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Worked_2")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
