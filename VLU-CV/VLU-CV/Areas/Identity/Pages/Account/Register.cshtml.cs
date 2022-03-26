@@ -76,12 +76,16 @@ namespace VLU_CV.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Content("~/");
+            returnUrl ??= Url.Content("/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = Input.UserName, Email = Input.Email, EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                if(Input.Role == null)
+                {
+                    Input.Role = "User";
+                }
                 await _userManager.AddToRoleAsync(user, Input.Role);
                 var user_check = await _userManager.GetUserIdAsync(user);
                 if (user.Id != user_check)

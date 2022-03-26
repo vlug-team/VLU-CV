@@ -23,25 +23,7 @@
             <label asp-for="Input.ConfirmPassword" style="margin: 6px;" for="">Nhập lại mật khẩu <strong style="color: red;">*</strong></label>
             <input asp-for="Input.ConfirmPassword" type="password" class="_input_text_ _shadow_ _boder-radius_">
             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            
-            <div class="form-group">
-                <label asp-for="Input.Role"></label>
-                <select asp-for="Input.Role" class="form-control">
-                    @if (Model.Roles != null)
-                    {
-                        @foreach (var item in Model.Roles)
-                        {
-                            <option value="@item.Name">@item.Name</option>
-                        }
-                    }
-                    else
-                    {
-                        <option value="Admin">Admin</option>
-                        <option value="User">User</option>
-                    }
-                </select>
-                <span asp-validation-for="Input.Role" class="text-danger"></span>
-            </div>
+          
             <button class="_boder-radius_" style="margin-top: 20px; height: 45px; background-color: rgb(51,102,201); color:white; width: 17vw; margin-left: 9vw;" type="submit">Tạo tài khoản</button>
         </form>
     </div>
@@ -54,7 +36,7 @@
             <p style="opacity: 0.5; width: 30vw; top:65%; position: absolute;">Tài khoản và mật khẩu của bạn nên được ghi nhớ hoặc lưu lại ở đâu đó sau khi đăng ký thành công!</p>
 
         </div>
-        <div class="_center_" style="margin-top: 30vh;">
+        <div class="_center_" style="margin-top: 20vh;">
             <p>Bạn chưa có tài khoản? </p><a href="" style="color: #0085FF; padding-left: 5px;"><strong> Đăng ký ngay</strong></a>
         </div>
     </div>
