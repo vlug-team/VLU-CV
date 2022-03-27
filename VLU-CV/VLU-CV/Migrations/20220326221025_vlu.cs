@@ -189,12 +189,12 @@ namespace VLU_CV.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "5ce9cda1-a149-4cd4-809d-860ba9efa92b", "5a3a0ab0-1e3e-4c4f-bc06-b06da23c649f", "User", "USER" });
+                values: new object[] { "48b7bea5-9ef6-41f1-9bcc-b90ec31020c6", "5fe38f71-f922-497c-872a-1bba174e3580", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "377c4bed-bd48-49ee-9910-da93eb808264", "Admin", "ADMIN" });
+                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "4cf3bcad-7b34-43e7-8049-35222be93147", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",

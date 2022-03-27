@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using VLU_CV.Data;
+using VLU_CV.Repository;
 using VLU_CV.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace VLU_CV.Controllers
 {
@@ -13,30 +10,63 @@ namespace VLU_CV.Controllers
     [ApiController]
     public class CreateCvController : ControllerBase
     {
-        public ApplicationDbContext _context;
-        public CreateCvController(ApplicationDbContext context)
+        private readonly IRepository _repository;
+        public CreateCvController(IRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CurriculumVitae>> GetPaymentDetail(int id)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CurriculumVitae>>> CVList()
         {
-            var curriculumVitaes = await _context.CurriculumVitaes.FindAsync(id);
+            return await _repository.SelectAll<CurriculumVitae>();
+        }
 
-            if (curriculumVitaes == null)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CurriculumVitae>> GetCV(long id)
+        {
+            var model = await _repository.SelectById<CurriculumVitae>(id);
+
+            if (model == null)
             {
                 return NotFound();
             }
 
-            return curriculumVitaes;
+            return model;
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CurriculumVitae>>> PostCreateCV(CurriculumVitae curriculumVitae)
-        {
-            _context.CurriculumVitaes.Add(curriculumVitae);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction("GetPaymentDetail", new { id = curriculumVitae.Id }, curriculumVitae);
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCV(long id, CurriculumVitae model)
+        {
+            if (id != model.Id)
+            {
+                return BadRequest();
+            }
+
+            await _repository.UpdateAsync<CurriculumVitae>(model);
+
+            return NoContent();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CurriculumVitae>> InsertCV([FromBody] CurriculumVitae model)
+        {
+            await _repository.CreateAsync<CurriculumVitae>(model);
+            return CreatedAtAction("GetCV", new { id = model.Id }, model);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<CurriculumVitae>> DeleteCV(long id)
+        {
+            var model = await _repository.SelectById<CurriculumVitae>(id);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            await _repository.DeleteAsync<CurriculumVitae>(model);
+
+            return model;
         }
     }
 }

@@ -8,9 +8,18 @@ import { CreateCv } from './createcv.model';
 })
 export class CreateCvService {
 	constructor(private http: HttpClient) { }
-	readonly baseURL = 'http://localhost:5001/api/createcv';
+	readonly baseURL = 'http://localhost:5001/api/CreateCV';
 	formData: CreateCv = new CreateCv();
+	list: CreateCv[];
 	postCreateCV() {
 		return this.http.post(this.baseURL, this.formData);
+	}
+	putCV() {
+		return this.http.put(this.baseURL, this.formData);
+	}
+	refreshList() {
+		this.http.get(this.baseURL)
+			.toPromise()
+			.then(res => this.list = res as CreateCv[]);
 	}
 }

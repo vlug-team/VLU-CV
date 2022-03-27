@@ -48,15 +48,15 @@ namespace VLU_CV.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5ce9cda1-a149-4cd4-809d-860ba9efa92b",
-                            ConcurrencyStamp = "5a3a0ab0-1e3e-4c4f-bc06-b06da23c649f",
+                            Id = "48b7bea5-9ef6-41f1-9bcc-b90ec31020c6",
+                            ConcurrencyStamp = "5fe38f71-f922-497c-872a-1bba174e3580",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "4aac28af-6ded-4720-94cf-bab3cb4072e9",
-                            ConcurrencyStamp = "377c4bed-bd48-49ee-9910-da93eb808264",
+                            ConcurrencyStamp = "4cf3bcad-7b34-43e7-8049-35222be93147",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

@@ -29,7 +29,7 @@ import { CreateCvComponent } from './create-cv/create-cv.component';
 		ResumeTemplateHHMComponent
 	],
 	imports: [
-		BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
+		BrowserModule,
 		HttpClientModule,
 		FormsModule,
 		RouterModule.forRoot([
