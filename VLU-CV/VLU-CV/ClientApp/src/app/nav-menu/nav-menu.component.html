@@ -3,26 +3,18 @@
 		box-shadow full__width justify-content-end" style="position: fixed;
 		top:0px; z-index: 7;">
 		<div class="container nav">
-			<img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png"
-				/>
+			<img [routerLink]="['/']" class="logo-img" src="./assets/Media/vlu-logo.png" />
 			<a class="navbar-brand logo__text" [routerLink]="['/']">
 				Trường Đại Học Văn
 				Lang
 			</a>
-			<button class="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target=".navbar-collapse"
-				aria-label="Toggle navigation"
-				[attr.aria-expanded]="isExpanded"
-				(click)="toggle()">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+				aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-				[ngClass]="{ show: isExpanded }">
+			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" [ngClass]="{ show: isExpanded }">
 				<ul class="navbar-nav flex-grow">
-					<li class="nav-item"
-						[routerLinkActive]="['link-active']"
+					<li class="nav-item" [routerLinkActive]="['link-active']"
 						[routerLinkActiveOptions]="{ exact: true }">
 						<a class="nav-link" [routerLink]="['/']">Trang chủ</a>
 					</li>

@@ -24,27 +24,4 @@ export class CreateCv {
 	public achievement: string;
 
 
-	constructor() {
-		this.id = 0;
-		this.fullName = '';
-		this.position='';
-		this.email ='';
-		this.phoneNumber="";
-		this.address="";
-		this.achievement = "";
-		this.worked_1="";
-		this.facebookUrl="";
-		this.description_1="";
-		this.description_2 = "";
-		this.gpa=0.0;
-		this.personalStatement="";
-		this.position="";
-		this.positioned_1="";
-		this.positioned_2="";
-		this.schoolName="";
-		this.specialized="";
-		this.skill_1="";
-		this.skill_2=""
-
-	}
 }

@@ -1,5 +1,5 @@
 <form class="background" novalidate #form="ngForm" (submit)="onSubmit(form)">
-	<input type="hidden" name="id" value="service.formData.id">
+	<input type="hidden" name="id" [(ngModel)]="service.formData.id">
 	<div style="height: 80px; width: 100%; position: relative; "></div>
 	<div class="d-flex flex-row parent">
 		<div style="width: 100%; height: 100%; position: relative; display: flex;">
@@ -16,10 +16,11 @@
 				</div>
 				<div class="profile">
 					<input type="text" class="name" name="fullName" placeholder="Họ và tên" #fullName="ngModel"
-						[(ngModel)]="service.formData.fullName" required>
+						[(ngModel)]="service.formData.fullName ">
 					<input type="text" class="position" name="position" placeholder="[Vị trí ứng tuyển]"
-						#position="ngModel" [(ngModel)]="service.formData.position">
-					<textarea class="personal" rows="5" placeholder="Nhập personal statement bạn muốn"></textarea>
+						#position="ngModel" [(ngModel)]="service.formData.position ">
+					<textarea class="personal" rows="5" placeholder="Nhập personal statement bạn muốn"
+						#personalStatement="ngModel" [(ngModel)]="service.formData.personalStatement"></textarea>
 				</div>
 			</div>
 			<div class="body">
@@ -31,26 +32,31 @@
 					<div class="simple__information" style="top: 40px;">
 						<div class="information">
 							<div class="icon birthday"></div>
-							<input type="text" class="birth-day" placeholder="Ngày sinh" onfocus="(this.type='date')"
-								onblur="if(this.value==''){this.type='text'}">
+							<input type="datetime" name="birthDay" class="birth-day" placeholder="Ngày sinh"
+								onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"
+								#birthDay="ngModel" [(ngModel)]="service.formData.birthDay ">
 						</div>
 						<div class="information">
 							<div class="icon mail"></div>
-							<input class="mail-style" placeholder="Email" type="email">
+							<input class="mail-style" name="email" placeholder="Email" type="email" #email="ngModel"
+								[(ngModel)]="service.formData.email ">
 						</div>
 						<div class="information">
 							<div class="icon phone"></div>
-							<input class="tel-style" placeholder="Số điện thoại" type="tel">
+							<input class="tel-style" name="phoneNumber" placeholder="Số điện thoại" type="text"
+								#phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber ">
 
 						</div>
 						<div class="information">
 							<div class="icon facebook"></div>
-							<input class="facebook-style" placeholder="Link facebook" type="url">
+							<input class="facebook-style" name="facebookUrl" placeholder="Link facebook" type="text"
+								#facebookUrl="ngModel" [(ngModel)]="service.formData.facebookUrl ">
 
 						</div>
 						<div class="information">
 							<div class="icon location"></div>
-							<input class="location-style" placeholder="Địa chỉ" type="text">
+							<input class="location-style" name="address" placeholder="Địa chỉ" type="text"
+								#address="ngModel" [(ngModel)]="service.formData.address ">
 						</div>
 					</div>
 					<div class="title__component" style="top: -29px;">
@@ -58,10 +64,16 @@
 						<div class="title__footer"></div>
 					</div>
 					<div class="simple__information">
-						<input class="skill-style skill-input" placeholder="Nhập kĩ năng" type="text">
-						<textarea class="p__content skill-style skill-text" placeholder="Nhập mô tả kĩ năng"></textarea>
-						<input class="skill-style skill-input" placeholder="Nhập kĩ năng" type="text">
-						<textarea class="p__content skill-style skill-text" placeholder="Nhập mô tả kĩ năng"></textarea>
+						<input class="skill-style skill-input" name="skill_1" placeholder="Nhập kĩ năng" type="text"
+							#skill_1="ngModel" [(ngModel)]="service.formData.skill_1 ">
+						<textarea class="p__content skill-style skill-text" name="skillDecription_1"
+							placeholder="Nhập mô tả kĩ năng" #skillDecription_1="ngModel"
+							[(ngModel)]="service.formData.skillDecription_1"></textarea>
+						<input class="skill-style skill-input" placeholder="Nhập kĩ năng" name="skill_2" type="text"
+							#skill_2="ngModel" [(ngModel)]="service.formData.skill_2 ">
+						<textarea class="p__content skill-style skill-text" name="skillDecription_2"
+							placeholder="Nhập mô tả kĩ năng" #skillDecription_2="ngModel"
+							[(ngModel)]="service.formData.skillDecription_2"></textarea>
 
 					</div>
 					<div class="title__component" style="top: 4em;">
@@ -69,8 +81,10 @@
 						<div class="title__footer"></div>
 					</div>
 					<div class="simple__information">
-						<textarea class="p__content" style="width: 180px; top: 7em; position: relative; height: 7em;"
-							placeholder="Nhập thành tích"></textarea>
+						<textarea class="p__content" name="achievement"
+							style="width: 180px; top: 7em; position: relative; height: 7em;"
+							placeholder="Nhập thành tích" #achievement="ngModel"
+							[(ngModel)]="service.formData.achievement"></textarea>
 
 					</div>
 				</div>
@@ -80,33 +94,44 @@
 						<div class="title__footer"></div>
 					</div>
 					<div class="simple__information" style="width:300px; margin-top: 3px;">
-						<input style="top: 44px; position: relative;" class="right-input"
-							placeholder="Nhập chuyên ngành" type="text">
+						<input name="specialized" style="top: 44px; position: relative;" class="right-input"
+							placeholder="Nhập chuyên ngành" type="text" #specialized="ngModel"
+							[(ngModel)]="service.formData.specialized">
 
-						<input style="top: 44px; position: relative;" class="right-input"
-							placeholder="Nhập trường đại học" type="text">
-						<input style="top: 44px; position: relative;" class="right-input" placeholder="Kết quả học tập"
-							type="text">
+						<input name="schoolName" style="top: 44px; position: relative;" class="right-input"
+							placeholder="Nhập trường đại học" type="text" #schoolName="ngModel"
+							[(ngModel)]="service.formData.schoolName">
+						<input name="gpa" style="top: 44px; position: relative;" class="right-input"
+							placeholder="Kết quả học tập" type="number" #gpa="ngModel"
+							[(ngModel)]="service.formData.gpa">
 					</div>
 					<div class="title__component" style="top: -55px; left: 10px;">
 						<p class="title">Kinh nghiệm làm việc</p>
 						<div class="title__footer"></div>
 					</div>
 					<div class="simple__information" style="width:255px;top:-33px">
-						<input class="job-input" placeholder="Vị trí làm việc" type="text">
-						<input class="job-input" placeholder="Nơi làm việc" type="text">
-						<textarea class="p__content job-input" placeholder="Mô tả công viêc..."></textarea>
-						<input class="job-input" placeholder="Vị trí làm việc" type="text">
-						<input class="job-input" placeholder="Nơi làm việc" type="text">
-						<textarea class="p__content job-input" placeholder="Mô tả công viêc..."></textarea>
+						<input name="positioned_1" class="job-input" placeholder="Vị trí làm việc" type="text"
+							#positioned_1="ngModel" [(ngModel)]="service.formData.positioned_1">
+						<input class="job-input" name="worked_1" placeholder="Nơi làm việc" type="text"
+							#worked_1="ngModel" [(ngModel)]="service.formData.worked_1">
+						<textarea class="p__content job-input" name="description_1" placeholder="Mô tả công viêc..."
+							#description_1="ngModel" [(ngModel)]="service.formData.description_1"></textarea>
+
 					</div>
-					<div class="simple__information" style="width:255px">
+					<div class="simple__information" style="width:255px;top:-33px">
+						<input class="job-input" name="positioned_2" placeholder="Vị trí làm việc" type="text"
+							#positioned_2="ngModel" [(ngModel)]="service.formData.positioned_2">
+						<input class="job-input" name="worked_2" placeholder="Nơi làm việc" type="text"
+							#worked_2="ngModel" [(ngModel)]="service.formData.worked_2">
+						<textarea class="p__content job-input" name="description_2" style="padding-top: 0;" type="text"
+							placeholder="Mô tả công viêc..." #description_2="ngModel"
+							[(ngModel)]="service.formData.description_2"></textarea>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div style="width: 100%; height: 100%; position: relative; display: flex;">
-			<button (click)="onSubmit(form)" style="margin: 0 0 0 40px;" type="submit">Save</button>
+			<button (click)="onSubmit(form)" style="margin: 0 0 0 40px;">Save</button>
 			<button (click)="onSubmit(form)" style="margin: 0 auto 0 10px;">Export</button>
 		</div>
 	</div>

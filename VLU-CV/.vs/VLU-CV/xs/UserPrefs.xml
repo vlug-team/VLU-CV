@@ -1,18 +1,8 @@
 ﻿<Properties StartupConfiguration="{5106078A-9558-4DCE-8F2A-9ED12FFB7169}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/ClientApp/package.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/Controllers/CreateCvController.cs">
     <Files>
-      <File FileName="VLU-CV/ClientApp/src/app/app-footer/app-footer.component.html" Line="3" Column="31" />
-      <File FileName="VLU-CV/ClientApp/src/app/app.component.html" Line="1" Column="39" />
-      <File FileName="VLU-CV/ClientApp/src/app/home/home.component.html" Line="1" Column="1" />
-      <File FileName="VLU-CV/ClientApp/src/app/nav-menu/nav-menu.component.html" Line="30" Column="62" />
-      <File FileName="VLU-CV/ClientApp/src/app/nav-menu/nav-menu.component.css" Line="31" Column="17" />
-      <File FileName="VLU-CV/ClientApp/src/app/counter/counter.component.html" Line="8" Column="1" />
-      <File FileName="VLU-CV/ClientApp/src/app/counter/counter.component.ts" Line="1" Column="1" />
-      <File FileName="VLU-CV/ClientApp/src/app/home/home.component.css" Line="1" Column="1" />
-      <File FileName="VLU-CV/ClientApp/src/app/app-footer/app-footer.component.css" Line="6" Column="13" />
-      <File FileName="VLU-CV/ClientApp/src/app/home/home.component.ts" Line="15" Column="1" />
-      <File FileName="VLU-CV/VLU-CV.csproj" Line="45" Column="5" />
-      <File FileName="VLU-CV/ClientApp/package.json" Line="28" Column="30" />
+      <File FileName="VLU-CV/Controllers/CreateCvController.cs" Line="67" Column="67" />
+      <File FileName="VLU-CV/ClientApp/src/app/create-cv/create-cv.component.html" Line="21" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,17 +11,15 @@
             <Node name="VLU-CV" expanded="True">
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
-                  <Node name="api-authorization" expanded="True">
-                    <Node name="login" expanded="True" />
-                  </Node>
                   <Node name="app" expanded="True">
-                    <Node name="app-footer" expanded="True" />
-                    <Node name="counter" expanded="True" />
-                    <Node name="home" expanded="True" />
+                    <Node name="create-cv" expanded="True" />
                     <Node name="nav-menu" expanded="True" />
                   </Node>
                 </Node>
               </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Repository" expanded="True" selected="True" />
               <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
@@ -43,10 +31,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.VLU-CV PreferredExecutionTarget="/Applications/CocCoc.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
