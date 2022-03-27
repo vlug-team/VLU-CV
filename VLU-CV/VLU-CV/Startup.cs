@@ -24,17 +24,24 @@ namespace VLU_CV
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages();
+            services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
-            services.AddAuthentication()
-                .AddIdentityServerJwt();
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-       
+            services.AddCors(option => {
+                option.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:5001");
+                    builder.WithOrigins("http://localhost:4200");
+
+                });
+            });
+
+            services.AddMvc(c => c.EnableEndpointRouting = false);
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
@@ -44,18 +51,8 @@ namespace VLU_CV
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                //app.UseMigrationsEndPoint();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-            app.UseCors("CorsPolicy");
+            app.UseCors();
+            app.UseMvc();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

@@ -12,6 +12,7 @@ using VLU_CV.Models;
 
 namespace VLU_CV.Controllers
 {
+    [EnableCors]
     [Route("api/createcv")]
     [ApiController]
     public class CVController : ControllerBase

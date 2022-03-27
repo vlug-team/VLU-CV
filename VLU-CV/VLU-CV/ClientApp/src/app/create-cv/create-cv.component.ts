@@ -13,11 +13,13 @@ export class CreateCvComponent implements OnInit {
 
 	}
 	onSubmit(form: NgForm) {
-		this.service.postCV(form.value).subscribe(res => {
+		let value = JSON.stringify(form.value);
+		this.service.postCV(value).subscribe(res => {
 			console.log('CV created successfully.');
 		}
 			,
 			err => {
+				alert('Error creating CV.');
 				console.log(err);
 			}
 		);

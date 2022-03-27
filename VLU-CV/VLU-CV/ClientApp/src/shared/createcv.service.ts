@@ -10,11 +10,11 @@ export class CreateCvService {
 	constructor(private http: HttpClient) {
 	}
 
-	readonly _baseUrl = 'http://localhost:44361/api/createcv';
+	readonly _baseUrl = 'http://localhost:5001/api/createcv';
 	formData: CreateCv = new CreateCv();
 	list: CreateCv[];
 
-	postCV(form: NgForm) {
+	postCV(form: any) {
 		const headers = new HttpHeaders()
 			.append('Content-Type', 'application/json')
 			.append('Access-Control-Allow-Headers', 'Content-Type')
