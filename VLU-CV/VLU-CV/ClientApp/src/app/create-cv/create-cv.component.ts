@@ -8,13 +8,19 @@ import { CreateCvService } from 'src/shared/createcv.service';
 	styleUrls: ['./create-cv.component.css']
 })
 export class CreateCvComponent implements OnInit {
-
 	constructor(public service: CreateCvService) { }
 	ngOnInit(): void {
 
 	}
 	onSubmit(form: NgForm) {
-		this.service.add(form.value).subscribe(
+		this.service.postCV(form.value).subscribe(res => {
+			console.log('CV created successfully.');
+		}
+			,
+			err => {
+				console.log(err);
+			}
 		);
 	}
+
 }
