@@ -12,9 +12,9 @@ using VLU_CV.Models;
 
 namespace VLU_CV.Controllers
 {
-    [EnableCors]
-    [Route("api/createcv")]
     [ApiController]
+    [Route("api/createcv")]
+    [EnableCors("AllowOrigin")]
     public class CVController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -24,7 +24,7 @@ namespace VLU_CV.Controllers
             _context = context;
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CurriculumVitae>>> GetCVList()
+        public  async Task<ActionResult<List<CurriculumVitae>>> GetList()
         {
             return await _context.CurriculumVitaes.ToListAsync();
         }
@@ -42,12 +42,27 @@ namespace VLU_CV.Controllers
             return curriculumVitae;
         }
         [HttpPost]
-        public async Task<ActionResult<CurriculumVitae>> PostCV([FromForm]CurriculumVitae curriculum)
+        public IActionResult AddCV([FromForm]CurriculumVitae curriculum)
         {
-            _context.CurriculumVitaes.Add(curriculum);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetCV", new { id = curriculum.Id }, curriculum);
+            if(curriculum == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _context.CurriculumVitaes.Add(curriculum);
+                _context.SaveChanges();
+                return Ok(new
+                {
+                    StatusCode = 200,
+                });
+            }
+        }
+        [HttpPut]
+        public CurriculumVitae EditCV(CurriculumVitae curriculumVitae)
+        {
+            var Cv = _context.CurriculumVitaes.Update(curriculumVitae);
+            return Cv.Entity;
         }
     }
 }
