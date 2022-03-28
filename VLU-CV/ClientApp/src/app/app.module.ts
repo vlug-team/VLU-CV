@@ -17,6 +17,8 @@ import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-templat
 import { ResumeTemplateHHMComponent } from './resume-template-hhm/resume-template-hhm.component';
 import { CreateCvComponent } from './create-cv/create-cv.component';
 import { CreateCvService } from "src/shared/createcv.service";
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -29,6 +31,8 @@ import { CreateCvService } from "src/shared/createcv.service";
 		ResumeTemplateLCPComponent,
 		ResumeTemplateHHMComponent,
 		CreateCvComponent,
+		LoginComponent,
+		RegisterComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -42,6 +46,8 @@ import { CreateCvService } from "src/shared/createcv.service";
 			{ path: "resume-template", component: ResumeTemplateComponent },
 			{ path: "resume-template-lcp", component: ResumeTemplateLCPComponent },
 			{ path: "resume-template-hhm", component: ResumeTemplateHHMComponent },
+			{ path: "login", component: LoginComponent },
+			{ path: "register", component: RegisterComponent }
 		]),
 		NgbModule,
 	],

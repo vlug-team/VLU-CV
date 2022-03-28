@@ -42,7 +42,7 @@ namespace VLU_CV.Controllers
             return curriculumVitae;
         }
         [HttpPost]
-        public IActionResult AddCV([FromForm]CurriculumVitae curriculum)
+        public IActionResult AddCV([FromBody]CurriculumVitae curriculum)
         {
             if(curriculum == null)
             {

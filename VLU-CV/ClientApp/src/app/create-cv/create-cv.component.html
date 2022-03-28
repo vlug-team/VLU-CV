@@ -1,4 +1,4 @@
-<form class="background" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+<form class="background" #form="ngForm" (ngSubmit)="onSubmit(form)">
 	<input type="hidden" name="id" [(ngModel)]="service.formData.id">
 
 	<div style="height: 80px; width: 100%; position: relative; "></div>
@@ -11,18 +11,16 @@
 				<div
 					style="background-color: rgba(196, 196, 196, 0.6); position: relative; top: 48px; left: 50px; width: 8em;height: 10em;">
 					<div class="image">
-						<label class="input-group-text" for="inputGroupFile01"
-							style="justify-content: center;">Upload</label>
-						<input type="file" class="form-control" id="inputGroupFile01">
+						<input type="file" accept="image/*" class="inputfile">
 					</div>
 				</div>
 				<div class="profile">
 					<input type="text" class="name" name="fullName" placeholder="Họ và tên" #fullName="ngModel"
-						[(ngModel)]="service.formData.fullName " required>
+						[(ngModel)]="service.formData.fullName ">
 					<input type="text" class="position" name="position" placeholder="[Vị trí ứng tuyển]"
-						[(ngModel)]="service.formData.position " required>
+						[(ngModel)]="service.formData.position ">
 					<textarea class="personal" rows="5" placeholder="Nhập personal statement bạn muốn"
-						[(ngModel)]="service.formData.personalStatement" required></textarea>
+						[(ngModel)]="service.formData.personalStatement"></textarea>
 				</div>
 			</div>
 			<div class="body">
@@ -100,8 +98,9 @@
 
 						<input name="schoolName" style="top: 44px; position: relative;" class="right-input"
 							placeholder="Nhập trường đại học" type="text" [(ngModel)]="service.formData.schoolName">
-						<input name="gpa" style="top: 44px; position: relative;" class="right-input"
-							placeholder="Kết quả học tập" type="number" [(ngModel)]="service.formData.gpa">
+						<input name="gpa" style="top: 44px; position: relative;" class="right-input" step=0.01 max="10"
+							min="0" placeholder="Kết quả học tập thang điểm 10" type="number"
+							[(ngModel)]="service.formData.gpa">
 					</div>
 					<div class="title__component" style="top: -55px; left: 10px;">
 						<p class="title">Kinh nghiệm làm việc</p>

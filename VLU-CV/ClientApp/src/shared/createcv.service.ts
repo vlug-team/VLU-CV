@@ -1,8 +1,7 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CreateCv } from './createcv.model';
-import { NgForm } from '@angular/forms';
 
 @Injectable()
 
@@ -10,12 +9,13 @@ export class CreateCvService {
 	constructor(private http: HttpClient) {
 	}
 
-	readonly _baseUrl = 'http://localhost:5000/api/createcv';
+	readonly _baseUrl = 'http://localhost:5000/api';
 	formData: CreateCv = new CreateCv();
 	list: CreateCv[];
 
-	postCV(form: NgForm) {
-		return this.http.post(this._baseUrl, form);
+	postCV() {
+		console.log(this.formData);
+		return this.http.post(this._baseUrl + "/createcv", this.formData);
 	}
 	refreshCVList() {
 		this.http.get(this._baseUrl)
