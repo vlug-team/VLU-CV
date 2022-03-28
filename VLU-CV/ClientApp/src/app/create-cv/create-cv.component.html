@@ -1,8 +1,10 @@
 <form class="background" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
 	<input type="hidden" name="id" [(ngModel)]="service.formData.id">
+
 	<div style="height: 80px; width: 100%; position: relative; "></div>
 	<div class="d-flex flex-row parent">
 		<div style="width: 100%; height: 100%; position: relative; display: flex;">
+			<a [routerLink]="['/resume']" style="margin: 0 40px 0 auto;"><button>❮❮ Quay lại</button></a>
 		</div>
 		<div id="cv_lcp" class="cv">
 			<div class="header">
@@ -16,11 +18,11 @@
 				</div>
 				<div class="profile">
 					<input type="text" class="name" name="fullName" placeholder="Họ và tên" #fullName="ngModel"
-						[(ngModel)]="service.formData.fullName ">
+						[(ngModel)]="service.formData.fullName " required>
 					<input type="text" class="position" name="position" placeholder="[Vị trí ứng tuyển]"
-						[(ngModel)]="service.formData.position ">
+						[(ngModel)]="service.formData.position " required>
 					<textarea class="personal" rows="5" placeholder="Nhập personal statement bạn muốn"
-						[(ngModel)]="service.formData.personalStatement"></textarea>
+						[(ngModel)]="service.formData.personalStatement" required></textarea>
 				</div>
 			</div>
 			<div class="body">

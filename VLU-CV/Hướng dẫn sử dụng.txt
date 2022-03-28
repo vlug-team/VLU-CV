@@ -1,0 +1,9 @@
+- Để tác biệt FE và BE nên em tách ra 2 proj riêng => clientapp là Fe, còn lại là BE
+- Để chạy dự án nên chắc chắn máy của mình đang cài là dotnet 5 check version như sau
+	+ Vào cmd gõ lệnh ``dotnet --version`` nếu là dotnet 6 thì tải "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-windows-x64-installer" 
+vào link sau và làm theo để đổi lại "https://stackoverflow.com/questions/42077229/switch-between-dotnet-core-sdk-versions"
+	+ Sau đó và đúng chỉ mục của proj và dùng lệnh "dotnet run" để chạy api (nhớ là drop-database, remove-migration, add-migration, update-database rồi mới chạy dotnet run) 
+	+ Tiếp theo chạy bên proj clientApp với các câu lệnh sau:
+		# npm install
+		# ng serve
+==> v là chạy thành công 
