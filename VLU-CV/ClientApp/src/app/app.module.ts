@@ -17,8 +17,7 @@ import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-templat
 import { ResumeTemplateHHMComponent } from './resume-template-hhm/resume-template-hhm.component';
 import { CreateCvComponent } from './create-cv/create-cv.component';
 import { CreateCvService } from "src/shared/createcv.service";
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -31,8 +30,7 @@ import { RegisterComponent } from './auth/register/register.component';
 		ResumeTemplateLCPComponent,
 		ResumeTemplateHHMComponent,
 		CreateCvComponent,
-		LoginComponent,
-		RegisterComponent,
+
 	],
 	imports: [
 		BrowserModule,
@@ -46,12 +44,22 @@ import { RegisterComponent } from './auth/register/register.component';
 			{ path: "resume-template", component: ResumeTemplateComponent },
 			{ path: "resume-template-lcp", component: ResumeTemplateLCPComponent },
 			{ path: "resume-template-hhm", component: ResumeTemplateHHMComponent },
-			{ path: "login", component: LoginComponent },
-			{ path: "register", component: RegisterComponent }
 		]),
 		NgbModule,
 	],
-	providers: [CreateCvService],
+	providers: [{
+		provide: 'SocialAuthServiceConfig',
+		useValue: {
+			autoLogin: true,
+			providers: [
+				{
+					id: GoogleLoginProvider.PROVIDER_ID,
+					provider: new GoogleLoginProvider('869931608751-188lc99vu7t7eeskbq9h9itcuvb5oekp.apps.googleusercontent.com') // your client id
+				}
+			]
+		}
+	}, CreateCvService, SocialAuthService],
 	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

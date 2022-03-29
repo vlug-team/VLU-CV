@@ -27,7 +27,7 @@ export class HomeComponent {
 		"../../assets/32/12.png",
 		"../../assets/32/13.png",
 		"../../assets/32/14.png",
-		"../../assets/32/15.png",
+		"../../assets/32/15.jpg",
 		"../../assets/32/16.png",
 		"../../assets/32/17.png",
 		"../../assets/32/18.png",

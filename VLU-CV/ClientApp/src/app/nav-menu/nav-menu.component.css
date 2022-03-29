@@ -1,82 +1,104 @@
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+	white-space: normal;
+	text-align: center;
+	word-break: break-all;
 }
-nav {
-  background-color: #003768;
-}
-html {
-  font-size: 10px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 12px;
-  }
-}
-* {
-  overflow: visible;
-}
-.box-shadow {
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
-}
-li {
-  color: #fff;
-  font-size: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-ul {
-  padding-right: 60px;
-}
-.logo-img {
-  width: 3.5%;
-}
-.navbar-brand:hover {
-  color: #fff;
-}
-a:hover {
-  color: yellow;
-}
-.logo__text {
-  font-size: 14px;
-}
-.nav {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-.full__width {
-  width: 100%;
-}
-.drop-down {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 30px;
-  left: 0px;
-  background-color: #003768;
 
-  display: none;
+nav {
+	background-color: #003768;
 }
+
+html {
+	font-size: 10px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+* {
+	overflow: visible;
+}
+
+.box-shadow {
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+li {
+	color: #fff;
+	font-size: 12px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ul {
+	padding-right: 60px;
+}
+
+.logo-img {
+	width: 3.5%;
+}
+
+.navbar-brand:hover {
+	color: #fff;
+}
+
+a:hover {
+	color: yellow;
+}
+
+.logo__text {
+	font-size: 14px;
+}
+
+.nav {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.full__width {
+	width: 100%;
+}
+
+.drop-down {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	background-color: #003768;
+
+	display: none;
+}
+
 .link:hover .drop-down {
-  display: flex;
+	display: flex;
 }
+
 .btn-login {
-  background-color: #ff0000;
-  border-radius: 5px;
-  width: 8em;
-  height: 32px;
-  color: #fff;
-  margin-top: 0px;
-  margin-left: 10ch;
-  box-shadow: none;
-  border: 0;
+	background-color: #ff0000;
+	border-radius: 5px;
+	width: 8em;
+	height: 32px;
+	color: #fff;
+	margin-top: 0px;
+	margin-left: 10ch;
+	box-shadow: none;
+	border: 0;
 }
+
+.btn-logout {
+	border-radius: 5px;
+}
+
 .resume_width {
-  width: 155px;
-  height: 68px;
+	width: 155px;
+	height: 68px;
 }
+
 .cover_width {
-  width: 170px;
-  height: 80px;
+	width: 170px;
+	height: 80px;
 }
