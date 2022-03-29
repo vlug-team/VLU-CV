@@ -34,5 +34,6 @@ namespace VLU_CV.Models
         public string Worked_2 { get; set; }
         public string Description_2 { get; set; }
         public string Achievement { get; set; }
+        public string ImageSrc { get; set; }
     }
 }

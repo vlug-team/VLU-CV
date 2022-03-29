@@ -14,7 +14,6 @@ export class CreateCvService {
 	list: CreateCv[];
 
 	postCV() {
-		console.log(this.formData);
 		return this.http.post(this._baseUrl + "/createcv", this.formData);
 	}
 	refreshCVList() {
@@ -25,4 +24,5 @@ export class CreateCvService {
 	editCV(form: any) {
 		return this.http.put(this._baseUrl + '/' + form.id, form);
 	}
+	
 }

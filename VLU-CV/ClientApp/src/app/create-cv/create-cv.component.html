@@ -8,12 +8,17 @@
 		</div>
 		<div id="cv_lcp" class="cv">
 			<div class="header">
-				<div
-					style="background-color: rgba(196, 196, 196, 0.6); position: relative; top: 48px; left: 50px; width: 8em;height: 10em;">
-					<div class="image">
-						<input type="file" accept="image/*" class="inputfile">
+				<label class="choose-label">
+					<div *ngIf="!isImg"
+						style="background-color: rgba(196, 196, 196, 0.6); position: relative; top: 48px; left: 50px; width: 8em;height: 10em;">
+						<div class="choose-avt">Chọn Ảnh</div>
+						<div class="image">
+							<input type="file" (change)="uploadImage($event)" accept="Image/*">
+						</div>
 					</div>
-				</div>
+					<img [src]="imgSrc" *ngIf="isImg"
+						style="position: relative; top: 48px; left: 50px;width: 8em;height: 10em;">
+				</label>
 				<div class="profile">
 					<input type="text" class="name" name="fullName" placeholder="Họ và tên" #fullName="ngModel"
 						[(ngModel)]="service.formData.fullName ">

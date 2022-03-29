@@ -24,10 +24,15 @@ namespace VLU_CV
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(c =>
+            services.AddCors(options =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
-                .AllowAnyHeader());
+                options.AddPolicy(
+                    name: "AllowOrigin",
+                    builder => {
+                        builder.AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader();
+                    });
             });
             services.AddControllersWithViews();
             services.AddSwaggerGen();
@@ -39,6 +44,11 @@ namespace VLU_CV
             services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+            services.AddAuthentication().AddGoogle(option =>
+            {
+                option.ClientId = Configuration["App:GoogleClientId"];
+                option.ClientSecret = Configuration["App:GoogleClientSecret"];
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,10 +70,7 @@ namespace VLU_CV
                 c.RoutePrefix = string.Empty;
             });
             app.UseRouting();
-            app.UseCors(x => x
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+            app.UseCors("AllowOrigin");
 
             app.UseHttpsRedirection();
             app.UseAuthorization();

@@ -22,6 +22,6 @@ export class CreateCv {
 	public worked_2: string;
 	public description_2: string;
 	public achievement: string;
-
+	public imageSrc: string = '';
 
 }

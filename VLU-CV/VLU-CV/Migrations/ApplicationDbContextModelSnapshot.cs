@@ -48,15 +48,15 @@ namespace VLU_CV.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "18b2a523-5276-45e4-b366-62d3595b4f0b",
-                            ConcurrencyStamp = "73406b4f-e7b1-4405-b915-cd67181a45c3",
+                            Id = "0b50db65-ecf2-4904-b3bf-bdbfcfc9394a",
+                            ConcurrencyStamp = "2263a7d2-abc9-4855-9769-e07a77bab45e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "4aac28af-6ded-4720-94cf-bab3cb4072e9",
-                            ConcurrencyStamp = "616cabe3-cc06-4b8d-8189-8a8ecf3bb344",
+                            ConcurrencyStamp = "ce38a040-bf3e-4cfc-94a8-af89bafe3a3e",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -289,6 +289,9 @@ namespace VLU_CV.Migrations
 
                     b.Property<double>("GPA")
                         .HasColumnType("float");
+
+                    b.Property<string>("ImageSrc")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PersonalStatement")
                         .HasColumnType("nvarchar(max)");

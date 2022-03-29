@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{5106078A-9558-4DCE-8F2A-9ED12FFB7169}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/Controllers/CreateCvController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/Startup.cs">
     <Files>
-      <File FileName="VLU-CV/Controllers/CreateCvController.cs" Line="31" Column="2" />
-      <File FileName="VLU-CV/ClientApp/src/app/create-cv/create-cv.component.html" Line="138" Column="7" />
-      <File FileName="VLU-CV/Startup.cs" Line="11" Column="19" />
-      <File FileName="VLU-CV/Repository/IRepository.cs" Line="9" Column="1" />
+      <File FileName="VLU-CV/Startup.cs" Line="42" Column="1" />
       <File FileName="VLU-CV/Program.cs" Line="16" Column="1" />
+      <File FileName="VLU-CV/Controllers/CVController.cs" Line="15" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,11 +26,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.VLU-CV PreferredExecutionTarget="/Applications/CocCoc.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.VLU-CV PreferredExecutionTarget="/Applications/CocCoc.app" />
 </Properties>

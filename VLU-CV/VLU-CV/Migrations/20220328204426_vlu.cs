@@ -73,7 +73,8 @@ namespace VLU_CV.Migrations
                     Positioned_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Worked_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description_2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Achievement = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Achievement = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageSrc = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -189,12 +190,12 @@ namespace VLU_CV.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "18b2a523-5276-45e4-b366-62d3595b4f0b", "73406b4f-e7b1-4405-b915-cd67181a45c3", "User", "USER" });
+                values: new object[] { "0b50db65-ecf2-4904-b3bf-bdbfcfc9394a", "2263a7d2-abc9-4855-9769-e07a77bab45e", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "616cabe3-cc06-4b8d-8189-8a8ecf3bb344", "Admin", "ADMIN" });
+                values: new object[] { "4aac28af-6ded-4720-94cf-bab3cb4072e9", "ce38a040-bf3e-4cfc-94a8-af89bafe3a3e", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
