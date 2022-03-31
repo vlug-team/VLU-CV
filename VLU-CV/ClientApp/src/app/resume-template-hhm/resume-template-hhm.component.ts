@@ -16,15 +16,14 @@ export class ResumeTemplateHHMComponent implements OnInit {
   
   name() {
     
-    htmlToImage.toPng(document.getElementById('cv_lcp'))
+    htmlToImage.toPng(document.getElementById('cv_hhm'))
       .then(function (dataUrl) {
 
         let pdf = new jsPDF('p', 'px', 'a4');
-        pdf.addImage(dataUrl,'PNG',0,0,446,653);
-        pdf.save('LuuChinhPhuong.pdf'); 
+        pdf.addImage(dataUrl,'PNG',0,0,390,653);
+        pdf.save('HaHoangMinh.pdf'); 
         
       });
     
   }
-
 }
