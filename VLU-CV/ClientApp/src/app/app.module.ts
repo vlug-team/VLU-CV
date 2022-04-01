@@ -15,6 +15,9 @@ import { AboutComponent } from "./about/about.component";
 import { ResumeTemplateComponent } from './resume-template/resume-template.component';
 import { ResumeTemplateLCPComponent } from './resume-template-lcp/resume-template-lcp.component';
 import { ResumeTemplateHHMComponent } from './resume-template-hhm/resume-template-hhm.component';
+import { ResumeTemplateHLHComponent } from "./resume-template-hlh/resume-template-hlh.component";
+import { ResumeTemplateTNNComponent } from "./resume-template-tnn/resume-template-tnn.component";
+import { ResumeTemplateHTMComponent } from "./resume-template-htm/resume-template-htm.component";
 import { CreateCvComponent } from './create-cv/create-cv.component';
 import { CreateCvService } from "src/shared/createcv.service";
 import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
@@ -29,8 +32,10 @@ import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 		ResumeTemplateComponent,
 		ResumeTemplateLCPComponent,
 		ResumeTemplateHHMComponent,
+		ResumeTemplateHLHComponent,
+		ResumeTemplateTNNComponent,
+		ResumeTemplateHTMComponent,
 		CreateCvComponent,
-
 	],
 	imports: [
 		BrowserModule,
@@ -44,6 +49,9 @@ import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 			{ path: "resume-template", component: ResumeTemplateComponent },
 			{ path: "resume-template-lcp", component: ResumeTemplateLCPComponent },
 			{ path: "resume-template-hhm", component: ResumeTemplateHHMComponent },
+			{ path: "resume-template-hlh", component: ResumeTemplateHLHComponent },
+			{ path: "resume-template-tnn", component: ResumeTemplateTNNComponent },
+			{ path: "resume-template-htm", component: ResumeTemplateHTMComponent },
 		]),
 		NgbModule,
 	],

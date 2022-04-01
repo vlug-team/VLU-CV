@@ -1,1 +1,50 @@
-<h1>hello world</h1>
+<div style="height: 80px; width: 100%; position: relative; "></div>
+<div class="d-flex flex-row parent">
+    <div style="width: 100%; height: 100%; position: relative; display: flex;">
+        <a [routerLink]="['/resume-template']" style="margin: 0 40px 0 auto;"><button>❮❮ Quay lại</button></a>
+        <img src="../../assets/Image/earth.png" alt="" style="position: absolute; margin:120px auto;">
+    </div>
+    <div id="cv_hhm" class="cv">
+        <div class="header">
+            <div class="image">
+                <img src="../../assets/Image/Ellipse 3.png" alt="" style="object-fit: cover; object-position: center;width: 100%;height: 100%; transition: .7s;">
+            </div>
+            <div class="profile">
+                <p class="name">HÀ HOÀNG MINH</p>
+                <p class="job">Sales Manager</p>
+                <div class="icon mail" style="margin-top: 5px; width: 15px; background-position: center;
+                                                background-size: contain; background-repeat: no-repeat; position: relative;">
+                    <p class="font" style="position: absolute;">hahm1120@gmail.com</p>
+                </div>
+                <div class="icon phone"  style="margin-top: 5px; width: 15px; background-position: center;
+                                                background-size: contain; background-repeat: no-repeat; position: relative;"> 
+                    <p class="font" style="position: absolute;">0917461736</p>
+                </div>
+
+            </div> 
+        </div>
+        <div class="body" style="display: inline;">
+            <p class="content-text">Kính gửi: chị Yến Hạ</p>
+            <p class="content-text">Talent Acquisition Team Manager</p>
+            <p class="content-text">Unilever Vietnam</p>
+            <p class="content-text" style="margin-bottom: 10px;">Thành Phố Hồ Chí Minh</p>
+            <p class="content-text">Ngày 09/01/2022</p>
+            <p class="content-text">Thư ứng tuyển Sales Manager</p>
+            <p class="content-text" style="margin-bottom: 10px;">Thưa chị Yến Hạ,</p>
+            <p class="content-text" style="margin-bottom: 10px;">Thông qua sự kiện Unified Contributions tại UAX Exhibition vào tháng 08/2021 vừa rồi, tôi may mắn được có cơ hội được chú ý lắng nghe màn chia sẻ thuyết trình đầy cuốn hút của một chị Ngân Phạm - Sales Executive tại Unilever, một trong những người truyền cảm hứng rất  nhiều cho tôi trong những tháng gần đây về việc sống một cuộc sống có ý nghĩa và giá trị hơn. Với trình độ, khả năng và kinh nghiệm hiện tại của mình thì tôi cho rằng mình hoàn toàn có đủ năng lực để đảm nhận vị trí Sales Manager này và cũng như hoàn thành xuất sắc các tác vụ được giao phó.</p>
+            <p class="content-text" style="margin-bottom: 10px;">Như đã được đề cập trong hồ sơ đính kèm, tôi có các khoảng thời gian thực tập trải nghiệm và làm việc tại các tập đoàn lớn trong lĩnh vực kinh doanh như Prudential, Tiki, Shopee, Đồng Xuân Group ở các vị trí lần lượt Phó Phòng Kinh Doanh, Quản Trị Viên fanpage, Quản Lý Chuỗi Cửa Hàng. Trong suốt các khoảng thời gian thực tập và làm việc, tôi đã học tập và tích lũy được rất nhiều kiến thức và kỹ năng từ kỹ năng mềm cho đến các kỹ năng cứng và chắc chắn là tôi có thể sử dụng các phần mềm được công ty giao một cách hiệu quả. Khi đọc mô tả công việc của Unilever Vietnam, tôi đã hình dung được bến đỗ tiếp theo của mình.</p>
+            <p class="content-text">Cảm ơn chị Yến Hạ đã dành thời gian quý báu của mình để xem lá thư xin việc này. Hi vọng chị có thể sắp xếp một cuộc phỏng vấn để chúng ta có thể hiễu rõ về nhau hơn cũng như để tôi có thể biết thêm thông tin về vị trí Sales Manager tại Unilever Vietnam.</p>
+            <p class="content-text">Trân trọng,</p>
+            <p class="content-text">Hà Hoàng Minh</p>
+        </div>
+    </div>
+    <div style="width: 100%; height: 100%; position: relative; display: flex;">
+        <button (click)="name()" style="margin: 0 auto 0 40px;">Export</button>
+        <div style="position: absolute; width: 100%; height: 300px; margin: 230px 30px; display: flex;flex-direction: row;">
+            <p style="width: 257px; height: 77px; font-style: normal; font-weight: bold;   font-size: 13px;  line-height: 18px;     text-align: right; color: #000000;">
+                Các Resume của sinh viên đã được cho phép công khai lên trang Tham Khảo Resume cho các sinh viên khác <br> có thể tiếp cận!
+            </p>
+            <img src="../../assets/Image/imagestudents.png" alt="" style="width: 101px; height: 101px;" >
+        </div>
+    </div>
+</div>

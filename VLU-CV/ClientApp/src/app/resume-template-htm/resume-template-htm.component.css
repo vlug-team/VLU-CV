@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.earth{
+    transition: 1.5s;
+}
+.earth:hover{
+    transform: rotate(270deg);
+}
+
+.parent {
+    height: 150vh;
+    width: 100vw;
+    position: relative;
+}
+
+.cv {
+    position: relative;
+    margin: 0 auto;
+    width: 580px;
+    height: 849px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.body {
+    height: 240px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+button {
+    width: 90px;
+    height: 35px;
+    background: rgba(249, 230, 230, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+
+    color: #FF0000;
+
+}
+
+.body {
+    height: 610px;
+}
+
+.image {
+    width: 109px;
+    height: 134px;
+    position: relative;
+    top: 45px;
+    left: 54px;
+    overflow: hidden;
+}
+
+.profile {
+    position: relative;
+    top: 39px;
+    left: 110px;
+    height: 134px;
+    width: 353px;
+    display: inline;
+}
+
+.name,
+.job,
+.title,
+p {
+    margin-left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.job,
+.content p {
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.6);
+
+}
+
+.job,
+.title {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.content p {
+    width: 303px;
+    height: 96px;
+    top: 7px;
+    left: 13px;
+    position: relative;
+}
+
+.content {
+    background: rgba(0, 8, 201, 0.2);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    width: 325px;
+    height: 111px;
+    top: 10px;
+    position: relative;
+}
+
+
+.title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    width: 200px;
+    margin: 4px 0px;
+}
+
+.information p {
+    font-weight: normal;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.left,
+.right {
+    width: 230px;
+    height: 100%;
+    display: inline;
+}
+
+.right {
+    width: 350px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    border-right: solid 15px white;
+    padding-left: 24px;
+    padding-right: 28px;
+    padding-top: 22px;
+}
+.left{
+    padding-left: 24px;
+    padding-right: 10px;
+    padding-top: 11px;
+    background: linear-gradient(181.75deg, rgba(204, 85, 68, 0.3) 3.51%, rgba(152, 124, 57, 0.3) 34.52%, rgba(49, 200, 36, 0.06) 98.52%);
+box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.simple__information{
+    width: 200px;
+    height: 145px;
+    position: relative;
+    margin-left: -3px;
+}
+.information{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+.birthday{
+    background: url(../../assets/Image/Icon/birthday4.png);
+    width: 43px;
+    height: 24px;
+}
+.phone{
+    background: url(../../assets/Image/Icon/phone4.png);
+    width: 23px;
+    height: 21px;
+}
+.mail{
+    background: url(../../assets/Image/Icon/mail4.png);
+    width: 25px;
+    height: 23px;
+}
+.location{
+    background: url(../../assets/Image/Icon/address4.png);
+    width: 32px;
+    height: 23px;
+}
+.linkedin{
+    background: url(../../assets/Image/Icon/linkedin.png);
+    width: 23px;
+    height: 21px;
+}
+.icon{
+    position: relative;
+    margin: 0 5px;
+    background-repeat: no-repeat;
+}
+.p__content {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
