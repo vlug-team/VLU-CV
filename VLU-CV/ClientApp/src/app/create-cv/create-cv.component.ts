@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { Observable, Subscriber } from 'rxjs';
 import { CreateCvService } from 'src/shared/createcv.service';
 @Component({
@@ -8,15 +9,28 @@ import { CreateCvService } from 'src/shared/createcv.service';
 	styleUrls: ['./create-cv.component.css']
 })
 export class CreateCvComponent implements OnInit {
-	constructor(public service: CreateCvService) { }
+	[x: string]: any;
+	user: SocialUser | null;
+	constructor(public service: CreateCvService, private authService: SocialAuthService) {
+		this.user = null;
+		this.authService.authState.subscribe((user: SocialUser) => {
+			this.user = user;
+		});
+	}
 	ngOnInit(): void {
 
 	}
 	imgSrc: string;
 	isImg = false;
-	onSubmit(form: NgForm) {
+
+
+	onSubmit(form: NgForm): void {
+		this.service.formData.userId = this.user.id;
+		console.log(this.user.id);
+		console.log(this.service.formData.userId)
 		this.service.postCV().subscribe(res => {
 			alert('CV created successfully.');
+			form.reset();
 		}
 			,
 			err => {

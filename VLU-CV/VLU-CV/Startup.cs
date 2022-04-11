@@ -24,31 +24,26 @@ namespace VLU_CV
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy(
-                    name: "AllowOrigin",
-                    builder => {
-                        builder.AllowAnyOrigin()
-                                .AllowAnyMethod()
-                                .AllowAnyHeader();
-                    });
-            });
+            services.AddCors(
+                options =>
+                {
+                    options.AddPolicy(
+                        name: "AllowOrigin",
+                        builder =>
+                        {
+                            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        }
+                    );
+                }
+            );
             services.AddControllersWithViews();
             services.AddSwaggerGen();
             services.AddRazorPages();
             services.AddControllers();
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders();
-            services.AddAuthentication().AddGoogle(option =>
-            {
-                option.ClientId = Configuration["App:GoogleClientId"];
-                option.ClientSecret = Configuration["App:GoogleClientSecret"];
-            });
+            services.AddDbContext<ApplicationDbContext>(
+                options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,26 +59,28 @@ namespace VLU_CV
                 app.UseHsts();
             }
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CV V1");
-                c.RoutePrefix = string.Empty;
-            });
+            app.UseSwaggerUI(
+                c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CV V1");
+                    c.RoutePrefix = string.Empty;
+                }
+            );
             app.UseRouting();
             app.UseCors("AllowOrigin");
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
-            });
-           
+            app.UseEndpoints(
+                endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
+                    endpoints.MapRazorPages();
+                }
+            );
         }
     }
-
 }
-

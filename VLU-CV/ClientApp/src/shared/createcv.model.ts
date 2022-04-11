@@ -23,5 +23,6 @@ export class CreateCv {
 	public description_2: string;
 	public achievement: string;
 	public imageSrc: string = '';
+	public userId: string;
 
 }

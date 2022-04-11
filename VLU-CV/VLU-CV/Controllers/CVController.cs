@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 using VLU_CV.Data;
 using VLU_CV.Models;
 
-
 namespace VLU_CV.Controllers
 {
     [ApiController]
-    [Route("api/createcv")]
+    [Route("api")]
     [EnableCors("AllowOrigin")]
     public class CVController : ControllerBase
     {
@@ -23,17 +22,13 @@ namespace VLU_CV.Controllers
         {
             _context = context;
         }
-        [HttpGet]
-        public  async Task<ActionResult<List<CurriculumVitae>>> GetList()
-        {
-            return await _context.CurriculumVitaes.ToListAsync();
-        }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<CurriculumVitae>> GetCV(int id)
+        [HttpGet("getcv")]
+        public async Task<ActionResult<List<CurriculumVitae>>> GetAllCVByUserId(string userId)
         {
-            var curriculumVitae = await _context.CurriculumVitaes.FindAsync(id);
-
+            var curriculumVitae = await _context.CurriculumVitaes
+                .Where(cv => cv.UserId == userId)
+                .ToListAsync();
             if (curriculumVitae == null)
             {
                 return NotFound();
@@ -41,10 +36,11 @@ namespace VLU_CV.Controllers
 
             return curriculumVitae;
         }
-        [HttpPost]
-        public IActionResult AddCV([FromBody]CurriculumVitae curriculum)
+
+        [HttpPost("createcv")]
+        public IActionResult AddCV([FromBody] CurriculumVitae curriculum)
         {
-            if(curriculum == null)
+            if (curriculum == null)
             {
                 return BadRequest();
             }
@@ -52,12 +48,10 @@ namespace VLU_CV.Controllers
             {
                 _context.CurriculumVitaes.Add(curriculum);
                 _context.SaveChanges();
-                return Ok(new
-                {
-                    StatusCode = 200,
-                });
+                return Ok(new { StatusCode = 200, });
             }
         }
+
         [HttpPut]
         public CurriculumVitae EditCV(CurriculumVitae curriculumVitae)
         {

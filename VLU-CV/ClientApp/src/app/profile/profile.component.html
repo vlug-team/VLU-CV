@@ -1,0 +1,102 @@
+<div class="row" style="margin-top: 6em; ">
+	<div class="col" *ngFor="let cv of this.data" style="margin-bottom: 3em;">
+		<div class="background">
+			<div class="cv" id="cv">
+				<div class="header">
+					<img [src]="cv.imageSrc" alt="" class="image">
+					<div class="profile">
+						<p class="name">{{cv.fullName}}</p>
+						<p class="job">{{cv.position}}</p>
+						<div class="content">
+							<p>
+								{{cv.personalStatement}}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="body">
+					<div class="left">
+						<div class="title__component">
+							<p class="title">Thông tin liên hệ</p>
+							<div class="title__footer"></div>
+						</div>
+						<div class="simple__information">
+							<div class="information">
+								<div class="icon birthday"></div>
+								<p>{{cv.birthDay}}</p>
+							</div>
+							<div class="information">
+								<div class="icon mail"></div>
+								<p>{{cv.email}}</p>
+							</div>
+							<div class="information">
+								<div class="icon phone"></div>
+								<p>{{cv.phoneNumber}}</p>
+							</div>
+							<div class="information">
+								<div class="icon facebook"></div>
+								<p>{{cv.facebookUrl}}</p>
+							</div>
+							<div class="information">
+								<div class="icon location"></div>
+								<p>{{cv.location}}</p>
+							</div>
+						</div>
+						<div class="title__component">
+							<p class="title">Các kỹ năng</p>
+							<div class="title__footer"></div>
+						</div>
+						<div class="simple__information" style="height: 100px; width:60px ;">
+							<strong>{{cv.skill_1}}</strong>
+							<p class="p__content" style="top:-18px; position:relative;margin-left: 8px;">
+								{{cv.skillDecription_1}}</p>
+
+							<strong style="top:-32px">{{cv.skill_2}}</strong>
+							<p class="p__content" style="top:-36px; position:relative;margin-left: 8px;">
+								{{cv.skillDecription_2}}</p>
+						</div>
+						<div class="title__component" style="top:3px">
+							<p class="title">Thành tích</p>
+							<div class="title__footer"></div>
+						</div>
+						<div class="simple__information" style="top:7px; width: 65px;">
+							<p class="p__content">{{cv.achievement}}</p>
+						</div>
+					</div>
+					<div class="right">
+						<div class="title__component" style="top:5px; left: 0px;">
+							<p class="title">Trình độ học vấn</p>
+							<div class="title__footer"></div>
+						</div>
+						<div class="simple__information">
+							<strong style="left: -20px;"> {{cv.specialized}}</strong><br>
+							<strong style="left: -20px; top:-30px">{{cv.schoolName}}</strong>
+							<p class="p__content" style="left: -20px; top:-30px; position: relative;">
+								{{cv.gpa}}</p>
+						</div>
+						<div class="title__component" style="top:-3px; left: 0px; width: 100px;">
+							<p class="title">Kinh nghiệm làm việc</p>
+							<div class="title__footer"></div>
+						</div>
+						<div class="simple__information">
+							<strong style="left: -20px; top: -22px;"> {{cv.positioned_1}}</strong><br>
+							<strong style="left: -20px; top:-39px">{{cv.worked_1}}</strong>
+							<p class="p__content" style="left: -20px; top:-40px; position: relative; width: 115px;">
+								{{cv.description_1}}</p>
+							<strong style="left: -20px; top: -51px;"> {{cv.positioned_2}}</strong><br>
+							<strong style="left: -20px; top:-69px">{{cv.worked_2}}</strong>
+							<p class="p__content" style="left: -20px; top:-70px; position: relative; width: 115px;">-
+								{{cv.description_2}}</p>
+						</div>
+						<div class="title__component" style="top:75px; left: 0px; width: 100px;">
+							<p class="title">Hoạt động</p>
+							<div class="title__footer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button (click)="name()" style="margin: 0 auto 0 40px;">Export</button>
+
+	</div>
+</div>

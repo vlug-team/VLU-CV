@@ -21,6 +21,8 @@ import { ResumeTemplateHTMComponent } from "./resume-template-htm/resume-templat
 import { CreateCvComponent } from './create-cv/create-cv.component';
 import { CreateCvService } from "src/shared/createcv.service";
 import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
+import { AuthGuardService } from "src/shared/auth-guard.service";
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -36,6 +38,7 @@ import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 		ResumeTemplateTNNComponent,
 		ResumeTemplateHTMComponent,
 		CreateCvComponent,
+		ProfileComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -45,7 +48,8 @@ import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 			{ path: "", component: HomeComponent, pathMatch: "full" },
 			{ path: "about", component: AboutComponent },
 			{ path: "resume", component: ResumeComponent },
-			{ path: "createcv", component: CreateCvComponent },
+			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
+			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },
 			{ path: "resume-template-lcp", component: ResumeTemplateLCPComponent },
 			{ path: "resume-template-hhm", component: ResumeTemplateHHMComponent },
