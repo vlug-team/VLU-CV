@@ -10,7 +10,7 @@ using VLU_CV.Data;
 namespace VLU_CV.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220410225817_vlu")]
+    [Migration("20220411113824_vlu")]
     partial class vlu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

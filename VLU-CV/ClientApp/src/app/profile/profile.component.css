@@ -72,7 +72,7 @@ text-align: center;
   height: 240px;
 }
 .image{
-  width: 43px;
+ width: 43px;
   height: 53px;
   position: relative;
   top: 20px;
@@ -155,36 +155,7 @@ line-height: 4px;
   position: relative;
   margin: 0 2px;
 }
-.birthday{
-  background: url(../../assets/Image/Icon/birthday.png);
-}
-.phone{
-  background: url(../../assets/Image/Icon/phone.png);
-}
-.mail{
-  background: url(../../assets/Image/Icon/mail.png);
-}
-.location{
-  background: url(../../assets/Image/Icon/location.png);
-}
-.facebook{
-  background: url(../../assets/Image/Icon/facebook.png);
-}
-.mail2{
-  background: url(../../assets/Image/Icon/envelop2.png);
-}
-.phone2{
-  background: url(../../assets/Image/Icon/phone2.png);
-}
-.birthday2{
-  background: url(../../assets/Image/Icon/party2.png);
-}
-.location2{
-  background: url(../../assets/Image/Icon/location2.png);
-}
-.facebook2{
-  background: url(../../assets/Image/Icon/facebook2.png);
-}
+
 strong{
 font-size: 4px;
 line-height: 5px;

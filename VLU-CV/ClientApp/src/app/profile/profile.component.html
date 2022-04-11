@@ -1,11 +1,9 @@
 <div class="row" style="margin-top: 6em; ">
-	<div class="col" *ngFor="cv of this.data" style="margin-bottom: 3em;">
+	<div class="col" *ngFor="let cv of this.data" style="margin-bottom: 3em;">
 		<div class="background">
-			<div class="cv">
+			<div class="cv" id="cv">
 				<div class="header">
-					<div class="image">
-						<img [src]="cv.imageSrc" alt="">
-					</div>
+					<img [src]="cv.imageSrc" alt="" class="image">
 					<div class="profile">
 						<p class="name">{{cv.fullName}}</p>
 						<p class="job">{{cv.position}}</p>
@@ -49,11 +47,11 @@
 							<div class="title__footer"></div>
 						</div>
 						<div class="simple__information" style="height: 100px; width:60px ;">
-							<strong>💥{{cv.skill_1}}</strong>
+							<strong>{{cv.skill_1}}</strong>
 							<p class="p__content" style="top:-18px; position:relative;margin-left: 8px;">
 								{{cv.skillDecription_1}}</p>
 
-							<strong style="top:-32px">💥 {{cv.skill_2}}</strong>
+							<strong style="top:-32px">{{cv.skill_2}}</strong>
 							<p class="p__content" style="top:-36px; position:relative;margin-left: 8px;">
 								{{cv.skillDecription_2}}</p>
 						</div>
@@ -71,7 +69,7 @@
 							<div class="title__footer"></div>
 						</div>
 						<div class="simple__information">
-							<strong style="left: -20px;">💥 {{cv.specialized}}</strong><br>
+							<strong style="left: -20px;"> {{cv.specialized}}</strong><br>
 							<strong style="left: -20px; top:-30px">{{cv.schoolName}}</strong>
 							<p class="p__content" style="left: -20px; top:-30px; position: relative;">
 								{{cv.gpa}}</p>
@@ -81,11 +79,11 @@
 							<div class="title__footer"></div>
 						</div>
 						<div class="simple__information">
-							<strong style="left: -20px; top: -22px;">💥 {{cv.positioned_1}}</strong><br>
+							<strong style="left: -20px; top: -22px;"> {{cv.positioned_1}}</strong><br>
 							<strong style="left: -20px; top:-39px">{{cv.worked_1}}</strong>
 							<p class="p__content" style="left: -20px; top:-40px; position: relative; width: 115px;">
 								{{cv.description_1}}</p>
-							<strong style="left: -20px; top: -51px;">💥 {{cv.positioned_2}}</strong><br>
+							<strong style="left: -20px; top: -51px;"> {{cv.positioned_2}}</strong><br>
 							<strong style="left: -20px; top:-69px">{{cv.worked_2}}</strong>
 							<p class="p__content" style="left: -20px; top:-70px; position: relative; width: 115px;">-
 								{{cv.description_2}}</p>
@@ -98,5 +96,7 @@
 				</div>
 			</div>
 		</div>
+		<button (click)="name()" style="margin: 0 auto 0 40px;">Export</button>
+
 	</div>
 </div>
