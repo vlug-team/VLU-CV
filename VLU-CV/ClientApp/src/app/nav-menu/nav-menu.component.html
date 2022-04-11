@@ -27,7 +27,7 @@
 						<div class="drop-down resume_width">
 							<a [routerLink]="['/resume']" style="margin: 1px 15px;">Tạo Resume</a>
 							<a [routerLink]="['/resume-template']" style="margin: 1px 15px;">Cộng đồng Resume</a>
-							<a href="#" style="margin: 1px 15px;">Resume của tôi</a>
+							<a *ngIf="user" [routerLink]="['profile']" style="margin: 1px 15px;">Resume của tôi</a>
 						</div>
 					</li>
 					<li class="nav-item link" [routerLinkActive]="['link-active']"
@@ -46,7 +46,7 @@
 						</button>
 					</li>
 					<li class="nav-item link" *ngIf="user" style="position: relative;top: 8px;">
-						<span class="user-text">
+						<span class="user-text" [routerLink]="['profile']">
 							{{ user.firstName }}
 						</span>
 						<svg (click)="signOut()" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

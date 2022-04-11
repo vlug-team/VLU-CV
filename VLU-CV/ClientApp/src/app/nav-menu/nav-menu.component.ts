@@ -8,6 +8,7 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 	styleUrls: ["./nav-menu.component.css"],
 })
 export class NavMenuComponent {
+	[x: string]: any;
 	isExpanded = false;
 	collapse() {
 		this.isExpanded = false;
@@ -17,20 +18,23 @@ export class NavMenuComponent {
 		this.isExpanded = !this.isExpanded;
 	}
 	user: SocialUser | null;
-
 	constructor(private authService: SocialAuthService) {
 		this.user = null;
 		this.authService.authState.subscribe((user: SocialUser) => {
-			console.log(user);
 			this.user = user;
 		});
 	}
 
 	signInWithGoogle(): void {
-		this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((x: any) => console.log(x));
+		this.authService.signIn(GoogleLoginProvider.PROVIDER_ID, this.googleLoginOptions).then((data) => {
+			console.log(data);
+		}).catch(data => {
+			this.authService.signOut();
+			this.router.navigate(['/']);
+		});
 	}
-
 	signOut(): void {
 		this.authService.signOut();
+		alert("You have been logged out");
 	}
 }
