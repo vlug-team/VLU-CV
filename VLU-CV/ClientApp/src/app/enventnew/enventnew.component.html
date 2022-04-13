@@ -1,11 +1,108 @@
 <div class="header-backgroud">
 	<h1 class="header-tilte">TRANG CHỦ - TIN TỨC SỰ KIỆN</h1>
 </div>
-<div class="row d-flex">
-	<div class="col-2">
-		<div>
+<div class="row d-flex" style="background-color:#F5E2E2 ;">
+	<div class="col-2" style="margin-top: 8em;margin-left: 5em;">
+		<div class="cv-template">
+			<img src="../../assets/Listpage/cv-template.png">
+			<button [routerLink]="['resume-template']" class="btn-more-resume" style="border: 0;">XEM HỒ SƠ</button>
 		</div>
 	</div>
-	<div class="col-10">
+	<div class="col" style="margin-top: 5em;">
+		<div class="row d-flex justify-content-center">
+			<div class="col-5" *ngFor="let c of this.dataFake; let i as index">
+				<div class="card" style="width: 295px; height: 430px;margin-bottom: 3em;overflow: hidden;">
+					<img [src]="c.image" width="100%" />
+					<div class="card-body">
+						<h7 class="card-title">{{c.title}}</h7>
+						<br />
+						<div class="d-flex" style="margin-top: 3px;">
+							<img src="../../assets/Listpage/calendar.png" width="18px" style="margin-left: 3px;" />
+							<p class="card-text">{{c.date}}</p>
+						</div>
+						<p class="card-text">{{c.content}}</p>
+						<img src="../../assets/Listpage/Message.png" width="100px" style="float: right;">
+						<a href="#" class="more card-link">Xem Thêm</a>
+					</div>
+				</div>
+			</div>
+			<!-- <div>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" (click)="previous()">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item">
+						<a class="page-link" (click)="next()">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</div> -->
+		</div>
 	</div>
 </div>
+<div class="d-flex footer-content">
+	<div style="position: relative;height:832px; width:100%; background:
+		linear-gradient(180deg, #70DA6E 0%, rgba(212, 245, 6, 0.2) 100%);">
+		<h2 class="_center_" style="overflow: visible; position: relative; top:120px"><strong
+				style="overflow: visible;">
+				Cơ Hội Du Học Cho Sinh Viên Văn Lang
+			</strong></h2>
+		<div style="position: relative; display: flex; flex-direction: row; width:
+			100%; height: 450px; top:160px;">
+			<div style="position: relative; width: 33.3%;background-color: #0000;">
+				<div class="_center_" style="position: relative; background: #FFF; border-radius: 20px; height:
+					100%; width: 80%;">
+					<img src="../../assets/Image/hn.png" alt="" style="max-width:90%; max-height:195px; margin-top: 25px;
+						border-radius: 20px;">
+					<p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+					<strong class="_text_max_height" style="position: absolute; top:255px;">
+						Đại học Văn Lang và Liverpool John Moores liên kết đào tạo ngành cử nhân
+					</strong>
+					<div style="position: absolute;top:325px;">
+						<a href="">
+							<button class="more-button">Xem Thêm</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div style="position: relative; width: 33.4%;background-color: #0000;">
+				<div class="_center_" style="position: relative; background: #FFF; border-radius: 20px; height:
+					100%; width: 80%;">
+					<img src="../../assets/Image/lt.png" alt="" style="max-width:90%; max-height:195px; margin-top: 25px; border-radius:
+						20px;">
+					<p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+					<strong class="_text_max_height" style="position: absolute; top:255px;">
+						Chương trình Hợp Nhất Cử nhân - Thạc sĩ Viện Công nghệ Châu Á (AIT) cho...
+					</strong>
+					<div style="position: absolute;top:325px;">
+						<a href="">
+							<button class="more-button">Xem Thêm</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div style="position: relative; width: 33.3%;background-color: #0000;">
+				<div class="_center_" style="position: relative; background: #FFF; border-radius: 20px; height:
+					100%; width: 80%;">
+					<img src="../../assets/Image/cn.png" alt="" style="max-width:90%; max-height:195px; margin-top: 25px;
+						border-radius: 20px;">
+					<p style="position: absolute; top: 230px; left: 20px; font-size: 12px;">22-02-2021</p>
+					<strong class="_text_max_height" style="position: absolute; top:255px;">
+						Chương trình liên kết 2+2 với Đại học Victoria (Úc) ngành QUẢN TRỊ KINH...
+					</strong>
+					<div style="position: absolute;top:325px;">
+						<a href="">
+							<button class="more-button">Xem Thêm</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-footer></app-footer>
