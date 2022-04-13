@@ -1,0 +1,12 @@
+.header-backgroud {
+	width: 100%;
+	height: 85vh;
+	background-image: url("../../assets/Listpage/Rectangle91.png");
+}
+
+.header-tilte {
+	color: #fff;
+	position: relative;
+	top: 4em;
+	left: 10em;
+}

@@ -23,6 +23,7 @@ import { CreateCvService } from "src/shared/createcv.service";
 import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { AuthGuardService } from "src/shared/auth-guard.service";
 import { ProfileComponent } from './profile/profile.component';
+import { EnventnewComponent } from './enventnew/enventnew.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -39,6 +40,7 @@ import { ProfileComponent } from './profile/profile.component';
 		ResumeTemplateHTMComponent,
 		CreateCvComponent,
 		ProfileComponent,
+		EnventnewComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -48,6 +50,7 @@ import { ProfileComponent } from './profile/profile.component';
 			{ path: "", component: HomeComponent, pathMatch: "full" },
 			{ path: "about", component: AboutComponent },
 			{ path: "resume", component: ResumeComponent },
+			{ path: "enventnew", component: EnventnewComponent },
 			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
 			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },
