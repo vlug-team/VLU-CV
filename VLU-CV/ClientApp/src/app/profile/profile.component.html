@@ -1,5 +1,5 @@
-<div class="row" style="margin-top: 6em; ">
-	<div class="col" *ngFor="let cv of this.data" style="margin-bottom: 3em;">
+<div class="row" style="margin-top: 6em;">
+	<div class="col-4" *ngFor="let cv of this.data" style="margin-bottom: 6em;">
 		<div class="background">
 			<div class="cv" id="cv">
 				<div class="header">
@@ -96,7 +96,9 @@
 				</div>
 			</div>
 		</div>
-		<button (click)="name()" style="margin: 0 auto 0 40px;">Export</button>
+		<div (click)="download()" style="left: 9em;  position: absolute;">
+			<button class="btn-more-resume">Export</button>
+		</div>
 
 	</div>
 </div>
