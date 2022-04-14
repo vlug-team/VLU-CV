@@ -1,43 +1,15 @@
-.header-backgroud {
-	width: 100%;
-	height: 47vh;
-	background: url("../../assets/Listpage/Rectangle91.png") no-repeat;
+* {
+	background-color: #F5E2E2;
+	padding: 0;
+	margin: 0;
 }
 
-._center_ {
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	background-color: #0000;
+.cv-template {
+	width: 300px;
 }
 
-.footer-content h2, p, strong, b {
-	background-color: #0000;
-}
-
-.card-title {
-	font-weight: 700;
-	font-size: 14px;
-}
-
-
-.card-text {
-	font-size: 14px;
-}
-
-.more {
-	color: #158C8C;
-}
-
-._text_max_height {
-	width: 85%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	line-height: 25px;
-	-webkit-line-clamp: 2;
-	height: 50px;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
+.cv-template img {
+	height: 250px;
 }
 
 .btn-more-resume {
@@ -60,6 +32,38 @@
 	margin-top: 2em;
 }
 
+._center_ {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	background-color: #0000;
+}
+
+.header {
+	width: 100%;
+	height: 500px;
+	margin-top: 3em;
+}
+
+.footer-content h2, p, strong, b {
+	background-color: #0000;
+}
+
+.strong_text {
+	font-weight: bold;
+}
+
+._text_max_height {
+	width: 85%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 25px;
+	-webkit-line-clamp: 2;
+	height: 50px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
 .more-button {
 	background-color: #c70000;
 	width: 223px;
@@ -76,14 +80,4 @@
 	position: relative;
 	top: 4em;
 	left: 10em;
-}
-
-
-
-.cv-template {
-	width: 300px;
-}
-
-.cv-template img {
-	height: 250px;
 }

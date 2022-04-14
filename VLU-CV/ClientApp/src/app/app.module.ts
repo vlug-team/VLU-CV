@@ -24,6 +24,7 @@ import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 import { AuthGuardService } from "src/shared/auth-guard.service";
 import { ProfileComponent } from './profile/profile.component';
 import { EnventnewComponent } from './enventnew/enventnew.component';
+import { InforeventComponent } from './inforevent/inforevent.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -41,6 +42,7 @@ import { EnventnewComponent } from './enventnew/enventnew.component';
 		CreateCvComponent,
 		ProfileComponent,
 		EnventnewComponent,
+		InforeventComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -51,6 +53,7 @@ import { EnventnewComponent } from './enventnew/enventnew.component';
 			{ path: "about", component: AboutComponent },
 			{ path: "resume", component: ResumeComponent },
 			{ path: "enventnew", component: EnventnewComponent },
+			{ path: "enventnew/inforevent", component: InforeventComponent },
 			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
 			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },

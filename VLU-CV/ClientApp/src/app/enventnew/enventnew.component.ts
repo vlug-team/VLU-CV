@@ -14,7 +14,8 @@ export class EnventnewComponent implements OnInit {
 			image: '../../../assets/Listpage/firter.png',
 			title: 'Thông tin cuộc thi chinh phục CV, có ngay công việc - Career Catching',
 			date: '12/12/2019',
-			content: "Cách để CV của bạn được chuyên viên sửa chữa và được nhà tuyển dụng trực tiếp xem ..."
+			content: "Cách để CV của bạn được chuyên viên sửa chữa và được nhà tuyển dụng trực tiếp xem ...",
+			link: "/enventnew/inforevent"
 		},
 		{
 			id: 2,
