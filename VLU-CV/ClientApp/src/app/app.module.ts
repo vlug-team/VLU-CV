@@ -25,6 +25,7 @@ import { AuthGuardService } from "src/shared/auth-guard.service";
 import { ProfileComponent } from './profile/profile.component';
 import { EnventnewComponent } from './enventnew/enventnew.component';
 import { InforeventComponent } from './inforevent/inforevent.component';
+import { Inforevent2Component } from './inforevent2/inforevent2.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -43,6 +44,7 @@ import { InforeventComponent } from './inforevent/inforevent.component';
 		ProfileComponent,
 		EnventnewComponent,
 		InforeventComponent,
+		Inforevent2Component,
 	],
 	imports: [
 		BrowserModule,
@@ -54,6 +56,7 @@ import { InforeventComponent } from './inforevent/inforevent.component';
 			{ path: "resume", component: ResumeComponent },
 			{ path: "enventnew", component: EnventnewComponent },
 			{ path: "enventnew/inforevent", component: InforeventComponent },
+			{ path: "enventnew/inforevent2", component: Inforevent2Component },
 			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
 			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },

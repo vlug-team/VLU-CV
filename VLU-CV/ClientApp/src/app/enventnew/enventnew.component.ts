@@ -22,7 +22,8 @@ export class EnventnewComponent implements OnInit {
 			image: '../../../assets/Listpage/resume-event.jpg',
 			title: 'Các yếu tố giúp Resume của bạn trở nên ấn tượng hơn trong mắt nhà tuyển dụng',
 			date: '12/12/2019',
-			content: "Bật mí bí quyết trình bày CV gây ấn tượng với nhà tuyển dụng ..."
+			content: "Bật mí bí quyết trình bày CV gây ấn tượng với nhà tuyển dụng ...",
+			link: "/enventnew/inforevent2"
 		},
 		{
 			id: 3,

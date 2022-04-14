@@ -1,0 +1,83 @@
+* {
+	background-color: #F5E2E2;
+}
+
+.header-background img {
+	width: 100%;
+	height: 100%;
+}
+
+
+.cv-template {
+	width: 300px;
+}
+
+.cv-template img {
+	height: 250px;
+}
+
+br {
+	margin-bottom: 1em;
+}
+
+.btn-more-resume {
+	width: 128px;
+	height: 48.52px;
+	background: linear-gradient(180deg, #C70000 0%, #503A8E 100%);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	color: white;
+	border-radius: 4px;
+	border: 0px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	margin-left: 1.5em;
+	margin-top: 2em;
+}
+
+._center_ {
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	background-color: #0000;
+}
+
+.header {
+	width: 100%;
+	height: 500px;
+	margin-top: 3em;
+}
+
+.footer-content h2, p, strong, b {
+	background-color: #0000;
+}
+
+.strong_text {
+	font-weight: bold;
+}
+
+._text_max_height {
+	width: 85%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 25px;
+	-webkit-line-clamp: 2;
+	height: 50px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.more-button {
+	background-color: #c70000;
+	width: 223px;
+	height: 72px;
+	border-radius: 5px;
+	border: 0px;
+	color: white;
+	font-weight: bold;
+}
