@@ -26,6 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EnventnewComponent } from './enventnew/enventnew.component';
 import { InforeventComponent } from './inforevent/inforevent.component';
 import { Inforevent2Component } from './inforevent2/inforevent2.component';
+import { ContactComponent } from './contact/contact.component';
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -45,18 +47,22 @@ import { Inforevent2Component } from './inforevent2/inforevent2.component';
 		EnventnewComponent,
 		InforeventComponent,
 		Inforevent2Component,
+		ContactComponent,
 	],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
+		NgxPaginationModule,
 		FormsModule,
 		RouterModule.forRoot([
 			{ path: "", component: HomeComponent, pathMatch: "full" },
 			{ path: "about", component: AboutComponent },
 			{ path: "resume", component: ResumeComponent },
 			{ path: "enventnew", component: EnventnewComponent },
+			{ path: "contact", component: ContactComponent },
 			{ path: "enventnew/inforevent", component: InforeventComponent },
 			{ path: "enventnew/inforevent2", component: Inforevent2Component },
+
 			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
 			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },

@@ -2,6 +2,7 @@
 	width: 100%;
 	height: 47vh;
 	background: url("../../assets/Listpage/Rectangle91.png") no-repeat;
+	background-size: cover;
 }
 
 ._center_ {
@@ -75,7 +76,7 @@
 	background-color: #0000 !important;
 	position: relative;
 	top: 4em;
-	left: 10em;
+	text-align: center;
 }
 
 
@@ -86,4 +87,8 @@
 
 .cv-template img {
 	height: 250px;
+}
+
+.pagination {
+	justify-content: space-around;
 }

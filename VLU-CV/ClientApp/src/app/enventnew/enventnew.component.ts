@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./enventnew.component.css']
 })
 export class EnventnewComponent implements OnInit {
-	index: number = 0;
-	visible = true;
-	dataFake = [
+	totalLegth: number = 0;
+	page: number = 1;
+	collection = [
 		{
 			id: 1,
 			image: '../../../assets/Listpage/firter.png',
@@ -68,8 +68,9 @@ export class EnventnewComponent implements OnInit {
 			content: "Bật mí bí quyết trình bày CV gây ấn tượng với nhà tuyển dụng ..."
 		}
 	];
-	// var get element by id
+
 	ngOnInit(): void {
 	}
+
 }
 
