@@ -1,6 +1,6 @@
 export class Mail {
-	public name: string = '';
-	public email: string = '';
-	public numberPhone: string = '';
-	public text: string = '';
+	public name: string
+	public mail: string
+	public numberPhone: string
+	public text: string
 }
