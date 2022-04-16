@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{5106078A-9558-4DCE-8F2A-9ED12FFB7169}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/Controllers/CVController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="VLU-CV/Models/CurriculumVitae.cs">
     <Files>
-      <File FileName="VLU-CV/Startup.cs" Line="42" Column="1" />
+      <File FileName="VLU-CV/Startup.cs" Line="43" Column="1" />
       <File FileName="VLU-CV/Program.cs" Line="16" Column="1" />
       <File FileName="VLU-CV/Controllers/CVController.cs" Line="15" Column="1" />
       <File FileName="VLU-CV/appsettings.json" Line="4" Column="83" />
@@ -10,7 +15,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="VLU-CV" expanded="True">
+          <Node name="VLU-CV" expanded="True" selected="True">
             <Node name="VLU-CV" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
@@ -24,11 +29,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.VLU-CV PreferredExecutionTarget="/Applications/CocCoc.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
