@@ -1,52 +1,52 @@
 <div class="d-flex flex-row parent justify-content-center" style="margin-top: 5em;">
 	<div id="cv" class="cv">
 		<div style="height: 220px; width: 580px; position: relative; border:15px solid #843D3D; border-bottom: 0;">
-			<img [src]="this.cvdata.imageSrc" alt=""
+			<img [src]="cvdata.imageSrc" alt=""
 				style="position: absolute; left:31px; top:27px;width: 150px;max-height: 200px;">
 			<p style="position: absolute; width: 300px; height: 11px; left: 232px; top: 51px;
                       font-style: normal; font-weight: bold; font-size:22px; line-height: 30px;">
-				{{this.cvdata.fullName}}
+				{{cvdata.fullName}}
 			</p>
 			<p style="position: absolute; width: 300px; height: 10px; left: 232px; top: 125px; font-style: normal;
                       font-weight: bold; font-size: 22px; line-height: 30px; color: rgba(0, 0, 0, 0.6);">
-				{{this.cvdata.position}}
+				{{cvdata.position}}
 			</p>
 		</div>
 		<div class="body">
-			<div class="left">
+			<div class="left" style="margin-top: 1em;">
 				<strong class="title">Giới thiệu</strong>
 				<p class="p__content" style="margin: 5px 0px;">
-					{{this.cvdata.personalStatement}}
+					{{cvdata.personalStatement}}
 				</p>
 				<strong class="title">Trình độ học vấn</strong>
 				<p class="p__content" style="margin-top: 5px;">
-					{{this.cvdata.specialized}}
+					{{cvdata.specialized}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.schoolName}}
+					{{cvdata.schoolName}}
 				</p>
 
 				<p class="p__content" style="margin-bottom: 5px;">
-					{{this.cvdata.gpa}}
+					{{cvdata.gpa}}
 				</p>
 				<strong class="title">Kinh nghiệm làm việc</strong>
 				<p class="p__content" style="margin-top: 5px;">
-					{{this.cvdata.positioned_1}}
+					{{cvdata.positioned_1}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.worked_1}}
+					{{cvdata.worked_1}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.positioned_1}}
+					{{cvdata.positioned_1}}
 				</p>
 				<p class="p__content" style="margin-top: 5px;">
-					{{this.cvdata.positioned_2}}
+					{{cvdata.positioned_2}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.worked_2}}
+					{{cvdata.worked_2}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.positioned_2}}
+					{{cvdata.positioned_2}}
 				</p>
 
 			</div>
@@ -55,37 +55,41 @@
 				<div class="simple__information">
 					<div class="information">
 						<div class="icon mail"></div>
-						<p style="margin-top:1px">{{this.cvdata.email}}</p>
+						<p style="margin-top:1px">{{cvdata.email}}</p>
 					</div>
 					<div class="information">
 						<div class="icon phone"></div>
-						<p style="margin-top:1px">{{this.cvdata.phoneNumber}}</p>
+						<p style="margin-top:1px">{{cvdata.phoneNumber}}</p>
 					</div>
 					<div class="information">
 						<div class="icon birthday"></div>
-						<p style="margin-top:1px">{{this.cvdata.birthDay.getUTCDay()}}</p>
+						<p style="margin-top:1px">{{cvdata.birthDay}}</p>
 					</div>
 					<div class="information">
 						<div class="icon location" style="width: 26px;"></div>
-						<p style="margin-top:1px">{{this.cvdata.address}}</p>
+						<p style="margin-top:1px">{{cvdata.address}}</p>
 					</div>
 					<div class="information">
 						<div class="icon facebook" style="margin-left: 3px;"></div>
-						<p style="margin-top:1px">{{this.cvdata.facebookUrl}}</p>
+						<p style="margin-top:1px">{{cvdata.facebookUrl}}</p>
 					</div>
 				</div>
 				<strong class="title">Các kỹ năng</strong>
 				<p class="p__content">
-					{{this.cvdata.skill_1}}
+					{{cvdata.skill_1}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.skillDecription_1}}
+					{{cvdata.skillDecription_1}}
 				</p>
 				<p class="p__content">
-					{{this.cvdata.skill_2}}
+					{{cvdata.skill_2}}
 				</p>
 				<p class="p__content" style="margin-bottom: 5px;">
-					{{this.cvdata.skillDecription_2}}
+					{{cvdata.skillDecription_2}}
+				</p>
+				<strong class="title">Thành tích</strong>
+				<p class="p__content">
+					{{cvdata.achievement}}
 				</p>
 			</div>
 		</div>
