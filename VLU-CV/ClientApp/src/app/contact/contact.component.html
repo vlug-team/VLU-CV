@@ -50,14 +50,14 @@
 		<div class="card shadow bg-body rounded" style="background-color: #D5C0C0; margin-right: 3em;">
 			<div class="card-body">
 				<h3><strong>Liên hệ chúng tôi</strong></h3>
-				<form method="post" #form="ngForm" (ngSubmit)="onSubmit(form)">
-					<input name="name" [ngModel]="model.contact.name" class="form-control mt-3" type="text"
+				<form #form="ngForm" (ngSubmit)="onSubmit()">
+					<input name="name" [(ngModel)]="this.model.contact.name" class="form-control mt-3" type="text"
 						placeholder="Tên của bạn">
-					<input name="numberPhone" [ngModel]="model.contact.numberPhone" class="form-control mt-3"
+					<input name="numberPhone" [(ngModel)]="this.model.contact.numberPhone" class="form-control mt-3"
 						type="text" placeholder="Số điện thoại liên lạc">
-					<input name="email" [ngModel]="model.contact.email" class="form-control mt-3" type="email"
+					<input name="mail" [(ngModel)]="this.model.contact.mail" class="form-control mt-3" type="email"
 						placeholder="Địa chỉ email">
-					<textarea name="note" [ngModel]="model.contact.text" class="form-control mt-3"
+					<textarea name="text" [(ngModel)]="this.model.contact.text" class="form-control mt-3"
 						placeholder="Lời nhắn"></textarea>
 					<button class="btn btn-primary mt-3"
 						style="width: 100%;font-weight: bold;background: rgba(199, 0, 0, 0.9); border: 1px; height: 3em;"

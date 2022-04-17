@@ -26,8 +26,6 @@ export class CreateCvComponent implements OnInit {
 
 	onSubmit(form: NgForm): void {
 		this.service.formData.userId = this.user.id;
-		console.log(this.user.id);
-		console.log(this.service.formData.userId)
 		this.service.postCV().subscribe(res => {
 			alert('CV created successfully.');
 			form.reset();

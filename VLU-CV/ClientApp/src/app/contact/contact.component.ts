@@ -13,10 +13,9 @@ export class ContactComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
-	onSubmit(form: NgForm) {
+	onSubmit() {
 		this.model.sendMail().subscribe(res => {
 			alert('We will contact soon.');
-			form.reset();
 		}
 			,
 			err => {
