@@ -18,12 +18,16 @@ export class CreateCvService {
 	readonly _baseUrl = 'http://localhost:5000/api';
 	formData: CreateCv = new CreateCv();
 	list: CreateCv[];
+	data: CreateCv;
 
 	postCV() {
 		return this.http.post(this._baseUrl + "/createcv", this.formData);
 	}
 	getCV(): Observable<CreateCv[]> {
 		return this.http.get<CreateCv[]>(this._baseUrl + '/getcv?userId=' + this.user.id);
+	}
+	getCVById(id: number): Observable<CreateCv> {
+		return this.http.get<CreateCv>(this._baseUrl + '/getcv' + id);
 	}
 	refreshCVList() {
 		this.http.get(this._baseUrl)

@@ -36,6 +36,16 @@ namespace VLU_CV.Controllers
 
             return curriculumVitae;
         }
+        [HttpGet("getcv{id}")]
+        public async Task<ActionResult<CurriculumVitae>> GetCvById(int id)
+        {
+            var cv = await _context.CurriculumVitaes.Where(c => c.Id == id).FirstAsync();
+            if (cv == null)
+            {
+                return NotFound();
+            }
+            return cv;
+        }
 
         [HttpPost("createcv")]
         public IActionResult AddCV([FromBody] CurriculumVitae curriculum)

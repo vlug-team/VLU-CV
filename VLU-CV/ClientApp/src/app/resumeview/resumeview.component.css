@@ -1,0 +1,203 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: visible;
+}
+
+
+
+.parent {
+	height: 150vh;
+	width: 100vw;
+}
+
+.cv {
+	margin: 0 auto;
+	width: 580px;
+	height: 849px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.body {
+	height: 240px;
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+
+button {
+	width: 90px;
+	height: 35px;
+	background: rgba(249, 230, 230, 0.8);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	border: 0;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;
+
+	color: #FF0000;
+
+}
+
+.body {
+	height: 610px;
+}
+
+.image {
+	width: 109px;
+	height: 134px;
+	position: relative;
+	top: 45px;
+	left: 54px;
+	overflow: hidden;
+}
+
+.profile {
+	position: relative;
+	top: 39px;
+	left: 110px;
+	height: 134px;
+	width: 353px;
+	display: inline;
+}
+
+.name,
+.job,
+.title,
+p {
+	margin-left: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 27px;
+}
+
+.job,
+.content p {
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.6);
+
+}
+
+.job,
+.title {
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+p {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.content p {
+	width: 303px;
+	height: 96px;
+	top: 7px;
+	left: 13px;
+	position: relative;
+}
+
+.content {
+	background: rgba(0, 8, 201, 0.2);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+	width: 325px;
+	height: 111px;
+	top: 10px;
+	position: relative;
+}
+
+
+.title {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 700;
+	width: 200px;
+	margin: 4px 0px;
+}
+
+.information p {
+	font-weight: normal;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.left,
+.right {
+	width: 326px;
+	height: 100%;
+	display: inline;
+}
+
+.right {
+	width: 254px;
+	background: rgba(117, 166, 37, 0.3);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+	border-right: solid 15px white;
+	padding-left: 24px;
+	padding-right: 28px;
+	padding-top: 22px;
+}
+
+.left {
+	padding-left: 46px;
+	padding-right: 29px;
+}
+
+.simple__information {
+	width: 200px;
+	height: 165px;
+	position: relative;
+}
+
+.information {
+	display: flex;
+	flex-direction: row;
+	margin: 5px 0px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.birthday {
+	background: url(../../assets/Image/Icon/birthday3.png);
+}
+
+.phone {
+	background: url(../../assets/Image/Icon/phone3.png);
+}
+
+.mail {
+	background: url(../../assets/Image/Icon/email3.png);
+}
+
+.location {
+	background: url(../../assets/Image/Icon/location3.png);
+}
+
+.facebook {
+	background: url(../../assets/Image/Icon/facebook3.png);
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	margin: 0 5px;
+	background-repeat: no-repeat;
+}
+
+.p__content {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+}
