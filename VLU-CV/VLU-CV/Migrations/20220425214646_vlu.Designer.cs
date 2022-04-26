@@ -10,7 +10,7 @@ using VLU_CV.Data;
 namespace VLU_CV.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220411113824_vlu")]
+    [Migration("20220425214646_vlu")]
     partial class vlu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,9 @@ namespace VLU_CV.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("BirthDay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description_1")

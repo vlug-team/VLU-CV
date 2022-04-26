@@ -29,6 +29,8 @@ import { Inforevent2Component } from './inforevent2/inforevent2.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgxPaginationModule } from "ngx-pagination";
 import { ResumeviewComponent } from './resumeview/resumeview.component';
+import { EditcvComponent } from './editcv/editcv.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -50,6 +52,8 @@ import { ResumeviewComponent } from './resumeview/resumeview.component';
 		Inforevent2Component,
 		ContactComponent,
 		ResumeviewComponent,
+		EditcvComponent,
+		DashboardComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -65,16 +69,16 @@ import { ResumeviewComponent } from './resumeview/resumeview.component';
 			{ path: "enventnew/inforevent", component: InforeventComponent },
 			{ path: "enventnew/inforevent2", component: Inforevent2Component },
 			{ path: "createcv", component: CreateCvComponent, canActivate: [AuthGuardService] },
-			{
-				path: "profile", component: ProfileComponent, canActivate: [AuthGuardService],
-			},
+			{ path: "profile", component: ProfileComponent, canActivate: [AuthGuardService] },
 			{ path: "profile/resumeview/:id", component: ResumeviewComponent, canActivate: [AuthGuardService] },
+			{ path: "profile/edit/:id", component: EditcvComponent, canActivate: [AuthGuardService] },
 			{ path: "resume-template", component: ResumeTemplateComponent },
 			{ path: "resume-template-lcp", component: ResumeTemplateLCPComponent },
 			{ path: "resume-template-hhm", component: ResumeTemplateHHMComponent },
 			{ path: "resume-template-hlh", component: ResumeTemplateHLHComponent },
 			{ path: "resume-template-tnn", component: ResumeTemplateTNNComponent },
 			{ path: "resume-template-htm", component: ResumeTemplateHTMComponent },
+			{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuardService] },
 		]),
 		NgbModule,
 	],

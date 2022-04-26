@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreateCv } from 'src/shared/createcv.model';
 import { CreateCvService } from 'src/shared/createcv.service';
 import * as jspdf from 'jspdf';
@@ -12,7 +12,7 @@ import html2canvas from 'html2canvas';
 })
 export class ResumeviewComponent implements OnInit {
 
-	constructor(public service: CreateCvService, public router: ActivatedRoute) { }
+	constructor(public service: CreateCvService, public router: ActivatedRoute, public routers: Router) { }
 	cvdata: CreateCv;
 	ngOnInit(): void {
 		this.router.params.subscribe(params => {
@@ -39,5 +39,14 @@ export class ResumeviewComponent implements OnInit {
 			pdf.save(this.cvdata.fullName + '.pdf');
 		});
 	}
+	deletecv() {
+		this.service.deleteCV(this.cvdata.id).subscribe(res => {
+			alert('CV deleted successfully.');
+			this.routers.navigate(['/profile']);
+		});
 
+	}
+	edit() {
+		this.routers.navigate(['profile/edit/' + this.cvdata.id]);
+	}
 }

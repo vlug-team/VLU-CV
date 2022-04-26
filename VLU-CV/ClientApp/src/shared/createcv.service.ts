@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CreateCv } from './createcv.model';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Injectable()
 
@@ -34,8 +35,11 @@ export class CreateCvService {
 			.toPromise()
 			.then(res => this.list = res as CreateCv[]);
 	}
-	editCV(form: any) {
-		return this.http.put(this._baseUrl + '/' + form.id, form);
+	editCV(data: CreateCv) {
+		console.log(data);
+		return this.http.put(this._baseUrl + '/editcv' + data.id, data);
 	}
-
+	deleteCV(id: number) {
+		return this.http.delete(this._baseUrl + '/deletecv' + id);
+	}
 }

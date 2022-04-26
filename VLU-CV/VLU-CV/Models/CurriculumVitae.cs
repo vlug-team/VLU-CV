@@ -16,6 +16,7 @@ namespace VLU_CV.Models
         public string Position { get; set; }
         public string PersonalStatement { get; set; }
         public DateTime BirthDay { get; set; }
+        public DateTime CreatedAt { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string FacebookUrl { get; set; }

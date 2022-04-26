@@ -35,6 +35,9 @@ namespace VLU_CV.Migrations
                     b.Property<DateTime>("BirthDay")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description_1")
                         .HasColumnType("nvarchar(max)");
 

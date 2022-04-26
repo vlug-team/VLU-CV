@@ -18,6 +18,7 @@ namespace VLU_CV.Migrations
                     Position = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PersonalStatement = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FacebookUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),

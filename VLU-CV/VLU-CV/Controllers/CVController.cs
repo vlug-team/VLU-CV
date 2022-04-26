@@ -36,6 +36,7 @@ namespace VLU_CV.Controllers
 
             return curriculumVitae;
         }
+
         [HttpGet("getcv{id}")]
         public async Task<ActionResult<CurriculumVitae>> GetCvById(int id)
         {
@@ -50,23 +51,55 @@ namespace VLU_CV.Controllers
         [HttpPost("createcv")]
         public IActionResult AddCV([FromBody] CurriculumVitae curriculum)
         {
+            var userCV = _context.CurriculumVitaes
+                .Where(c => c.UserId == curriculum.UserId && c.CreatedAt == DateTime.Today)
+                .ToList();
             if (curriculum == null)
             {
                 return BadRequest();
             }
             else
             {
-                _context.CurriculumVitaes.Add(curriculum);
-                _context.SaveChanges();
-                return Ok(new { StatusCode = 200, });
+                if (userCV.Count <= 6 && userCV.Count > 0)
+                {
+                    curriculum.CreatedAt = DateTime.Today;
+                    _context.CurriculumVitaes.Add(curriculum);
+                    _context.SaveChanges();
+                    return Ok(new { StatusCode = 200, });
+                }
+                else
+                {
+                    return BadRequest(new { StatusCode = 400 });
+                }
             }
         }
 
-        [HttpPut]
-        public CurriculumVitae EditCV(CurriculumVitae curriculumVitae)
+        [HttpDelete("deletecv{id}")]
+        public async Task<ActionResult<CurriculumVitae>> DeleteCV(int id)
         {
-            var Cv = _context.CurriculumVitaes.Update(curriculumVitae);
-            return Cv.Entity;
+            var cv = await _context.CurriculumVitaes.FindAsync(id);
+            if (cv == null)
+            {
+                return NotFound();
+            }
+            _context.CurriculumVitaes.Remove(cv);
+            await _context.SaveChangesAsync();
+            return cv;
+        }
+
+        [HttpPut("editcv{id}")]
+        public async Task<IActionResult> EditCV(int id, [FromBody] CurriculumVitae curriculum)
+        {
+            if (id != curriculum.Id)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                _context.CurriculumVitaes.Update(curriculum);
+                await _context.SaveChangesAsync();
+                return Ok(new { StatusCode = 200, });
+            }
         }
     }
 }

@@ -1,38 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { Observable, Subscriber } from 'rxjs';
+import { CreateCv } from 'src/shared/createcv.model';
 import { CreateCvService } from 'src/shared/createcv.service';
+
 @Component({
-	selector: 'app-create-cv',
-	templateUrl: './create-cv.component.html',
-	styleUrls: ['./create-cv.component.css']
+	selector: 'app-editcv',
+	templateUrl: './editcv.component.html',
+	styleUrls: ['./editcv.component.css']
 })
-export class CreateCvComponent implements OnInit {
-	user: SocialUser | null;
-	constructor(public service: CreateCvService, private authService: SocialAuthService) {
-		this.user = null;
-		this.authService.authState.subscribe((user: SocialUser) => {
-			this.user = user;
-		});
-	}
-	ngOnInit(): void {
+export class EditcvComponent implements OnInit {
+
+	constructor(public service: CreateCvService, public router: ActivatedRoute) {
 
 	}
+
+	user: SocialUser | null;
+	formData: CreateCv;
 	imgSrc: string;
 	isImg = false;
 
-
-	onSubmit(form: NgForm): void {
-		this.service.formData.userId = this.user.id;
-		this.service.postCV().subscribe(res => {
-			alert('CV created successfully.');
-			form.reset();
+	ngOnInit(): void {
+		this.router.params.subscribe(params => {
+			this.service.getCVById(params.id).subscribe(data => {
+				this.formData = data;
+			});
 		}
-			,
+		);
+	}
+
+	onSubmit(): void {
+		this.formData.userId = this.user.id;
+		this.service.editCV(this.formData).subscribe(res => {
+			alert('CV edit successfully.');
+		},
 			err => {
-				err.status === 400 ? alert('You can only have 6 CV today') : console.log(err);
+				alert('CV edit failed.');
+				console.log(err);
 			}
+
 		);
 	}
 	uploadImage(event: Event) {
@@ -46,7 +54,7 @@ export class CreateCvComponent implements OnInit {
 		});
 		obervable.subscribe((d) => {
 			this.imgSrc = d;
-			this.service.formData.imageSrc = d;
+			this.formData.imageSrc = d;
 		})
 	}
 	readFile(file: File, sub: Subscriber<any>) {
