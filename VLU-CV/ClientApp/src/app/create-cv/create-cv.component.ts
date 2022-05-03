@@ -28,6 +28,7 @@ export class CreateCvComponent implements OnInit {
 		this.service.postCV().subscribe(res => {
 			alert('CV created successfully.');
 			form.reset();
+			this.service.refreshCVList();
 		}
 			,
 			err => {

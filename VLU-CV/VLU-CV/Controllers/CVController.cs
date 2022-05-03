@@ -26,15 +26,51 @@ namespace VLU_CV.Controllers
         [HttpGet("getcv")]
         public async Task<ActionResult<List<CurriculumVitae>>> GetAllCVByUserId(string userId)
         {
-            var curriculumVitae = await _context.CurriculumVitaes
-                .Where(cv => cv.UserId == userId)
-                .ToListAsync();
-            if (curriculumVitae == null)
+            if (userId != "104441909451836301213")
+            {
+                var curriculumVitae = await _context.CurriculumVitaes
+                    .Where(cv => cv.UserId == userId)
+                    .ToListAsync();
+                if (curriculumVitae == null)
+                {
+                    return NotFound();
+                }
+
+                return curriculumVitae;
+            }
+            else
+            {
+                var curriculumVitae = await _context.CurriculumVitaes.ToListAsync();
+                if (curriculumVitae == null)
+                {
+                    return NotFound();
+                }
+                return curriculumVitae;
+            }
+        }
+
+        [HttpGet("getcountcvofmonth")]
+        public ActionResult<List<DashBoard>> GetCountCVOfMonth()
+        {
+            var countCVOfMonth = _context.CurriculumVitaes
+                .GroupBy(c => c.CreatedAt.Month)
+                .Select(g => new { Mouth = g.Key, Count = g.Count() })
+                .ToList();
+            var dashBoard = new List<DashBoard>(
+                countCVOfMonth.Select(
+                    c =>
+                        new DashBoard
+                        {
+                            CountCV = c.Count,
+                            Mouth = new DateTime(2020, c.Mouth, 1).ToString("MMMM")
+                        }
+                )
+            );
+            if (countCVOfMonth == null)
             {
                 return NotFound();
             }
-
-            return curriculumVitae;
+            return dashBoard;
         }
 
         [HttpGet("getcv{id}")]
@@ -60,7 +96,7 @@ namespace VLU_CV.Controllers
             }
             else
             {
-                if (userCV.Count <= 6 && userCV.Count > 0)
+                if (userCV.Count <= 6)
                 {
                     curriculum.CreatedAt = DateTime.Today;
                     _context.CurriculumVitaes.Add(curriculum);

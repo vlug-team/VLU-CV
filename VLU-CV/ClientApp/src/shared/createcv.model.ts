@@ -24,5 +24,10 @@ export class CreateCv {
 	public achievement: string;
 	public imageSrc: string = '';
 	public userId: string;
+	public createdAt: Date;
 
+}
+export class Dashboard {
+	public countCV: number;
+	public mouth: string;
 }

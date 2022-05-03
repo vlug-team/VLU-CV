@@ -37,4 +37,10 @@ namespace VLU_CV.Models
         public string Achievement { get; set; }
         public string ImageSrc { get; set; }
     }
+
+    public class DashBoard
+    {
+        public int CountCV { get; set; }
+        public string Mouth { get; set; }
+    }
 }

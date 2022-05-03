@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CreateCv } from './createcv.model';
+import { CreateCv, Dashboard } from './createcv.model';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
@@ -41,5 +41,8 @@ export class CreateCvService {
 	}
 	deleteCV(id: number) {
 		return this.http.delete(this._baseUrl + '/deletecv' + id);
+	}
+	getdashboard(): Observable<Dashboard[]> {
+		return this.http.get<Dashboard[]>(this._baseUrl + '/getcountcvofmonth');
 	}
 }

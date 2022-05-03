@@ -1,0 +1,17 @@
+.width-card {
+	width: var(--card-width);
+	height: var(--card-height);
+}
+
+.margin-card {
+	margin-top: var(--magrin-top);
+	margin-bottom: var(--magrin-bottom);
+	margin-left: var(--magrin-left);
+}
+
+#chart {
+	margin: 35px auto;
+	width: 90%;
+	min-height: 100%;
+	overflow: hidden;
+}

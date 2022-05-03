@@ -31,6 +31,8 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { ResumeviewComponent } from './resumeview/resumeview.component';
 import { EditcvComponent } from './editcv/editcv.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -58,6 +60,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 	imports: [
 		BrowserModule,
 		HttpClientModule,
+    NgApexchartsModule,
 		NgxPaginationModule,
 		FormsModule,
 		RouterModule.forRoot([
