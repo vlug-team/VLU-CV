@@ -42,7 +42,7 @@ export class CreateCvService {
 	deleteCV(id: number) {
 		return this.http.delete(this._baseUrl + '/deletecv' + id);
 	}
-	getdashboard(): Observable<Dashboard[]> {
-		return this.http.get<Dashboard[]>(this._baseUrl + '/getcountcvofmonth');
+	getdashboard(): Observable<Dashboard> {
+		return this.http.get<Dashboard>(this._baseUrl + '/getcountcvofmonth');
 	}
 }

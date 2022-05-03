@@ -28,6 +28,6 @@ export class CreateCv {
 
 }
 export class Dashboard {
-	public countCV: number;
-	public mouth: string;
+	public count: number = 0;
+	public month: Date;
 }

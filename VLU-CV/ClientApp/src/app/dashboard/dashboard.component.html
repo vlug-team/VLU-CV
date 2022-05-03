@@ -4,7 +4,7 @@
 			<div class="card-body">
 				<div class="card-title">
 					<h4 style="overflow: hidden;height: 32px;">Tổng số lượng resume đã tạo:
-						<strong>{{datacv.length}}</strong>
+						<strong>{{this.data.length}}</strong>
 					</h4>
 				</div>
 			</div>
@@ -13,10 +13,9 @@
 </div>
 <div class="row margin-card width-card justify-content-center"
 	style="--margin-left: 3em; --card-width: 100%; --card-height: 100%; --magrin-bottom: 5em">
-	<div id="chart" style="overflow: hidden">
-		<apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-			[dataLabels]="chartOptions.dataLabels" [grid]="chartOptions.grid" [stroke]="chartOptions.stroke"
-			[title]="chartOptions.title"></apx-chart>
+	<div id="chart">
+		<apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+			[plotOptions]="chartOptions.plotOptions" [xaxis]="chartOptions.xaxis"></apx-chart>
 	</div>
 </div>
 <app-footer></app-footer>

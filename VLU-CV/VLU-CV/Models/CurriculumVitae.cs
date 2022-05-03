@@ -40,7 +40,7 @@ namespace VLU_CV.Models
 
     public class DashBoard
     {
-        public int CountCV { get; set; }
-        public string Mouth { get; set; }
+        public int Count { get; set; }
+        public DateTime Month { get; set; }
     }
 }

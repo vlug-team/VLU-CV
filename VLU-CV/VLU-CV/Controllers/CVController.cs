@@ -26,7 +26,7 @@ namespace VLU_CV.Controllers
         [HttpGet("getcv")]
         public async Task<ActionResult<List<CurriculumVitae>>> GetAllCVByUserId(string userId)
         {
-            if (userId != "104441909451836301213")
+            if (userId != "100099488054233697335")
             {
                 var curriculumVitae = await _context.CurriculumVitaes
                     .Where(cv => cv.UserId == userId)
@@ -54,15 +54,15 @@ namespace VLU_CV.Controllers
         {
             var countCVOfMonth = _context.CurriculumVitaes
                 .GroupBy(c => c.CreatedAt.Month)
-                .Select(g => new { Mouth = g.Key, Count = g.Count() })
+                .Select(g => new { Month = g.Key, Count = g.Count() })
                 .ToList();
             var dashBoard = new List<DashBoard>(
                 countCVOfMonth.Select(
                     c =>
                         new DashBoard
                         {
-                            CountCV = c.Count,
-                            Mouth = new DateTime(2020, c.Mouth, 1).ToString("MMMM")
+                            Count = c.Count,
+                            Month = new DateTime(2020, c.Month, 1)
                         }
                 )
             );
