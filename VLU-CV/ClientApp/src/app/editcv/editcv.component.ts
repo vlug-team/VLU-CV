@@ -13,14 +13,12 @@ import { CreateCvService } from 'src/shared/createcv.service';
 })
 export class EditcvComponent implements OnInit {
 
-	constructor(public service: CreateCvService, public router: ActivatedRoute) {
+	constructor(public service: CreateCvService, public router: ActivatedRoute, public route: Router) {
 
 	}
 
 	user: SocialUser | null;
 	formData: CreateCv;
-	imgSrc: string;
-	isImg = false;
 
 	ngOnInit(): void {
 		this.router.params.subscribe(params => {
@@ -32,9 +30,9 @@ export class EditcvComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		this.formData.userId = this.user.id;
 		this.service.editCV(this.formData).subscribe(res => {
 			alert('CV edit successfully.');
+			this.route.navigate(['/profile']);
 		},
 			err => {
 				alert('CV edit failed.');
@@ -42,31 +40,5 @@ export class EditcvComponent implements OnInit {
 			}
 
 		);
-	}
-	uploadImage(event: Event) {
-		const file = (event.target as HTMLInputElement).files[0];
-		this.isImg = true;
-		this.convertImageToBase64(file);
-	}
-	convertImageToBase64(file: File) {
-		const obervable = new Observable((sub: Subscriber<any>) => {
-			this.readFile(file, sub);
-		});
-		obervable.subscribe((d) => {
-			this.imgSrc = d;
-			this.formData.imageSrc = d;
-		})
-	}
-	readFile(file: File, sub: Subscriber<any>) {
-		const fileReader = new FileReader();
-		fileReader.readAsDataURL(file);
-		fileReader.onload = () => {
-			sub.next(fileReader.result);
-			sub.complete();
-		}
-		fileReader.onerror = (error) => {
-			sub.error(error);
-			sub.complete();
-		}
 	}
 }

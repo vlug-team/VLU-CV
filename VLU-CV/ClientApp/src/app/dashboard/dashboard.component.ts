@@ -5,7 +5,8 @@ import {
 	ChartComponent,
 	ApexDataLabels,
 	ApexXAxis,
-	ApexPlotOptions
+	ApexPlotOptions,
+	ApexTitleSubtitle
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -14,9 +15,12 @@ export type ChartOptions = {
 	dataLabels: ApexDataLabels;
 	plotOptions: ApexPlotOptions;
 	xaxis: ApexXAxis;
+	title: ApexTitleSubtitle;
 };
 import { CreateCvService } from "../../shared/createcv.service";
-import { CreateCv, Dashboard } from "../../shared/createcv.model";
+import { Dashboard } from "../../shared/createcv.model";
+import { SocialAuthService, SocialUser } from "angularx-social-login";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: 'app-dashboard',
@@ -26,18 +30,20 @@ import { CreateCv, Dashboard } from "../../shared/createcv.model";
 export class DashboardComponent implements OnInit {
 	@ViewChild("chart") chart: ChartComponent;
 	public chartOptions: Partial<ChartOptions>;
-	data: CreateCv[];
-	constructor(private createCvService: CreateCvService) {
+	data: Dashboard[];
+	count: number;
+	countofmonth: number;
+	month: any;
+	userSocial: SocialUser;
+	constructor(private createCvService: CreateCvService, private router: Router, private user: SocialAuthService) {
 		this.chartOptions = {
-			series: [
-				{
-					name: "Count",
-					data: [0]
-				}
-			],
+
 			chart: {
-				type: "bar",
-				height: 350
+				type: "area",
+				height: 450,
+				zoom: {
+					enabled: false
+				}
 			},
 			plotOptions: {
 				bar: {
@@ -47,24 +53,40 @@ export class DashboardComponent implements OnInit {
 			dataLabels: {
 				enabled: false
 			},
-			xaxis: {
-				categories: [new Date().getMonth() - 1 + "-" + new Date().getFullYear()]
+			title: {
+				text: "Number of CVs"
+			},
 
-			}
+
 		};
 	}
 	ngOnInit(): void {
-		this.createCvService.getCV().subscribe(data => {
-			this.data = data;
-			console.log(this.data);
-			this.chartOptions.series = [
+		this.user.authState.subscribe((user) => {
+			this.userSocial = user;
+			if (user.id !== "100099488054233697335") {
+				this.router.navigate(["/"]);
+			}
+		});
+		this.createCvService.getcount().subscribe(data => {
+			this.count = data
+		});
+		this.createCvService.getcountofmonth().subscribe(data => {
+			this.countofmonth = data
+		}
+		);
 
+		this.createCvService.getalldashboard().subscribe(data => {
+
+			this.data = data;
+			this.chartOptions.series = [
 				{
 					name: "Count",
-					data: [this.data.length]
-				}
+					data: this.data.map(x => x.count)
+				},
 			];
-			this.chartOptions.xaxis.categories = [new Date().getMonth() + "-" + new Date().getFullYear()];
+			this.chartOptions.xaxis = {
+				categories: this.data.map(x => x.month)
+			};
 		});
 	}
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SocialAuthService, SocialUser } from 'angularx-social-login';
 import { Observable, Subscriber } from 'rxjs';
+import { CreateCv, ErrorList } from 'src/shared/createcv.model';
 import { CreateCvService } from 'src/shared/createcv.service';
 @Component({
 	selector: 'app-create-cv',
@@ -21,18 +22,27 @@ export class CreateCvComponent implements OnInit {
 	}
 	imgSrc: string;
 	isImg = false;
-
+	errorList: ErrorList;
 
 	onSubmit(form: NgForm): void {
 		this.service.formData.userId = this.user.id;
-		this.service.postCV().subscribe(res => {
+		this.service.postCV(this.service.formData).subscribe(res => {
 			alert('CV created successfully.');
 			form.reset();
+			this.isImg = false;
+			this.imgSrc = null;
+			this.service.formData = new CreateCv();
 			this.service.refreshCVList();
-		}
-			,
+		},
 			err => {
-				err.status === 400 ? alert('You can only have 6 CV today') : console.log(err);
+				this.errorList = err.error.errors;
+				console.log(err);
+				if (err.status == 422) {
+					alert('Please fill all the required fields.\n' + this.errorList.map(x => x.message).join('\n'));
+				}
+				else if (err.error.statusCode === 423) {
+					alert('You can create just 6 cv in day');
+				}
 			}
 		);
 	}

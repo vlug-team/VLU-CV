@@ -28,6 +28,13 @@ export class CreateCv {
 
 }
 export class Dashboard {
+	public id: number;
 	public count: number = 0;
-	public month: Date;
+	public month: string;
+}
+export class ErrorList {
+	[x: string]: any;
+	public message: string;
+	public status: number;
+	public field: string;
 }

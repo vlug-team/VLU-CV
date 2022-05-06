@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,10 +37,18 @@ namespace VLU_CV
                     );
                 }
             );
-            services.AddControllersWithViews();
+            services.AddControllers().ConfigureApiBehaviorOptions(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var result = new ValidationFailedResult(context.ModelState);
+                    // TODO: add `using System.Net.Mime;` to resolve MediaTypeNames
+                    result.ContentTypes.Add(MediaTypeNames.Application.Json);
+                    return result;
+                };
+            });
             services.AddSwaggerGen();
             services.AddRazorPages();
-            services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(
                 options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))

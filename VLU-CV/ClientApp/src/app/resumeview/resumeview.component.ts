@@ -14,11 +14,12 @@ export class ResumeviewComponent implements OnInit {
 
 	constructor(public service: CreateCvService, public router: ActivatedRoute, public routers: Router) { }
 	cvdata: CreateCv;
+	birthDate: string;
 	ngOnInit(): void {
 		this.router.params.subscribe(params => {
 			this.service.getCVById(params.id).subscribe(data => {
 				this.cvdata = data;
-				console.log(this.cvdata);
+				this.birthDate = new Date(data.birthDay).toLocaleDateString();
 			});
 		}
 		);

@@ -21,8 +21,9 @@ export class CreateCvService {
 	list: CreateCv[];
 	data: CreateCv;
 
-	postCV() {
-		return this.http.post(this._baseUrl + "/createcv", this.formData);
+
+	postCV(data: CreateCv) {
+		return this.http.post(this._baseUrl + "/createcv", data);
 	}
 	getCV(): Observable<CreateCv[]> {
 		return this.http.get<CreateCv[]>(this._baseUrl + '/getcv?userId=' + this.user.id);
@@ -43,6 +44,15 @@ export class CreateCvService {
 		return this.http.delete(this._baseUrl + '/deletecv' + id);
 	}
 	getdashboard(): Observable<Dashboard> {
-		return this.http.get<Dashboard>(this._baseUrl + '/getcountcvofmonth');
+		return this.http.get<Dashboard>(this._baseUrl + '/getcount');
+	}
+	getalldashboard(): Observable<Dashboard[]> {
+		return this.http.get<Dashboard[]>(this._baseUrl + '/getcount');
+	}
+	getcount(): Observable<number> {
+		return this.http.get<number>(this._baseUrl + '/getcountcv');
+	}
+	getcountofmonth(): Observable<number> {
+		return this.http.get<number>(this._baseUrl + '/getcountofmonth');
 	}
 }

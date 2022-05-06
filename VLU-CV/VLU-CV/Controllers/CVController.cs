@@ -40,7 +40,7 @@ namespace VLU_CV.Controllers
             }
             else
             {
-                var curriculumVitae = await _context.CurriculumVitaes.ToListAsync();
+                var curriculumVitae = await _context.CurriculumVitaes?.ToListAsync()!;
                 if (curriculumVitae == null)
                 {
                     return NotFound();
@@ -49,20 +49,22 @@ namespace VLU_CV.Controllers
             }
         }
 
-        [HttpGet("getcountcvofmonth")]
+        [HttpGet("getcount")]
         public ActionResult<List<DashBoard>> GetCountCVOfMonth()
         {
+            int id = 1;
             var countCVOfMonth = _context.CurriculumVitaes
                 .GroupBy(c => c.CreatedAt.Month)
-                .Select(g => new { Month = g.Key, Count = g.Count() })
+                .Select(g => new { Month = g.Key, Count = g.Count(), })
                 .ToList();
             var dashBoard = new List<DashBoard>(
                 countCVOfMonth.Select(
                     c =>
                         new DashBoard
                         {
+                            Id = id++,
                             Count = c.Count,
-                            Month = new DateTime(2020, c.Month, 1)
+                            Month = new DateTime(2022, c.Month, 1).ToString("MMMM")
                         }
                 )
             );
@@ -84,30 +86,71 @@ namespace VLU_CV.Controllers
             return cv;
         }
 
+        [HttpGet("getcountcv")]
+        public ActionResult<int> GetCountCV()
+        {
+            var countCV = _context.CurriculumVitaes.Count();
+
+            if (countCV <= 0)
+            {
+                return NotFound();
+            }
+            return countCV;
+        }
+
+        [HttpGet("getcountofmonth")]
+        public ActionResult<int> GetCountOfMonth()
+        {
+            var countCVOfMonth = _context.CurriculumVitaes
+                .GroupBy(c => c.CreatedAt.Month)
+                .Select(g => new { Month = g.Key, Count = g.Count(), })
+                .ToList();
+            var count = countCVOfMonth.Count();
+
+            if (count <= 0)
+            {
+                return NotFound();
+            }
+            return count;
+        }
+
         [HttpPost("createcv")]
         public IActionResult AddCV([FromBody] CurriculumVitae curriculum)
         {
-            var userCV = _context.CurriculumVitaes
-                .Where(c => c.UserId == curriculum.UserId && c.CreatedAt == DateTime.Today)
-                .ToList();
             if (curriculum == null)
             {
                 return BadRequest();
             }
             else
             {
-                if (userCV.Count <= 6)
+                if (GetCountCVToday(curriculum.UserId) <= 6)
                 {
-                    curriculum.CreatedAt = DateTime.Today;
+                    curriculum.CreatedAt = DateTime.Now.Date;
                     _context.CurriculumVitaes.Add(curriculum);
                     _context.SaveChanges();
                     return Ok(new { StatusCode = 200, });
                 }
+                else if (GetCountCVToday(curriculum.UserId) > 6)
+                {
+                    return BadRequest(new { StatusCode = 423 });
+                }
                 else
                 {
-                    return BadRequest(new { StatusCode = 400 });
+                    return BadRequest(new { StatusCode = 422 });
                 }
             }
+        }
+
+        private int GetCountCVToday(string userId)
+        {
+            var cvToday = _context.CurriculumVitaes
+                ?.Where(c => c.UserId == userId && c.CreatedAt == DateTime.Now.Date)
+                .ToList();
+            if (cvToday == null)
+            {
+                return 0;
+            }
+            return cvToday.Count;
         }
 
         [HttpDelete("deletecv{id}")]

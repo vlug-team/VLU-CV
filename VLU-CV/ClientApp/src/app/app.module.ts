@@ -60,7 +60,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
 	imports: [
 		BrowserModule,
 		HttpClientModule,
-    NgApexchartsModule,
+		NgApexchartsModule,
 		NgxPaginationModule,
 		FormsModule,
 		RouterModule.forRoot([

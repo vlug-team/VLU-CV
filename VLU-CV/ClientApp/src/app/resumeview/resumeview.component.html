@@ -23,33 +23,33 @@
 						</p>
 						<strong class="title">Trình độ học vấn</strong>
 						<p class="p__content" style="margin-top: 5px;">
-							{{cvdata.specialized}}
+							Chuyên ngành: <strong>{{cvdata.specialized}}</strong>
 						</p>
 						<p class="p__content">
-							{{cvdata.schoolName}}
+							Trường ĐH: {{cvdata.schoolName}}
 						</p>
 
 						<p class="p__content" style="margin-bottom: 5px;">
-							{{cvdata.gpa}}
+							GPA: {{cvdata.gpa}}
 						</p>
 						<strong class="title">Kinh nghiệm làm việc</strong>
 						<p class="p__content" style="margin-top: 5px;">
-							{{cvdata.positioned_1}}
+							Vị trí: {{cvdata.positioned_1}}
 						</p>
 						<p class="p__content">
-							{{cvdata.worked_1}}
+							Nơi làm việc: {{cvdata.worked_1}}
 						</p>
 						<p class="p__content">
-							{{cvdata.positioned_1}}
+							Mô tả: {{cvdata.description_1}}
 						</p>
 						<p class="p__content" style="margin-top: 5px;">
-							{{cvdata.positioned_2}}
+							Vị trí: {{cvdata.positioned_2}}
 						</p>
 						<p class="p__content">
-							{{cvdata.worked_2}}
+							Nơi làm việc: {{cvdata.worked_2}}
 						</p>
 						<p class="p__content">
-							{{cvdata.positioned_2}}
+							Mô tả: {{cvdata.description_2}}
 						</p>
 
 					</div>
@@ -58,7 +58,7 @@
 						<div class="simple__information">
 							<div class="information">
 								<div class="icon mail"></div>
-								<p style="margin-top:1px">{{cvdata.email}}</p>
+								<a href="mailto:{{cvdata.email}}" style="margin-top:3px; color: blue;">Email</a>
 							</div>
 							<div class="information">
 								<div class="icon phone"></div>
@@ -66,7 +66,7 @@
 							</div>
 							<div class="information">
 								<div class="icon birthday"></div>
-								<p style="margin-top:1px">{{cvdata.birthDay}}</p>
+								<p style="margin-top:1px">{{birthDate}}</p>
 							</div>
 							<div class="information">
 								<div class="icon location" style="width: 26px;"></div>
@@ -74,21 +74,21 @@
 							</div>
 							<div class="information">
 								<div class="icon facebook" style="margin-left: 3px;"></div>
-								<p style="margin-top:1px">{{cvdata.facebookUrl}}</p>
+								<a href="{{cvdata.facebookUrl}}" style="margin-top:3px;color: blue;">Facebook</a>
 							</div>
 						</div>
 						<strong class="title">Các kỹ năng</strong>
 						<p class="p__content">
-							{{cvdata.skill_1}}
+							- {{cvdata.skill_1}}
 						</p>
 						<p class="p__content">
-							{{cvdata.skillDecription_1}}
+							Mô tả: {{cvdata.skillDecription_1}}
 						</p>
 						<p class="p__content">
-							{{cvdata.skill_2}}
+							- {{cvdata.skill_2}}
 						</p>
 						<p class="p__content" style="margin-bottom: 5px;">
-							{{cvdata.skillDecription_2}}
+							Mô tả: {{cvdata.skillDecription_2}}
 						</p>
 						<strong class="title">Thành tích</strong>
 						<p class="p__content">
