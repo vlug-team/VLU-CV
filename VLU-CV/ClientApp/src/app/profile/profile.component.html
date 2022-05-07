@@ -1,5 +1,6 @@
 <div class="row" style="margin-top: 6em;">
-	<div class="col-4" *ngFor="let cv of this.data" style="margin-bottom: 6em;">
+	<div class="col-4" *ngFor="let cv of this.data | paginate: { itemsPerPage: 8, currentPage: page }"
+		style="margin-bottom: 6em;">
 		<div class="background">
 			<div class="cv" id="cv">
 				<div class="header">
@@ -100,4 +101,9 @@
 			<button class="btn-more-resume">View</button>
 		</div>
 	</div>
+</div>
+<div>
+	<pagination-controls class="pagination" responsive="true" previousLabel="<<" nextLabel=">>"
+		(pageChange)="page = $event">
+	</pagination-controls>
 </div>

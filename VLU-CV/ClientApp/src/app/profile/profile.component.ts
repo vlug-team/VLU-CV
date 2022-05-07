@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
 	constructor(public service: CreateCvService, public router: Router) { };
 	data: CreateCv[];
 	cvdata: CreateCv;
+	page: number = 1;
 	closeResult = '';
 	ngOnInit(): void {
 		this.service.getCV().subscribe(data => {
