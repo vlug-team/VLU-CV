@@ -19,12 +19,12 @@ export class EditcvComponent implements OnInit {
 
 	user: SocialUser | null;
 	formData: CreateCv;
-
 	ngOnInit(): void {
 		this.router.params.subscribe(params => {
 			this.service.getCVById(params.id).subscribe(data => {
 				this.formData = data;
 			});
+
 		}
 		);
 	}
