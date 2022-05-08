@@ -29,14 +29,11 @@ export class ResumeviewComponent implements OnInit {
 		var data = document.getElementById('cv');
 		html2canvas(data).then(canvas => {
 			let imgWidth = 208;
-			let pageHeight = 295;
-			let imgHeight = canvas.height * imgWidth / canvas.width;
-			let heightLeft = imgHeight;
+			let imgHeight = canvas.height * imgWidth / canvas.width - 40;
 
 			const contentDataURL = canvas.toDataURL('image/png')
 			let pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-			let position = 0;
-			pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+			pdf.addImage(contentDataURL, 'PNG', 0, 0, imgWidth, imgHeight)
 			pdf.save(this.cvdata.fullName + '.pdf');
 		});
 	}
