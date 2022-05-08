@@ -101,17 +101,9 @@ namespace VLU_CV.Controllers
         [HttpGet("getcountofmonth")]
         public ActionResult<int> GetCountOfMonth()
         {
-            var countCVOfMonth = _context.CurriculumVitaes
-                .GroupBy(c => c.CreatedAt.Month)
-                .Select(g => new { Month = g.Key, Count = g.Count(), })
-                .ToList();
-            var count = countCVOfMonth.Count();
+            var countCVOfMonth = _context.CurriculumVitaes.Where(c => c.CreatedAt.Month == DateTime.Now.Month).Count();
 
-            if (count <= 0)
-            {
-                return NotFound();
-            }
-            return count;
+            return countCVOfMonth;
         }
 
         [HttpPost("createcv")]
