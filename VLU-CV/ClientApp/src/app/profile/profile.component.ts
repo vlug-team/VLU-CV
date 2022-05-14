@@ -15,10 +15,13 @@ export class ProfileComponent implements OnInit {
 	data: CreateCv[];
 	cvdata: CreateCv;
 	page: number = 1;
-	closeResult = '';
+	isData = false;
 	ngOnInit(): void {
 		this.service.getCV().subscribe(data => {
 			this.data = data;
+			if (this.data.length > 0 && this.data != null) {
+				this.isData = true;
+			}
 			console.log(this.data);
 		})
 	}
