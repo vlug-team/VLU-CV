@@ -2,7 +2,7 @@
 	<div class="row" style="margin-top: 6em;">
 		<div class="col-4" *ngFor="let cv of this.data | paginate: { itemsPerPage: 8, currentPage: page }"
 			style="margin-bottom: 6em;">
-			<div class="background">
+			<div class="background" [ngStyle]="{'background': getRandomColor()}">
 				<div class="cv" id="cv">
 					<div class="header">
 						<img [src]="cv.imageSrc" alt="" class="image">

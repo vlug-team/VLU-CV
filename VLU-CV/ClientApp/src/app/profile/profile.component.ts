@@ -22,8 +22,17 @@ export class ProfileComponent implements OnInit {
 			if (this.data.length > 0 && this.data != null) {
 				this.isData = true;
 			}
-			console.log(this.data);
-		})
+		});
+
+
+	}
+	getRandomColor() {
+		var letters = '0123456789ABCDEF';
+		var color = '#';
+		for (var i = 0; i < 6; i++) {
+			color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
 	}
 	download() {
 		htmlToImage.toPng(document.getElementById('cv'))
