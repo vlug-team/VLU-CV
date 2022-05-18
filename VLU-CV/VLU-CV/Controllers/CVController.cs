@@ -54,8 +54,8 @@ namespace VLU_CV.Controllers
         {
             int id = 1;
             var countCVOfMonth = _context.CurriculumVitaes
-                .GroupBy(c => c.CreatedAt.Month)
-                .Select(g => new { Month = g.Key, Count = g.Count(), })
+                .GroupBy(c => c.CreatedAt.Day)
+                .Select(g => new { Day = g.Key, Count = g.Count(), })
                 .ToList();
             var dashBoard = new List<DashBoard>(
                 countCVOfMonth.Select(
@@ -64,7 +64,7 @@ namespace VLU_CV.Controllers
                         {
                             Id = id++,
                             Count = c.Count,
-                            Month = new DateTime(2022, c.Month, 1).ToString("MMMM")
+                            Day = new DateTime(2022, DateTime.Now.Month, c.Day).ToString("dd/MM/yyyy")
                         }
                 )
             );
@@ -101,7 +101,9 @@ namespace VLU_CV.Controllers
         [HttpGet("getcountofmonth")]
         public ActionResult<int> GetCountOfMonth()
         {
-            var countCVOfMonth = _context.CurriculumVitaes.Where(c => c.CreatedAt.Month == DateTime.Now.Month).Count();
+            var countCVOfMonth = _context.CurriculumVitaes
+                .Where(c => c.CreatedAt.Month == DateTime.Now.Month)
+                .Count();
 
             return countCVOfMonth;
         }

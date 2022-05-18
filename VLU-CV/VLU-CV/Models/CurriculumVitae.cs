@@ -96,6 +96,6 @@ namespace VLU_CV.Models
     {
         public int Id { get; set; }
         public int Count { get; set; }
-        public string Month { get; set; }
+        public string Day { get; set; }
     }
 }

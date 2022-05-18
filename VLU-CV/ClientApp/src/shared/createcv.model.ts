@@ -30,7 +30,7 @@ export class CreateCv {
 export class Dashboard {
 	public id: number;
 	public count: number = 0;
-	public month: string;
+	public day: string;
 }
 export class ErrorList {
 	[x: string]: any;

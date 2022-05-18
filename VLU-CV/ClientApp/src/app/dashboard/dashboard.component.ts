@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
 				},
 			];
 			this.chartOptions.xaxis = {
-				categories: this.data.map(x => x.month)
+				categories: this.data.map(x => x.day)
 			};
 		});
 	}
