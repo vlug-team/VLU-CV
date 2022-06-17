@@ -23,7 +23,7 @@ namespace VLU_CV.Controllers
             else
             {
                 MailMessage message = new MailMessage(
-                    from: "duta08042000@gmail.com",
+                    from: "duta08042000@yahoo.com",
                     to: "daonguyenduytan1@gmail.com",
                     subject: "VLU-CV",
                     body: $"<h1>Yêu cầu liên hệ:</h1>"
@@ -36,20 +36,19 @@ namespace VLU_CV.Controllers
                 message.BodyEncoding = System.Text.Encoding.UTF8;
                 message.SubjectEncoding = System.Text.Encoding.UTF8;
                 message.IsBodyHtml = true;
-                message.ReplyToList.Add(new MailAddress("duta08042000@gmail.com"));
-                message.Sender = new MailAddress("duta08042000@gmail.com");
+                message.ReplyToList.Add(new MailAddress("duta08042000@yahoo.com"));
+                message.Sender = new MailAddress("duta08042000@yahoo.com");
 
                 try
                 {
-                    using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
+                    using (SmtpClient smtp = new SmtpClient("smtp.mail.yahoo.com", 587))
                     {
-                        client.Port = 587;
-                        client.Credentials = new NetworkCredential(
-                            "duta08042000@gmail.com",
-                            "C57htr7gy1"
+                        smtp.Credentials = new NetworkCredential(
+                            "duta08042000@yahoo.com",
+                            "ismukjvvqadoycup"
                         );
-                        client.EnableSsl = true;
-                        client.Send(message);
+                        smtp.EnableSsl = true;
+                        smtp.Send(message);
                         return Ok(new { StatusCode = 200 });
                     }
                 }

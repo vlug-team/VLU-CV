@@ -64,7 +64,11 @@ namespace VLU_CV.Controllers
                         {
                             Id = id++,
                             Count = c.Count,
-                            Day = new DateTime(2022, DateTime.Now.Month, c.Day).ToString("dd/MM/yyyy")
+                            Day = new DateTime(
+                                DateTime.Now.Year,
+                                DateTime.Now.Month,
+                                c.Day
+                            ).ToString("dd/MM/yyyy")
                         }
                 )
             );
